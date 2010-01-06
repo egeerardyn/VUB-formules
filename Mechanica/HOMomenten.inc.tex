@@ -1,0 +1,38 @@
+\newpage
+\section{Hogere-ordemomenten}
+
+\subsection{Massatraagheidsmomenten}
+
+\paragraph{Traagheidsmomenten}
+\[
+  I_x = \int \varrho \left( y^2 + z^2 \right) \d{D}
+\]
+
+\paragraph{Traagheidstensor} (steeds symmetrisch en diagonaliseerbaar (HTA))
+\[
+  \overline{\overline{I}}_O =
+  \left[
+    \begin{array}{ccc}
+      I_x & - P_{xy} & - P_{xz}\\
+      - P_{yx} & I_y & - P_{yz}\\
+      - P_{zx} & - P_{zy} & I_z\\
+    \end{array}
+  \right]
+\]
+\[
+  I^O_{ij} = \int\left( x_k x_k \delta_{ij} - x_{i} x_{j} \right) \d{m}
+\]
+
+\paragraph{Transformatie} naar een geroteerd assenstelsel
+\[
+  \overline{\overline{I}}'_O = M \overline{\overline{I}}_O M^{\tau}
+\]
+
+\paragraph{Stelling van Steiner} (transformatie naar een verplaatst assenstelsel)
+\[
+  I^A_{ij} = I^G_{ij} + m \left(a_ka_k \delta_{ij} - a_i a_j\right)
+\]
+Uitgewerkte notatie (voor evenwijdige assen)
+\[
+  I_{d_2} = I_{d_G} + m \norm{d_2d_G}^2
+\]

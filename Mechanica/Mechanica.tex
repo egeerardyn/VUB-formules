@@ -1,0 +1,104 @@
+\documentclass[pdftex,fleqn,a4paper]{article}
+
+  \let\oldAuthor\author
+  \renewcommand{\author}[1]{\newcommand{\theAuthor}{#1}\oldAuthor{#1}}
+  \let\oldTitle\title
+  \renewcommand{\title}[1]{\newcommand{\theTitle}{#1}\oldTitle{#1}}
+  \newcommand{\subtitle}[1]{\newcommand{\theSubtitle}{#1}}
+  \let\oldDate\date
+  \renewcommand{\date}[1]{\newcommand{\theDate}{#1}\oldDate{#1}}
+
+  \usepackage{vubtitlepage}
+ \faculty{Faculteit Ingenieurswetenschappen}
+
+  \author{\href{mailto:Egon.Geerardyn@vub.ac.be}{Egon Geerardyn}}
+  \title{Formules Mechanica}
+  \newcommand{\revisie}{revisie 1.7}
+  \date{\revisie\ (\today)}
+
+
+
+
+  %\usepackage{graphicx}
+
+  \usepackage{fancyhdr}
+  \usepackage[dutch]{babel}
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+  \usepackage{graphicx}
+  \usepackage{wrapfig}
+  \usepackage{flow}
+  %%%%
+
+  \addtolength{\textheight}{2cm}
+  \addtolength{\textwidth}{3cm}
+  \addtolength{\hoffset}{-1.5cm}
+  \renewcommand{\rmdefault}{cmss}
+  \renewcommand{\sfdefault}{cmr}
+
+
+    \renewcommand{\vec}[1]{\overline{#1}} %small notations (may be commented out for traditional arrow notation)
+    \input{../commands/commands.inc.tex}
+
+ %lay-out
+  \hypersetup{colorlinks,%
+            citecolor=black,%
+            filecolor=black,%
+            linkcolor=black,%
+            urlcolor=black,%
+            pdfauthor={Egon Geerardyn},%
+            pdftitle={Formules Mechanica},%
+            plainpages=false}
+  \pdfpagewidth=\paperwidth
+  \pdfpageheight=\paperheight
+ %margins
+\begin{document}
+ \maketitlepage
+%  \titlepage
+%  \thispagestyle{empty}%
+%  \null
+%  \vfill
+%  \begin{center}\leavevmode
+%    \normalfont
+%    %{\Large\raggedleft schooljaren 2004 -- 2005 -- 2006\par}%
+%    {\Large\raggedleft Ingenieurswetenschappen\par}%
+%    \hrulefill\par
+%    {\Huge\raggedright Formularium Mechanica \large \revisie\   \footnotesize (\today)\par }%
+%  \end{center}%
+%  \vfill
+%  \scriptsize{auteur: \textsc{E. Geerardyn}\par
+%  \scriptsize{bron: \textsc{prof. D. Lefeber}, \textit{Mechanica: Deel I}, Dienst Uitgaven VUB 2006.}\par
+%  \scriptsize{bron: \textsc{prof. D. Lefeber}, \textit{Mechanica: Deel II}, Dienst Uitgaven VUB 2006.}
+%  \normalsize
+%
+%  \null
+\setlength{\voffset}{-2cm}
+  \newpage
+
+  \pagestyle{fancy}
+  \rhead{pagina \thepage}
+  \chead{\footnotesize \revisie}
+  \lhead{\textbf{Formules Mechanica}}
+  \cfoot{}
+  \input{voorwoord.inc.tex}
+   \newpage
+   \tableofcontents
+   \newpage
+
+   \input{vectoren.inc.tex}
+   \input{CoordTransf.inc.tex}
+
+   \input{KinematicaPunt.inc.tex}
+   \input{Statica.inc.tex}
+  \input{DynamicaPunt.inc.tex}
+  \input{MechSP.inc.tex}
+  \input{MechSL.inc.tex}
+
+  \input{mmvc.inc.tex}
+
+
+  \appendix
+       \input{HOMomenten.inc.tex}
+       \input{vergelijkingen.inc.tex}
+\end{document}

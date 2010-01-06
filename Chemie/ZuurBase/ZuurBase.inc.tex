@@ -1,0 +1,167 @@
+\onecolumn
+\newpage
+\section{Zuur-Base-evenwichten}
+\label{sec:H:ZuurBase}
+
+\paragraph{Aciditeitsconstante}
+\label{sec:Aciditeitsconstante}
+\[
+  HZ + H_2O \evenwicht Z^- + H_3O^+
+\]
+\[
+  \K_A = \K_a = \K_Z = \frac{\conc{H_3O^+}_e \conc{Z^-}_e}{\conc{HZ}_e}
+\]
+
+\paragraph{Basiciteitsconstante}
+\label{sec:Basiciteitsconstante}
+\[
+  \K_B = \K_b = \frac{\conc{BH^+}_e \conc{OH^-}_e}{\conc{B}_e}
+\]
+\[
+  B + H_2O \evenwicht BH^+ + OH^-
+\]
+
+\paragraph{Autoprotolyseconstante} (ion-product)
+\label{sec:Autoprotolyseconstante}
+\[
+  2H_2O \evenwicht H_3O^+ + OH^-
+\]
+\[
+  \K_W = \conc{H_3O^+}_e \conc{OH^-}_e = 1,0 \cdot 10^{-14} \quad \mbox{ bij } 25 \degree \eenheid{C}
+\]
+
+\paragraph{Relatie tussen Aciditeitsconstante en Basiciteitsconstante}
+\label{sec:RelatieKAenKB}
+Voor een zuur en zijn geconjugeerde base of voor een base en zijn geconjugeerd zuur geldt:
+\[
+  HZ + H_2O \evenwicht Z^- + H_3O^+
+\]
+\[
+  Z^- + H_2O \evenwicht HZ + OH^-
+\]
+\[
+  \K_A \K_B = \K_W
+\]
+
+\paragraph{p-schalen}
+\label{sec:pschalen}
+\[
+  \pH = - \log \conc{H_3O^+}_e
+\]
+\[
+  \pOH = - \log \conc{OH^-}_e
+\]
+\[
+  \pKa = - \log \K_A
+\]
+\[
+  \pKb = - \log \K_B
+\]
+\[
+  \pKw = - \log \K_W = \pKa + \pKb = \pH + \pOH = 14,0 \quad \mbox{bij 25°C}
+\]
+
+\paragraph{Protolysegraad}
+\label{sec:protolysegraad}
+\[
+  \alpha = \frac{\conc{HZ}_0 - \conc{HZ}_e}{\conc{HZ}_0}
+         = \frac{\conc{H_3O^+}_e - \conc{H_3O^+}_0}{\conc{HZ}_0}
+         = \frac{\conc{H_3O^+}_e}{z_0}
+\]
+
+\[
+  \beta  = \frac{\conc{B}_0 - \conc{B}_e}{\conc{B}_0}
+         = \frac{\conc{OH^-}_e - \conc{OH^-}_0}{\conc{B}_0}
+         = \frac{\conc{OH^-}_e}{b_0}
+\]
+
+
+\subsection{Classificatie van zuren/basen}
+\label{sec:ClassZurenBasen}
+\begin{tabular}{||r|rcl|c|rcl|l||}
+  \hline
+       & $10       \leq$ & $\K_A$ &                 & sterk           & $10       \leq$ & $\K_B$ &                 &      \\
+  zuur & $10^{-10} \leq$ & $\K_A$ & $\leq 10^{-4} $ & zwak            & $10^{-10} \leq$ & $\K_B$ & $\leq 10^{-4} $ & base \\
+       &                 & $\K_A$ & $\leq 10^{-10}$ & verwaarloosbaar &                 & $\K_B$ & $\leq 10^{-10}$ &      \\
+  \hline
+\end{tabular}
+
+\subsection{pH-berekening}
+\label{sec:HH:pHBerekening}
+\[
+  \begin{array}[pos]{|r|l|}
+	  \hline
+	  \mbox{\textbf{Eigenschap}}             & \mbox{\textbf{Formule}}                                               \\ \hline
+	  
+	  \mbox{Sterk zuur}                      & \pH = - \log \conc{Z}_0                                               \\% \hline
+	  \mbox{Sterke base}                     & \pH = 14 + \log \conc{B}_0                                            \\ %\hline
+	  \mbox{Zwak zuur}                       & \pH = \frac{1}{2} \left( \pKa - \log \conc{Z}_0 \right)               \\ %\hline
+	  \mbox{Zwakke base}                     & \pH = 7 + \frac{1}{2} \left( \pKa + \log \conc{B}_0 \right)           \\% \hline
+	  \mbox{Buffermengsel}                   & \pH = \pKa + \log \frac{\conc{B}_0}{\conc{Z}_0}                       \\% \hline
+	  \mbox{Zout: sterk zuur + sterke base}  & \pH = 7                                                               \\% \hline
+	  \mbox{Zout: sterk zuur + zwakke base}  & \pH = 7 + \frac{1}{2} \left( \pKa + \log \conc{\mbox{zout}}_0 \right) \\% \hline
+	  \mbox{Zout: zwak zuur + sterke base}   & \pH = 7 + \frac{1}{2} \left( \pKb - \log \conc{\mbox{zout}}_0 \right) \\% \hline
+	  \mbox{Zout: zwak zuur + zwakke base}   & \pH = 7 + \frac{1}{2} \left( \pKa - \pKb \right)                      \\ \hline
+	  
+  \end{array}
+\]
+
+
+\subsection{Buffermengsels}
+\label{sec:HH:buffers}
+
+\definitie{buffer}{mengsel van een geconcentreerd zwak zuur en zijn geconcentreerde zwakke base}\par
+\textbf{voorwaarden}
+\begin{itemize}
+	\item Vergelijkbaar zwk zuur en vergelijkbaar zwakke base ($\K_A \approx \K_B$: allebei zwak)
+	\item Allebei in hoge concentratie ($b_0, z_0 \geq 1 \cdot 10^{-2} \eenh{M}$)
+	\item Protolysegraad van het zuur en de base is zeer klein ($\alpha, \beta <  1$ à $2 \%$)
+\end{itemize}
+\paragraph{Formule van Henderson-Hassselbalch} (enkel geldig in een buffer)
+\label{sec:formHendersonHasselbalch}
+\[
+  \pH = \pKa + \log \frac{\conc{B}_0}{\conc{BH^+}_0} = \pKa + \log \frac{b_0}{z_0}
+\]
+
+\subsection{Amfolieten}
+\label{sec:H:Amfolieten}
+\[
+  H_2X + H_2O \evenwicht HX^- + H_3O^+ \qquad \K_{A1} = \frac{\conc{HX^-}_e\conc{H_3O^+}_e}{\conc{H_2X}_e}
+\]
+\[
+  HX^- + H_2O \evenwicht X^{2-} + H_3O^+ \qquad \K_{A2} = \frac{\conc{X^{2-}}_e\conc{H_3O^+}_e}{\conc{HX^-}_e}
+\]
+\[
+  \pH = \frac{1}{2} \left( \pK_{A1} + \pK_{A1} \right)
+\]
+
+
+\subsection{Titraties}
+\label{sec:HH:Titraties}
+
+\subsubsection{Sterk zuur met een sterke base}
+\label{sec:SterkZuurEnSterkeBase}
+
+\paragraph{Zure startoplossing}
+\paragraph{Voor het equivalentiepunt}
+\paragraph{Tijdens het equivqlentiepunt}
+\paragraph{Na het equivalentiepunt}
+
+\subsubsection{Zwakke base met sterk zuur of Zwak zuur met sterke base}
+\label{sec:ZwakkeBaseMetSterkZuur}
+
+\paragraph{Zure startoplossing}
+\paragraph{Voor het equivalentiepunt}\par
+Neutralisatiegraad
+\[
+  \Theta = \frac{xb}{Va}
+\]
+\[
+  1 - \Theta = 1 - \frac{xb}{Va} = \frac{Va - xb}{Va}
+\]
+\[
+  \pH = \pKa + \log \frac{xb}{Va - xb} = \pKa + log \frac{\Theta}{1 - \Theta}
+\]
+\paragraph{Tijdens het equivqlentiepunt}
+licht basis karakter ($\pH \neq 7,0$)
+\paragraph{Na het equivalentiepunt}

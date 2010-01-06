@@ -1,0 +1,68 @@
+\documentclass[fleqn,a4paper]{article}
+
+  \author{Egon Geerardyn}
+  \title{Formules Wiskunde}
+  \date{\today}
+  \usepackage{graphicx}
+  \usepackage{amsfonts}
+  \usepackage{mathrsfs}
+  \usepackage{fancyhdr}
+  \usepackage[dutch]{babel}
+  \usepackage[latin1]{inputenc}
+  \newcommand{\degree}[0]{^\circ}
+  \newcommand{\bol}[0]{\mathscr{B}}
+  \newcommand{\cfr}[1]{(cfr. \ref{#1} op p. \pageref{#1})}
+  \setlength{\voffset}{-2cm}
+  \addtolength{\textheight}{2cm}
+  \addtolength{\textwidth}{3cm}
+  \addtolength{\hoffset}{-1.5cm}
+  \renewcommand{\rmdefault}{cmss}
+  \renewcommand{\sfdefault}{cmr}
+    \newcommand{\bgsin}{\mbox{ \textsf{Bgsin}}\,}
+    \newcommand{\bgcos}{\mbox{ \textsf{Bgcos}}\,}
+    \newcommand{\bgtan}{\mbox{ \textsf{Bgtan}}\,}
+    \newcommand{\bgcot}{\mbox{ \textsf{Bgcot}}\,}
+    \newcommand{\co}{\mbox{ \textsf{co}}\,}
+    \newcommand{\gemiddelde}[1]{\left< #1 \right>}
+    \newcommand{\revisie}{revisie 1.3}
+ %lay-out
+
+ %margins
+\begin{document}
+  \titlepage
+  \thispagestyle{empty}%
+  \null
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    %{\Large\raggedleft schooljaar 2005 -- 2006\par}%
+    {\Large\raggedleft Koninklijk Atheneum Vilvoorde\par}%
+    \hrulefill\par
+    {\Huge\raggedright Formules en Constanten Fysica \large \revisie \par }%
+  \end{center}%
+  \vfill
+  \null
+  \newpage
+
+  \pagestyle{fancy}
+  \rhead{pagina \thepage}
+  \chead{\revisie}
+  \lhead{\textbf{Formules Fysica}}
+  \cfoot{}
+  
+  \tableofcontents
+  \newpage
+  
+  %Conversies en constanten
+  
+  
+  %Mechanica
+  \input{mechanica/beweging.inc.tex}
+  \input{mechanica/kracht.inc.tex}
+  
+  %Harmonische Trillingen
+  \input{trillingen/trillingen.inc.tex}
+  \input{trillingen/golven.inc.tex}
+  \input{trillingen/geluidsleer.inc.tex}
+  
+\end{document}

@@ -1,0 +1,413 @@
+
+\subsection{Vergelijkingen oplossen}
+\label{sec:NAVgln}
+\[
+ f(x) = 0 \Rightarrow x = ?
+\]
+Conventies
+\begin{eqnarray*}
+  f_n &=& f(x_n)\\
+  f'_n &=& f'(x_n)
+\end{eqnarray*}
+Algemeen algoritme:
+\[
+  x_{n+1} = x_n + k(x)f(x)
+\]
+
+\paragraph{Newton} (tweede orde)
+\[
+  x_{n+1} = x_n - \frac{f_n}{f'_n}
+\]
+\begin{itemize}
+  \item[\pro] Vrij snelle convergentie
+  \item[\con] Afgeleide berekenen is moeilijk
+\end{itemize}
+
+
+\paragraph{Vaste richting}
+\[
+ x_{n+1} = x_n - \frac{f_n}{f'_0}
+\]
+\begin{itemize}
+ \item[\pro] Slechts 1 afgeleide te berekenen
+ \item[\con] Tragere convergentie dan Newton
+\end{itemize}
+
+\paragraph{Koorde}
+\[
+ x_{n+1} = \frac{x_nf_{n-1} - x_{n-1}f_n}{f_{n-1} - f_n}
+\]
+\begin{itemize}
+  \item[\warn] $x_0$ en $x_1$ nodig bij het begin
+  \item[\pro] Geen afgeleide nodig
+\end{itemize}
+
+
+\paragraph{Regula Falsi}
+\begin{itemize}
+  \item[\warn] Zelfde als methode van de koorde, met de extra voorwaarde dat $x_{k}$ en $x_{k+1}$ steeds een verschillend teken hebben op elke iteratiestap $k$.
+\end{itemize}
+
+
+\paragraph{Dichotomie}
+\begin{itemize}
+  \item[\warn] Analoog aan regula falsi, maar het interval wordt steeds in twee exact even grote delen gesplitst.
+  \item[\con] Tragere convergentie dan regula falsi
+\end{itemize}
+
+\paragraph{Newton voor veelterm}
+\[
+ f(x) = \sum_{i = 0}^N a_i x^{N-i} = a_0x^N + a_1x6 {N-1} + \cdots + a_N
+\]
+\begin{eqnarray*}
+  b_0     & = & a_0\\
+  c_0     & = & a_0 + a_k \\
+  b_k     & = & x_n b_{k-1} + a_k\qquad \forall k = 1 \to N\\
+  c_k     & = & x_n c_{k-1} + b_k\qquad \forall k = 1 \to N-1\\
+  x_{n+1} & = & x_n - \frac{b_N}{c_{N-1}}
+\end{eqnarray*}
+
+
+\subsection{Stelsels oplossen}
+\label{sec:NAStelsels}
+\[
+  \vec{F}(\vec{x}) = 0
+  \Leftrightarrow
+  \left\{
+  \begin{array}{l}
+    f_1(x_1, \ldots, x_N) = 0 \\
+    \vdots \\
+    f_N(x_1, \ldots, x_N) = 0
+  \end{array}
+  \right.
+\]
+Algemeen algoritme:
+\[
+  \vec{x}_{m+1} = \vec{x}_{m} + K(\vec{x}_m)\vec{F}(\vec{x}_m) \qquad \mbox{met $K$ een $n\times n$-matrix}
+\]
+\paragraph{Newton-Raphson} (cfr. Newton)
+\[
+  \pdiff{(f_1, \ldots, f_n)}{(x_1, \ldots, x_n)}(\vec{x}) =
+  J(\vec{x}) =
+  \left[
+  \begin{array}{ccc}
+    \pdiff{f_1}{x_1} (\vec{x}) & \cdots & \pdiff{f_1}{x_n}(\vec{x})\\
+    \vdots & \ddots & \vdots\\
+    \pdiff{f_n}{x_1} (\vec{x})& \cdots & \pdiff{f_n}{x_n} (\vec{x})\\
+  \end{array}
+  \right]
+  \qquad \qquad
+  \mbox{Jacobiaan}
+\]
+\[
+ \vec{x}_{m+1} = \vec{x}_m - J^{-1}(\vec{x}_m) \vec{F}(\vec{x}_m)
+\]
+Per iteratie een lineair stelsel oplossen.
+
+\paragraph{Morrey} (cfr. vaste richting)
+\[
+ \vec{x}_{m+1} = \vec{x}_m - J^{-1}(\vec{x}_0) \vec{F}(\vec{x}_m)
+\]
+
+\paragraph{Diagonaalterm}
+\[
+  D(\vec{x}) =
+  \left[
+  \begin{array}{ccc}
+    \pdiff{f_1}{x_1} (\vec{x}) & 0 & 0\\
+    0 & \ddots & 0\\
+    0 & 0 & \pdiff{f_n}{x_n} (\vec{x})\\
+  \end{array}
+  \right]
+  \qquad \qquad
+  \mbox{diagonaalmatrix van de Jacobiaan}
+\]
+\[
+ \vec{x}_{m+1} = \vec{x}_m - D^{-1}(\vec{x}_m) \vec{F}(\vec{x}_m)
+\]
+\begin{itemize}
+  \item[\con] Enkel gebruiken als de niet-diagonaal elementen van de Jacobiaan verwaarloosbaar klein zijn.
+\end{itemize}
+
+
+\subsection{Lineaire stelsels oplossen}
+\label{sec:NALinStelsels}
+
+\subsubsection{Iteratieve methodes}
+\label{sec:NALinSIteratief}
+
+\paragraph{Versnelling van de convergentie: overrelaxatie}
+\[
+  \omega \geq 1
+\]
+
+\paragraph{Stabilisatie van de convergentie: onderrelaxatie}
+\[
+  \omega \leq 1
+\]
+
+\paragraph{Jacobi}
+\[
+  G =
+  \qquad \mbox{iteratiematrix}
+\]
+
+
+\paragraph{Gauss-Seidel}
+
+
+\subsubsection{Directe methodes}
+\label{sec:NALinSDirect}
+
+
+
+\subsection{Eigenwaardes en eigenvectoren}
+
+\subsection{Interpolatie}
+Vertrekkende van een functietabel $f_i = f(x_i)$ voor waarden van $i = 0 \to n$,
+de functie benaderen in de punten daartussen of daarbuiten. Eventueel zijn ook $f_i' = f'(x_i)$ gekend.
+
+\subsubsection{Lagrangeveeltermen}
+\[
+  L_j(x) = \prod_{\stackrel{i=0}{i\neq j}}^n \frac{x-x_i}{x_j-x_i}
+\]
+\[
+  p_n(x) = \sum_{i=0}{n} f_i L_i(x)
+\]
+
+\subsubsection{Hermiteveeltermen}
+\[
+  H(x) = \sum_{i=0}^n f_i H_{i} + \sum_{i=0}^n f_i' \hat{H}_{i}
+\]
+\[
+  H_{i}(x) = \left[  1 - 2(x-x_i) L_i'(x_i)\right]L_i^2(x)
+\]
+\[
+  \hat{H}_i(x) = (x-x_i)L_i^2(x)
+\]
+
+\subsubsection{Cubic Spline}
+\[
+  \forall x \in [x_j,x_{j+1}]:\quad S_j(x) = a_j + b_j(x-x_j) + c_j(x-x_j)^2 + d_j(x-x_j)^3
+\]
+\paragraph{Vrije / natuurlijke randvoorwaarden}
+\[
+  \begin{array}{l}
+    S''(x_0) = S''0(x_0) = 0\\
+    S''(x_n) = S''_{n-1} = 0
+  \end{array}
+\]
+
+\paragraph{Ingeklemde randvoorwaarden}
+\[
+  \begin{array}{l}
+    S'(x_0) = S'0(x_0) = f'(x_0)\\
+    S'(x_n) = S'_{n-1} = f'(x_n)
+  \end{array}
+\]
+
+\paragraph{Uitwerking voor vrije randvoorwaarden}
+\[
+  h_j = x_{j=1} - x_j
+\]
+\[
+  \forall j \in [0,n]:\quad a_j = f_j
+\]
+\[
+  \forall j \in [0,n-1]:\quad b_j = \frac{a_{j+1}-a_j}{h_j} - \left.\left.\frac{h_j}{3}\right( 2*c_j + c_{j+1}\right)
+\]
+\[
+  \forall j \in [0,n-1]:\quad d_j = \frac{c_{j+1} - c_j}{3h_j}
+\]
+
+
+
+
+
+
+
+\subsection{Least-squares benadering}
+
+\subsection{Numerieke differentiatie}
+
+\subsection{Numerieke integratie}
+\[
+  \int_a^b f(x) \d{x} \quad \mbox{berekenen}
+\]
+
+\subsubsection{Newton-Cotes-integratie}
+Deze formules worden ook vaak gebruikt door per deelinterval te integreren om zo hun nauwkeurigheid op te drijven. Per conventie wordt de integratie uitgevoerd over het interval $[a,b]$, waarbij de functiewaardes $f_0 = f(x_0)$ tot $f_n = f(x_n)$ gebruikt worden. $\mathrm{L}_i(x)$ is de interpolatieveelterm van Lagrange. We werken hier steeds met equidistante spilpunten.
+
+\[
+  \int_a^b f(x) \d{x} = \sum_{i=0}^n c_i f_i + E(f)
+\]
+\[
+  c_i = \int_a^b \mathrm{L}_i(x)\d{x}
+  = \int_a^b  \prod_{\stackrel{j=0}{j\neq i}}^n \frac{x-x_j}{x_i-x_j}\d{x}
+  = \frac{(-1)^n}{h^n i! (n-i)!} \int_a^b  \prod_{\stackrel{j=0}{j\neq i}}^n (x - x_j)\d{x}
+\]
+
+\paragraph{Open formules} ($a$ en $b$ worden niet als spilpunt gebruikt)
+\[
+  \begin{array}{l}
+    a = x_{-1}\\
+    b = x_{n+1}\\
+    h = \frac{b-a}{n+2}\\
+    x_k= x_{-1} + (k+1)h\\
+  \end{array}
+\]
+\begin{eqnarray*}
+  \int_a^b f(x)\d{x} & = & \ldots\\
+  \int_{x_{-1}}^{x_1} f(x)\d{x} & = & 2hf_0 + \frac{h^3}{3}f^{(2)}(\xi) \qquad \mbox{centrale Riemannsom}\\
+  \int_{x_{-1}}^{x_2} f(x)\d{x} & = & \left.\left. \frac{3h}{2}\right(f_0 + f_1\right) + \frac{3h^3}{4} f^{(2)}(\xi)\\
+  \int_{x_{-1}}^{x_3} f(x)\d{x} & = & \left.\left. \frac{4h}{3}\right(2f_0 -f_1 +2f_2\right) + \frac{28h^5}{90} f^{(4)}(\xi) \qquad \mbox{Milne}\\
+  \int_{x_{-1}}^{x_4} f(x)\d{x} & = & \left.\left. \frac{5h}{24}\right(11f_0 +f_1 +f_2 + 11f_3\right) + \frac{95h^5}{144} f^{(4)}(\xi)
+\end{eqnarray*}
+
+
+\paragraph{Gesloten formules} ($a$ en $b$ worden wel als spilpunt gebruikt)
+\[
+  \begin{array}{l}
+    a = x_0\\
+    b = x_n\\
+    h = \frac{b-a}{n}\\
+    x_k= x_0 +kh\\
+  \end{array}
+\]
+\begin{eqnarray*}
+  \int_a^b f(x)\d{x} & = & \ldots\\
+  \int_{x_0}^{x_ 1} f(x)\d{x} & = & f\left( \frac{a+b}{2} \right)\\
+  \int_{x_0}^{x_2} = \left. \left. \frac{h}{3} \right( f_0 + 4f_1 + f_2 \right) - \frac{h^5}{90}f^{(4)}(\xi) \qquad \mbox{Simpson}\\
+\end{eqnarray*}
+
+
+\paragraph{Trapeziumregel} (gesloten met 2 spilpunten)
+\[
+  \int_{x_0}^{x_1} f(x)\d{x} = \left. \left. \frac{h}{2} \right(f_0 + f_1\right)
+\]
+
+
+\paragraph{Simpson} (gesloten met 3 spilpunten)
+\[
+  x
+\]
+
+
+\paragraph{Milne} (open met 3 spilpunten)
+\[
+x
+\]
+
+\subsubsection{Gauss-integratie}
+
+
+\subsection{Differentiaalvergelijkingen met beginvoorwaarden}
+\label{sec:DiffVglnNum}
+
+\paragraph{Probleemstelling} Oplossen van een differentiaalvergelijking,
+of een stelsel differentiaalvergelijkingen. Voor hogere ordes herleiden tot $N \times N$-stelsel van eerste orde.
+\[
+  \frac{\d{y}}{\d{x}} = f(x, y)
+  \qquad
+  \mbox{of}
+  \qquad
+  \frac{\d{\vec{y}}}{\d{x}} = f(x, \vec{y})
+  \qquad
+  \mbox{met }
+  \vec{y}(x_0) = \vec{y}_0
+\]
+Hierbij maakt men gebruik van een stapgrootte $h$.
+
+\subsubsection{Expliciete eenstapsmethodes}
+Predictors worden steeds als $\hat{y}$ weergegeven, $f_i$ is een verkorte notatie voor $f(x_i,y_i)$.
+
+\paragraph{Euler} (orde 1)
+\[
+  y_{n+1} = y_n + h \cdot f_n
+\]
+
+\paragraph{Heun} (orde 2).
+\[
+  \hat{y}_{n+1} = y_n + h \cdot f_n
+\]
+\[
+  y_{n+1} = y_n + \left.\left. \frac{h}{2}\right(f(x_n,y_n) + f(x_{n+1},\hat{y}_{n+1}) \right)
+\]
+
+\paragraph{Midpoint method} (orde 2)
+\[
+  \hat{y}_{n+1} = y_n + h \cdot f_n
+\]
+\[
+  y_{n+1} = y_n + h \cdot f\left(x_n + \frac{h}{2}, y_n + \frac{h}{2} f(x_n,y_n) \right)
+\]
+
+\paragraph{Runge-Kutta I} (orde 4)
+\begin{eqnarray*}
+  k_1 & = & h\cdot f_n\\
+  k_2 & = & h\cdot f\left(x_n+\frac{h}{2},y_n+\frac{k_1}{2}\right)\\
+  k_3 & = & h\cdot f\left(x_n+\frac{h}{2},y_n+\frac{k_1+k_2}{4}\right)\\
+  k_4 & = & h\cdot f\left(x_n+h,y_n-k_2+2k_3\right)
+\end{eqnarray*}
+\[
+  y_{n+1} = y_n + \frac{k_1 + 4k_3 + k_4}{6}
+\]
+
+\paragraph{Runge-Kutta II} (orde 4)
+\begin{eqnarray*}
+  k_1 & = & h\cdot f_n\\
+  k_2 & = & h\cdot f\left(x_n+\frac{h}{2},y_n+\frac{k_1}{2}\right)\\
+  k_3 & = & h\cdot f\left(x_n+\frac{h}{2},y_n+\frac{k_2}{2}\right)\\
+  k_4 & = & h\cdot f\left(x_n+h,y_n+k_3\right)
+\end{eqnarray*}
+\[
+  y_{n+1} = y_n + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}
+\]
+
+\subsubsection{Expliciete meerstapsmethodes}
+Om te starten, maakt men voor de eerste $k$ spilpunten gebruik van een eenstapsmethode van dezelfde of hogere orde, voordat men deze formules kan toepassen.
+
+\paragraph{Adams-Bashforth} (2 spilpunten, orde 2)
+\[
+  y_{n+1} = y_n + \left.\left. \frac{h}{2} \right( 3f_n - f_{n-1}\right)
+\]
+
+\paragraph{Adams-Bashforth} (3 spilpunten, orde 3)
+\[
+  y_{n+ 1} = y_n + \left.\left. \frac{h}{12} \right( 23f_n - 16f_{n-1} + f_{n-2}\right)
+\]
+
+\paragraph{Adams-Bashforth} (4 spilpunten, orde 4)
+\[
+  y_{n+1} = y_n + \left.\left. \frac{h}{24} \right( 55f_n - 59f_{n-1} + 37f_{n-2} - 9f_{n-3}\right)
+\]
+
+\subsubsection{Impliciete meerstapsmethodes}
+Praktisch gezien zal men voor $f_{n+1}$ een predictor $\hat{f}_{n+1}$ gebruiken, zoals berekend met de expliciete meerstapsmethodes. Hierbij maakt men steeds gebruik van een methode van gelijke of hogere orde. Dit is voor Adams-Moluton en Adams-Bashforth gelijk aan het aantal spilpunten.
+
+\paragraph{Adams-Moulton / Crank-Nicholson / trapeziumschema} (2 spilpunten, orde 2)
+\[
+  y_{n+1} = y_n + \left.\left. \frac{h}{2} \right( \hat{f}_{n+1} + f_n\right)
+\]
+
+\paragraph{Adams-Moulton} (3 spilpunten, orde 3)
+\[
+  y_{n+1} = y_n + \left.\left. \frac{h}{12} \right( 5 \hat{f}_{n+1} + 8f_n -f_{n-1}\right)
+\]
+
+\paragraph{Adams-Moulton} (4 spilpunten, orde 4)
+\[
+  y_{n+1} = y_n + \left.\left. \frac{h}{24} \right( 9 \hat{f}_{n+1} + 19f_n -5f_{n-1} + f_{n-2}\right)
+\]
+
+\subsection{Differentiaalvergelijkingen met randvoorwaarden}
+\paragraph{Probleemstelling}
+\[
+  \frac{\d^2{y}}{\d{x}} = f\left(x,y, \frac{\d{y}}{\d{x}} \right)
+  \qquad
+  \mbox{met randvoorwaarden $y(a) = y_a$ en $y(b) = y_b$}
+\]
+
+\paragraph{Shooting method]}Door $y'(a) = \lambda_a$ te gokken en de zo bekomen functie op te lossen met een methode voor beginvoorwaarden. Nadien kan gecontroleerd worden of de geschatte waarde plausibel is, door de randvoorwaarden na te gaan.
+
+\paragraph{Discretisatie} Men deelt het interval $[a,b]$ op in $n$ deelintervallen en stelt $h = \frac{b-a}{n}$ en $x_k = a + kh$. Men bepaalt de oplossing door in de differentiaalvergelijking alle afgeleides te vervangen door een numerieke afleiding en zodoende bekomt men per spilpunt een lineaire vergelijking met $y_k$ als onbekenden, ofwel in het totaal een lineair $n \times n$-stelsel.

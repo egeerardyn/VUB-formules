@@ -1,0 +1,122 @@
+
+\subsection{Combinatieleer}
+\label{sec:Combinatieleer}
+
+\[
+   V^p_n = \frac{n!}{\left(n-p\right)!}
+\]
+\[
+  \overline{V}^p_n = n!
+\]
+\[
+  P_n = V^n_n = n!
+\]
+\[
+  \overline{P}^{a_1,a_2,\ldots,a_i}_n = \frac{n!}{a_1!a_2!\ldots a_i!}
+\]
+\[
+  C^p_n =  \combination{n}{p} = \frac{V^p_n}{P_p} = \frac{n!}{p!\left(n-p\right)!}
+\]
+\[
+  \overline{C}_n = C^p_{n+p-1} = \frac{V^p_{n+p-1}}{P_p} = \frac{\left(n+p-1\right)!}{p!\left(n-1\right)!}
+\]
+\paragraph{Formule van Stifel-Pascal}
+\[
+  C^p_{n+1} = C^p_n + C_n^{p-1} \qquad \mbox{of} \qquad \combination{n+1}{p} = \combination{n}{p} + \combination{n}{p-1}
+\]
+\paragraph{Binomium van Newton}
+\[
+  \left(a+b\right)^n = \sum_{k=0}^n \combination{n}{k} a^{n-k}b^k
+\]
+
+\scriptsize
+\setiftext{ja}{nee}
+\STRUCT{opgave}{}{%
+  \IF{volgorde van belang?}%
+    \THEN{%
+      \IF{Herhaling mogelijk?}%
+        \THEN{%
+          \IF{Aantal herhalingen bepaald?}%
+            \THEN{%
+              \ACTION{$\overline{P}^{a_1,a_2,\ldots,a_i}_n$}%
+            }%
+            \ELSE{%
+              \ACTION{$\overline{V}^p_n$}%
+            }%
+            \ENDIF%
+         }%
+         \ELSE{%
+           \IF{$p=n$}%
+             \THEN{%
+               \ACTION{$P_n$}%
+             }%
+             \ELSE{%
+               \ACTION{$V^p_n$}%
+             }%
+             \ENDIF%
+         }%
+         \ENDIF%
+    }%
+    \ELSE{%
+      \IF{Herhaling mogelijk?}%
+        \THEN{%
+          \ACTION{$\overline{C}^p_n$}%
+        }%
+        \ELSE{%
+          \ACTION{$C^p_n$}
+        }%
+        \ENDIF%
+    }%
+    \ENDIF%
+}%
+\normalsize
+
+\subsection{Rekenregels voor kansen}
+\label{sec:RekenregelsVoorKansen}
+
+
+\paragraph{Somregel}
+\[
+  \prob{A \vee B} = \prob{A \cup B} = \prob{A} + \prob{B}
+  \Leftrightarrow
+  \mbox{ $A$ en $B$ zijn onafhankelijke gebeurtenissen}
+\]
+\[
+  \prob{A \vee B} = \prob{A \cup B} = \prob{A} + \prob{B} - \prob{A \cap B}
+\]
+
+\paragraph{Verschilregel}
+\label{sec:VerschilregelKangsrekening}
+\[
+  \prob{A \backslash B} = \prob{A} - \prob{A \cap B}
+\]
+
+\paragraph{Stelling van Boole}
+\label{sec:StellingBooleKangsrekening}
+\[
+  \prob{A \cup B} = \prob{A} + \prob{B} - \prob{A \cap B}
+\]
+
+\paragraph{Productregel}
+\label{sec:ProductregelKangsrekening}
+\[
+  \prob{A \wedge B} = \prob{A \cap B} = \prob{A} \cdot \prob{B}
+  \Leftrightarrow
+  \mbox{ $A$ en $B$ zijn onafhankelijke gebeurtenissen}
+\]
+
+\paragraph{Voorwaardelijke kansen}
+\[
+  \prob{A | B} = \frac{\prob{A \cap B}}{\prob{B}}
+\]
+
+\paragraph{Regel van Bayes}
+\[
+  \prob{A|B}\prob{B} = \prob{B|A}\prob{A}
+\]
+\[
+  \prob{A|B} = \frac{\prob{B|A}\prob{A}}{\prob{B}}
+\]
+\[
+  \prob{A|B} = \frac{\prob{B|A}\prob{A}}{\prob{B|A}\prob{A} + \prob{B|A^c}\prob{A^c}}
+\]

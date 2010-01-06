@@ -1,0 +1,29 @@
+\section{Numerieke Integratie}
+\label{sec:NumInt}
+\paragraph{Intervalmiddens}
+\label{sec:NumIntMiddens}
+\begin{equation}
+ \int_a^b f(x)\d{x} \approx \frac{b-a}{n} \sum_{k=1}^{n} f\left(a + k\frac{b-a}{2n} \right)
+\end{equation}
+Linkergrenzen
+\begin{equation}
+ \int_a^b f(x)\d{x} \approx \frac{b-a}{n} \sum_{k=0}^{n-1} f\left(a + k\frac{b-a}{n} \right)
+\end{equation}
+Rechtergrenzen
+\begin{equation}
+ \int_a^b f(x)\d{x} \approx \frac{b-a}{n} \sum_{k=1}^{n} f\left(a + k\frac{b-a}{n} \right)
+\end{equation}
+
+\paragraph{Trapeziumregel}
+\label{sec:NumIntTrapezium}
+\begin{equation}
+ \int_a^b f(x)\d{x} \approx \frac{b-a}{2n} \left[f(a) + f(b) + 2\sum_{k=1}^{n-1} f\left(a + k\frac{b-a}{n} \right)\right]
+\end{equation}
+
+\paragraph{Paraboolregel}
+\label{sec:NumIntParabool}
+($n \in 2\mathbb{N}$)
+\begin{equation}
+ \int_a^b f(x)\d{x} \approx \frac{b-a}{3n} \left[f(a) + f(b) + 2\sum_{k=1}^{\frac{n-2}{2}} f\left(a + 2k\frac{b-a}{n} \right)
+ 																														+ 4\sum_{k=1}^{\frac{n}{2}} f\left(a + (2k-1)\frac{b-a}{n} \right)\right]
+\end{equation}

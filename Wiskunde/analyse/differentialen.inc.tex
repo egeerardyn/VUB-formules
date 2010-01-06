@@ -1,0 +1,29 @@
+\subsection{Differentialen}
+\label{sec:Differentialen}
+\[
+  \d{f\left(x\right)} = \frac{\d{f}}{\d{x}} \d{x}
+                      = \D_x\left(f\right) \d{x}
+\]
+\paragraph{Totale differentiaal van een functie}
+\[
+  f \left( x_1 , \ldots , x_N \right) 
+  \Rightarrow 
+  \d{f} = \sum_{i=1}^N \frac{\pd{f}}{\pd{x_i}}\d{x_i} 
+\]
+Differentiaal van hogere orde (voor een functie van 2 veranderlijken)
+\[
+  f \left( x,y \right) 
+  \Rightarrow
+  \d^n{f} = \sum_{i=0}^{n} \combination{n}{k} \frac{\pd^{n}{f}}{\pd{x}^{k}\pd{y}^{n-k}} \d{x}^{k} \d{y}^{n-k}
+\]
+Differentiaal van hogere orde (de macht $.^{\left[n\right]}$ is slechts formeel!)
+\[
+  f \left( x_1 , \ldots , x_N \right)
+  \Rightarrow
+  \d^n{f} = \left(\sum_{k=1}^{N} \frac{\pd{}}{\pd{x_i}}\d{x_i}  \right)^{\left[n\right]}f
+\]
+
+\paragraph{Kettingregel}
+\[
+  \frac{\d{f}}{\d{t}} = \sum^m_{i=1} \frac{\pd{f}}{\pd{x_i}} \frac{\d{x_i}}{\d{t}}
+\]

@@ -1,0 +1,135 @@
+\documentclass[pdftex,fleqn,a4paper]{article}
+  
+  \let\oldAuthor\author
+  \renewcommand{\author}[1]{\newcommand{\theAuthor}{#1}\oldAuthor{#1}} 
+  \let\oldTitle\title
+  \renewcommand{\title}[1]{\newcommand{\theTitle}{#1}\oldTitle{#1}}
+  \newcommand{\subtitle}[1]{\newcommand{\theSubtitle}{#1}}
+  \let\oldDate\date
+  \renewcommand{\date}[1]{\newcommand{\theDate}{#1}\oldDate{#1}}
+  
+  \usepackage{../huisstijl/vubtitlepage}
+  \faculty{Faculteit Ingenieurswetenschappen}
+  
+  \author{\href{mailto:Egon.Geerardyn@vub.ac.be}{Egon Geerardyn}}
+  \title{Formules Fysica}
+  \newcommand{\revisie}{revisie 0.1}
+  \date{\revisie\ (\today)}
+ 
+ 
+ 
+ 
+  %\usepackage{graphicx}
+  \usepackage{amsfonts}
+  \usepackage{mathrsfs}
+  \usepackage{fancyhdr}
+  \usepackage[dutch]{babel}
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+ 
+  \usepackage{graphicx}
+  \usepackage{wrapfig}
+  \usepackage{rotating}
+  %%%%
+
+  \addtolength{\textheight}{2cm}
+  \addtolength{\textwidth}{3cm}
+  \addtolength{\hoffset}{-1.5cm}
+  \renewcommand{\rmdefault}{cmss}
+  \renewcommand{\sfdefault}{cmr}
+
+  \newcommand{\oper}[1]{\widehat{\mathrm{#1}}}
+  \newcommand{\bra}[1]{\left<#1\right|}
+  \newcommand{\ket}[1]{\left|#1\right>}
+  \newcommand{\braket}[2]
+  
+  \newenvironment{CNTABLE}{\begin{center}\begin{tabular}{|l|c|l|l|}
+                           \hline
+                           \textbf{Beschrijving} & \textbf{Eenheid} & \textbf{> omzetting >} & \textbf{Eenheid} \\
+                           \hline}{\hline \end{tabular}\end{center}}
+  \newcommand{\CNENTRY}[4]{#1 & $x = [#2]$ & $y = #3$ & $y = [#4]$\\}
+
+  \newenvironment{CTTABLE}{\begin{center}\begin{tabular}{|l|c|r|l|}
+                           \hline
+                           \textbf{Beschrijving} & \textbf{Symbool} & \textbf{Waarde} & \textbf{Eenheid} \\
+                           \hline}{\hline \end{tabular}\end{center}}
+  \newcommand{\CTENTRY}[4]{#1 & $#2$ & $#3$ & $#4$\\}
+
+  \newenvironment{GOTABLE}{\begin{center}\begin{tabular}{|l|r|l|}
+                           \hline
+                           \textbf{Beschrijving} & \textbf{Waarde} & \textbf{Eenheid} \\
+                           \hline}{\hline \end{tabular}\end{center}}
+  \newcommand{\GOENTRY}[3]{#1 & $#2$ & $#3$ \\}
+
+    \input{../commands/commands.inc.tex}
+    \newcommand{\definitie}[2]{\par \textbf{#1:}  #2\par}
+
+  
+ %lay-out
+  \hypersetup{colorlinks,%
+            citecolor=black,%
+            filecolor=black,%
+            linkcolor=black,%
+            urlcolor=black,%
+            pdfauthor={Egon Geerardyn},%
+            pdftitle={Formules Fysica},%
+            plainpages=false}%,%
+            %pdfpagelabels}
+  \pdfpagewidth=\paperwidth
+  \pdfpageheight=\paperheight
+ %margins
+\begin{document}
+  \maketitlepage
+%  \titlepage
+%  \thispagestyle{empty}%
+%  \null
+%  \vfill
+%  \begin{center}\leavevmode
+%    \normalfont
+%    %{\Large\raggedleft schooljaren 2004 -- 2005 -- 2006\par}%
+%    {\Large\raggedleft Ingenieurswetenschappen\par}%
+%    \hrulefill\par
+%    {\Huge\raggedright Formularium Chemie \large \revisie\   \footnotesize (\today)\par }%
+%  \end{center}%
+%  \vfill
+%  \footnotesize
+%  auteur: \textsc{E. Geerardyn}\par
+%  bron: \textsc{prof. R. Willem}, \textit{Chemie: Structuur en Transformaties van de materie}, Dienst Uitgaven VUB 2006.\par
+%  bron: \textsc{prof. M. Biesemans} en \textsc{prof. R. Willem} , \textit{Chemie: Oefeningen}, Dienst Uitgaven VUB 2006.\par
+%  bron: \textsc{Brown, LeMay} en \textsc{Bursten} , \textit{Chemistry: the Central Science (10th Edition)}, Pearson Education 2006.
+%  \normalsize
+%  
+%  \null
+    \setlength{\voffset}{-2cm}
+  
+  \newpage
+
+  \pagestyle{fancy}
+  \rhead{pagina \thepage}
+  \chead{\footnotesize \revisie}
+  \lhead{\textbf{Formules Fysica}}
+   \cfoot{}
+     \input{voorwoord.inc.tex}
+     \newpage
+     \tableofcontents
+   \newpage
+   
+   \input{Golven/golven.inc.tex}
+   \input{Geluid/geluid.inc.tex}
+   \input{EM/EM.inc.tex}
+   \input{nucleair/nucleair.inc.tex}
+   \input{quantum/quantum.inc.tex}
+   
+   \appendix
+   
+   
+   \input{Appendix/SI.inc.tex}
+   \input{Appendix/convers.inc.tex}
+   \input{Appendix/ctes.inc.tex}
+   \input{Appendix/GO.inc.tex}
+   
+ 
+ 
+
+\end{document}

@@ -1,0 +1,130 @@
+\subsection{Limieten}
+\label{sec:Limieten}
+
+\paragraph{Limiet van een rij}
+\[
+  \lim_{n \to \infty} = l 
+  \quad \Leftrightarrow \quad
+  \forall \varepsilon > 0 : \exists\; n > N_\varepsilon : l - \varepsilon< u_n < l + \varepsilon
+\]
+
+\paragraph{Minimum en Maximum}
+\[
+  \min A \in A : \forall a \in A : \min A \leq a
+\]
+\[
+  \max A \in A : \forall a \in A : a \leq \max A
+\]
+
+\paragraph{Infimum en Supremum}
+\[
+  \forall \varepsilon > o : \exists\; a \in A :  \inf A \leq a < \inf A + \varepsilon
+\]
+\[
+  \forall \varepsilon > o : \exists\; a \in A :  \sup A  - \varepsilon < a \leq \sup A
+\]
+
+\paragraph{Bewerkingen met limieten}
+\[
+  \lim_{n \to \infty} u_n + v_n = \lim_{n \to \infty} u_n + \lim_{n \to \infty} v_n
+\]
+\[
+  \lim_{n \to \infty} u_n \cdot v_n = \lim_{n \to \infty} u_n \cdot \lim_{n \to \infty} v_n
+\]
+\[
+  \lim_{n \to \infty} \abs{u_n} = \abs{\lim_{n \to \infty} u_n}
+\]
+\[
+  \lim_{n \to \infty} \frac{v_n}{u_n} = \frac{\lim_{n \to \infty} v_n}{\lim_{n \to \infty} u_n}
+\]
+
+\paragraph{Cauchyrij}
+\[
+  \forall \varepsilon > 0 : \exists\; N > 0 : n,m > N \Rightarrow \abs{u_n-u_m} < \varepsilon
+\]
+
+\paragraph{Limiet van een functie}
+\[
+  \lim_{x \to a} f\left(x\right) = b 
+  \quad \Leftrightarrow \quad
+  \forall \varepsilon > 0 : \exists\; \delta > 0 : 0 < \abs{x-a} < \delta 
+                            \Rightarrow \abs{f(x) - b} < \varepsilon
+\]
+\[
+  \lim_{\vec{x} \to \vec{a}} \vec{f}\left(\vec{x}\right) = \vec{b} 
+  \quad \Leftrightarrow \quad
+  \forall \varepsilon > 0 : \exists\; \delta > 0 : 0 < \norm{\vec{x} - \vec{a}} < \delta 
+                            \Rightarrow \norm{f(x) - b} < \varepsilon
+\]
+
+\paragraph{Oneigenlijke limieten}
+\[
+  \lim_{x \to + \infty} f\left(x\right) = b 
+  \quad \Leftrightarrow \quad
+  \forall \varepsilon > 0 : \exists\; \alpha \in \mathbb{R} : x > \alpha
+                            \Rightarrow \abs{f(x) - b} < \varepsilon
+\]
+\[
+  \lim_{x \to - \infty} f\left(x\right) = b 
+  \quad \Leftrightarrow \quad
+  \forall \varepsilon > 0 : \exists\; \alpha \in \mathbb{R} : x < \alpha
+                            \Rightarrow \abs{f(x) - b} < \varepsilon
+\]
+\[
+  \lim_{x \to a} f\left(x\right) = + \infty 
+  \quad \Leftrightarrow \quad
+  \forall \alpha \in \mathbb{R} : \exists\; \delta > 0 : 0 < \abs{x-a} < \delta
+                                  \Rightarrow f(x) > \alpha
+\]
+\[
+  \lim_{x \to a} f\left(x\right) = - \infty 
+  \quad \Leftrightarrow \quad
+  \forall \alpha \in \mathbb{R} : \exists\; \delta > 0 : 0 < \abs{x-a} < \delta
+                                  \Rightarrow f(x) < \alpha
+\]
+\paragraph{Rekenregels voor oneindig}
+\[
+  \forall a \in \mathbb{R}^0\; : \; 
+  a \cdot \left(\pm \infty\right) = \sign{a} \left(\pm \infty \right)
+\]
+\[
+  \forall a \in \mathbb{R} \; : \; 
+  a + \left(\pm \infty\right) = \pm \infty
+\]
+\paragraph{Onbepaalde vormen}
+\[
+  0 \cdot \left( \pm \infty \right) \;,\;
+  \frac{0}{0} \;,\;
+  \pm \frac{\infty}{\infty} \;,\;
+  \pm \infty \mp \infty \;,\;
+  0^0 \;,\;
+  \left( \pm \infty \right)^0 \;,\;
+  1^{\pm \infty}
+\]
+
+\paragraph{Merkwaardige limieten}
+\[
+  \lim_{x \to +\infty} \left( 1 + \frac{1}{x} \right)^x = e
+\]
+
+\paragraph{Regel van de l'Hopital}
+\[
+  \mbox{geldig voor: } \quad \lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0 \quad \mbox{of} \quad  \lim_{x \to a} f(x) = \lim_{x \to a} g(x) = \pm \infty
+\]
+\[
+  \lim_{x \to a} \frac{f(x)}{g(x)}
+  \hopital
+  \lim_{x \to a} \frac{f(x)}{g(x)}
+\]
+
+\paragraph{Omvormen van limieten} bij onbepaalde vormen om de regel van de l'Hopital toe te kunnen passen:
+\[
+  \lim_{x \to a} f(x) - g(x) = \lim_{x \to a} f(x)g(x)\left(\frac{1}{g(x)} - \frac{1}{f(x)}\right) 
+\]
+\[
+  \lim_{x \to a} f(x)g(x) = \lim_{x \to a} \frac{f(x)}{\frac{1}{g(x)}}
+                          = \lim_{x \to a} \frac{g(x)}{\frac{1}{f(x)}}
+\]
+\[
+  \lim_{x \to a} f(x)^{g(x)} = \exp \lim_{x \to a} g(x) \ln f(x)
+\]

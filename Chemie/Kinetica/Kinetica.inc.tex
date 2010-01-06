@@ -1,0 +1,81 @@
+\onecolumn
+\newpage
+\section{Chemische Kinetica}
+\label{sec:H:Kinetica}
+
+\paragraph{Snelheid voor een enkelvoudig reactiepad of samengesteld rectiepad met stationariteit}
+\[
+  s = \frac{1}{\nu_i}\frac{\d{\conc{X_i}}}{\d{t}} \qquad \mbox{met $\nu_i$ de stoichiometrische coëfficiënt ($< 0$ voor de uitgangsstoffen)}
+\]
+\paragraph{Monomoleculair reactiepad}
+\[
+  A \reactie B + C + \ldots
+\]
+\[
+  s = \frac{-\d{\conc{A}}}{\d{t}} = k \conc{A}
+\]
+\paragraph{Bimoleculair reactiepad}
+\[
+  A + B \reactie C + D + \ldots
+\]
+\[
+  s = \frac{-\d{\conc{A}}}{\d{t}} = \frac{-\d{\conc{B}}}{\d{t}} = k \conc{A}\conc{B}
+\]
+
+\paragraph{Halveringstijd}
+\[
+  \conc{A}_{t=t_{1/2}} = \frac{\conc{A}_0}{2}
+\]
+\[
+  \conc{A}_{t=t_{1/f}} = \frac{\conc{A}_0}{f}
+\]
+Bij een eerste-orde-reactie:
+\[
+  t_{1/f} = \frac{\ln f}{k}
+\]
+\[
+  \frac{t_{1/f}}{t_{1/g}} = \frac{\ln f}{\ln g}
+\]
+Bij een $n$-de-orde-reactie:
+\[
+  t_{1/f} = \frac{f^{n-1}-1}{\conc{A}_0^{n-k} \left(n-1\right) k}
+\]
+\[
+  \frac{t_{1/f}}{t_{1/g}} = \frac{f^{n-1}-1}{g^{n-1}-1}
+\]
+De verhouding tussen twee delingstijden is typerend voor de reactieorde.
+
+Eerste-orde-reactie:
+\[
+  \conc{A}_t = \conc{A}_0 e^{-kt}
+\]
+
+Tweede-orde-reactie:
+\[
+  \frac{1}{\conc{A}_t} = \frac{1}{\conc{A}_0}+kt
+\]
+
+\paragraph{Stationariteit}
+\label{sec:Stationariteit}
+\begin{eqnarray*}
+  A  & \stackrel{k_1}{\reactie} & B\\
+  B  & \stackrel{k_1}{\reactie} & C\\
+  \\
+  A & \stackrel{k_?}{\reactie} & C  
+\end{eqnarray*}
+\[
+  \frac{\d{\conc{B}}}{\d{t}} \approx 0 \Leftrightarrow \conc{B} <<< \conc{A} \mbox{ én } \conc{B} <<< \conc{C}
+\]
+
+\paragraph{Activeringsenergie van Arrhenius}
+\[
+  k = A e^{\frac{-E_A}{RT}}
+\]
+
+\paragraph{Activeringsenthalpie van Eyring}
+\[
+  k = \frac{\kappa T}{h} e^{\frac{-\Delta G^{\ddag}}{R}}
+\]
+\[
+  \Delta G^\ddag = \Delta H^\ddag - T\Delta S^\ddag
+\]

@@ -1,0 +1,116 @@
+\twocolumn
+\subsection{Afgeleiden}
+\label{sec:Afgeleiden}
+
+\paragraph{Definitie}
+\[
+ \D_x f \left( a \right) = \lim_{x \to a} \frac{ f\left(x\right) - f\left(a\right)}{x-a}
+                         = \frac{ \d{f}}{\d{x}}
+\]
+\paragraph{Richtingsafgeleide} volgens $\vec{u}$
+\[
+ \D_{\vec{u}} f \left( \vec{a} \right) = \lim_{h \to 0} \frac{ f\left(\vec{a} + h\vec{u}\right) - f\left(\vec{a}\right)}{h}
+\]
+\paragraph{Rekenregels}
+\[
+  \D \alpha = 0
+\]
+\[
+  \D x = 1
+\]
+\[
+  \D\left(\alpha f \pm \beta g\right) = \alpha \D f \pm \beta \D g
+\]
+\[
+  \D\left(f \cdot g\right) = f\D g + g\D f
+\]
+\[
+  \D\left(\frac{f}{g}\right) = \frac{g\D f - f\D g}{g^2}
+\]
+\[
+  \D x^n = nx^{n-1}
+\]
+\[
+  \D f^m = m\cdot f^{m-1} \cdot \D f \qquad \textrm{met $m \in \mathbb{Q}_0$}
+\]
+\paragraph{Kettingregel}
+\[
+  \D \left[\left(g \circ f\right)\left(x\right)\right] = \D g\left[f\left(x\right)\right] \cdot \D f\left(x\right)
+\]
+\[
+  \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} \qquad \textrm{met $u = f\left(x\right)$}
+\]
+\paragraph{Afgeleide van de inverse functie}
+\[
+  \D f^{-1} = \frac{1}{\D f \left( f^{-1} \left( x \right) \right) }
+\]
+\[
+  \frac{\d{x}}{\d{y}} = \left(\frac{\d{y}}{\d{x}} \right)^{-1}
+\]
+\paragraph{Frequente vormen}
+\[
+  \D e^x = e^x
+\]
+\[
+  \D a^x = a^x \ln a
+\]
+\[
+  \D\left(\ln x\right) = \frac{1}{x}
+\]
+\[
+  \D\left(^a \log x\right)= \frac{1}{x \cdot \ln a}
+\]
+\[
+  \D\left(f^g\right) = f^g \left( Dg \ln f + \frac{f}{g} Df \right)
+\]
+\newpage
+\[
+  \D\left(\sin x\right) = \cos x
+\]
+\[
+  \D\left(\cos x\right) = -\sin x
+\]
+\[
+  \D\left(\tan x\right) = \frac{1}{\cos^2 x} = \sec^2 x
+\]
+\[
+  \D\left(\cot x\right) = \frac{ -1}{\sin^2 x} = - \csc^2 x
+\]
+\[
+  \D\left(\argsin x\right) = \frac{1}{\sqrt{1-x^2}}
+\]
+\[
+  \D\left(\argcos x\right) = \frac{-1}{\sqrt{1-x^2}}
+\]
+\[
+  \D\left(\argtan x\right) = \frac{1}{1+x^2}
+\]
+\[
+  \D\left(\argcot x\right) = \frac{-1}{1+x^2}
+\]
+\[
+  \D\left(\sinh x\right) = \cosh x 
+\]
+\[
+  \D\left(\cosh x\right) = \sinh x
+\]
+\[
+  \D\left(\tanh x\right) = \frac{1}{\cosh^2 x}
+\]
+\[
+  \D\left(\coth x\right) = \frac{-1}{\sinh^2 x}
+\]
+\[
+  \D\left(\argsinh x\right) = \frac{1}{\sqrt{1 + x^2}}
+\]
+\[
+  \D\left(\argcosh x\right) = \frac{1}{\sqrt{x^2 - 1}}
+\]
+\[
+  \D\left(\argtanh x\right) = \frac{1}{1-x^2}
+\]
+\[
+  \D\left(\argtanh x\right) = \frac{1}{1-x^2}
+\]
+
+\onecolumn

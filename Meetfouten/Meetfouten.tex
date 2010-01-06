@@ -1,0 +1,96 @@
+\documentclass[pdftex,fleqn,a4paper]{article}
+  
+  \let\oldAuthor\author
+  \renewcommand{\author}[1]{\newcommand{\theAuthor}{#1}\oldAuthor{#1}} 
+  \let\oldTitle\title
+  \renewcommand{\title}[1]{\newcommand{\theTitle}{#1}\oldTitle{#1}}
+  \newcommand{\subtitle}[1]{\newcommand{\theSubtitle}{#1}}
+  \let\oldDate\date
+  \renewcommand{\date}[1]{\newcommand{\theDate}{#1}\oldDate{#1}}
+  
+  \usepackage{../huisstijl/vubtitlepage}
+  \faculty{Faculteit Ingenieurswetenschappen}
+  
+  \author{\href{mailto:Egon.Geerardyn@vub.ac.be}{Egon Geerardyn}}
+  \title{Theorie der Meetfouten}
+  \newcommand{\revisie}{revisie 0.8 }
+  \date{\today}
+ 
+ 
+
+ 
+  %\usepackage{graphicx}
+  \usepackage{amsfonts}
+  \usepackage{mathrsfs}
+  \usepackage{fancyhdr}
+  \usepackage[dutch]{babel}
+  \usepackage[latin1]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+  \usepackage{flow}
+  %%%%
+  
+  \addtolength{\textheight}{2cm}
+  \addtolength{\textwidth}{3cm}
+  \addtolength{\hoffset}{-1.5cm}
+  \renewcommand{\rmdefault}{cmss}
+  \renewcommand{\sfdefault}{cmr}
+    \input{../commands/commands.inc.tex}
+    
+  
+ %lay-out
+  \hypersetup{colorlinks,%
+            citecolor=black,%
+            filecolor=black,%
+            linkcolor=black,%
+            urlcolor=black,%
+            pdfauthor={Egon Geerardyn},%
+            pdftitle={Theorie der Meetfouten},%
+            plainpages=false}%,%
+            %pdfpagelabels}
+  \pdfpagewidth=\paperwidth
+  \pdfpageheight=\paperheight
+ %margins
+\begin{document}
+\maketitlepage
+%  \titlepage
+%  \thispagestyle{empty}%
+%  \null
+%  \vfill
+%  \begin{center}\leavevmode
+%    \normalfont
+%    %{\Large\raggedleft schooljaren 2004 -- 2005 -- 2006\par}%
+%    {\Large\raggedleft 1 bachelor Ingenieurswetenschappen, Vrije Universiteit Brussel\par}%
+%    \hrulefill\par
+%    {\Huge\raggedright Theorie der Meetfouten \large \revisie\   \footnotesize (\today)\par }%
+%  \end{center}%
+%  \vfill
+%  \scriptsize{auteur: \textsc{E. Geerardyn}\\
+%  \scriptsize{bron: \textsc{H. Vanherzeele}, \textit{Meten en Experimenteren Deel 1: Theorie der meetfouten}, Dienst Uitgaven VUB 2004.}
+%  \normalsize
+%  \null
+%  \newpage
+%
+  \pagestyle{fancy}
+  \rhead{pagina \thepage}
+  \chead{\footnotesize \revisie}
+  \lhead{\textbf{Theorie der Meetfouten}}
+  \cfoot{}
+   \setlength{\voffset}{-2cm}
+   \input{voorwoord.inc.tex}
+   \newpage
+   \tableofcontents
+   \newpage
+   
+ \input{H1.tex}
+ \input{H2.tex}
+ \input{H3.tex}
+ \input{H4.tex}
+ 
+ \appendix
+ \input{ztabel.tex}
+ %\input{excel.tex}
+ 
+ \ttfamily  
+
+\end{document}

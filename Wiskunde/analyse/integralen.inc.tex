@@ -1,0 +1,189 @@
+\twocolumn
+\subsection{Integratie}
+\label{sec:Integralen}
+
+\subsubsection{Frequente integralen}
+\label{sec:FundamenteleIntegralen}
+
+\[
+ \int \d{x} = x + c
+\]
+
+\[
+ \int x^n \d{x} = \frac{x^{n+1}}{n+1} + c \quad \mbox{ met } n \in \mathbb{R} \not \; \left\{-1\right\}
+\]
+
+\[
+ \int \frac{1}{x} \d{x} = \int x^{-1}\d{x} = \ln \abs{x} + c
+\]
+
+\[
+ \int e^x \d{x} = e^x + c
+\]
+
+\[
+ \int\ln (ax + b) \d{x} = x\ln (ax +b) - x + \frac{b}{a}\ln (ax + b) + c
+\]
+
+\[
+ \int a^x \cdot \d{x} = \frac{a^x}{\ln a}+ c
+\]
+
+\[
+ \int \sin x \cdot \d{x} = - \cos x + c
+\]
+
+\[
+ \int \cos x \cdot \d{x} = \sin x + c
+\]
+
+\[
+ \int \sec^2 x \cdot \d{x} = \int \frac{1}{\cos^2 x} = \tan x + c
+\]
+
+\[
+ \int \csc^2 x \cdot \d{x} = \int \frac{1}{\sin^2 x} = - \cot x + c
+\]
+
+\[
+ \int \cos^2 ax \cdot \d{x} = \frac{x + \sin(2ax)}{2} + c
+\]
+
+\[
+ \int \frac{\d{x}}{1+x^2} = \argtan x + c = - \argcot x + c
+\]
+
+%\[
+% \int \frac{1}{\sqrt{1-x^2}} \cdot \d{x} = \argsin x + c = - \argcos x + c
+%\]
+
+\[
+ \int \frac{\d{x}}{\sqrt{1-x^2}} \cdot  = \argtanh x + c = \frac{1}{2} \ln \frac{1+x}{1-x}
+\]
+
+\[
+ \int \sinh x \cdot \d{x} = \cosh x + c
+\]
+
+\[
+ \int \cosh x \cdot \d{x} = \sinh x + c
+\]
+
+\[
+ \int \cos^2 x \d{x} = \frac{x + \sin x \cdot \cos x}{2} + c 
+\]
+
+\[
+ \int \sin^2 x \d{x} = \frac{x - \sin x \cdot \cos x}{2} + c 
+\]
+
+\[
+ \int \tan x \d{x} = -\ln\left|\cos x \right| + c = \ln\left|\sec x \right| + c
+\]
+
+\[
+ \int \cot x \d{x} = \ln\left|\sin x \right| + c
+\]
+
+\[
+  \int \frac{\d{x}}{a^2+x^2} = \frac{\argtan \frac{x}{a}}{a} + c
+\]
+
+\[
+  \int \frac{\d{x}}{\sqrt{a^2+x^2}} = \argsin \frac{x}{a} + c
+\]
+
+\[
+ \int f^n (x) \cdot f' (x) \d{x} = \frac{f^{n+1}(x)}{n+1} + c
+\]
+
+\[
+ \int \frac{f'(x)}{f(x)} \d{x} = \ln\left|f(x)\right|+c
+\]
+
+\[
+ \int f^n(x)f'(x)\d{x} = \frac{f^{n+1}(x)}{n+1} + c \qquad \mbox{ met } n \in \mathbb{R} \not \; \left\{-1\right\}
+\]
+
+\[
+ \int f(x)\d{g(x)} = f(x)g(x) - \int g(x) \d{f(x)} + c
+\]
+
+\onecolumn
+
+\subsubsection{Integraaltheorema's }
+\label{sec:Integraaltheoremas}
+
+\paragraph{Green-Riemann}
+\[
+  \oint_{C+} P(x,y)\d{x} + Q(x,y)\d{y} = \iint_G \left(\frac{\pd{Q}}{\pd{x}} - \frac{\pd{P}}{\pd{y}}\right)\d{S}
+\]
+
+\paragraph{Oppervlakteintegraal}
+\[
+  S = \iint_G \left\| \frac{\pd{\vec{r}}}{\pd{u}} \times \frac{\pd{\vec{r}}}{\pd{v}} \right\| \d{u}\d{v}
+\]
+
+\paragraph{Stokes}
+\[
+  \iint \left(\vrot{\vec{f}}\right) \vec{n}_u = \oint_C \vec{f}(\vec{r}) \cdot \d{\vec{r}}
+\]
+
+\paragraph{Ostrogradsky}
+\[
+  \iint_S \left( \vec{f} \cdot \vec{n}_u\right) \d{S} = \iiint_V \vdiv{\vec{f}} \d{V}
+\]
+
+
+
+\subsubsection{Toepassingen}
+\label{sec:Toepassingen}
+\paragraph{Inhoud van een omwentelingslichaam}
+\label{sec:InhoudOmwentelingslichaam}
+bepaald door wenteling van $f(x)$ om de $x$-as begrensd door $a$ en $b$
+\[
+ V = \pi\int_a^b \left[f(x)\right]^2 \d{x}
+\]
+
+\paragraph{Booglengte van een kromme}
+\label{sec:BooglengteKrommeAlg}
+\[
+  L = \int_a^b \left\| \frac{\d{\vec{r}}}{\d{t}}\right\| \d{t}
+\]
+\[
+ L = \int_a^b \d{s} \qquad \mbox{ met } \d{s} = \sqrt{\d{x}^2 + \d{y}^2 + \d{z}^2}
+\]
+
+\paragraph{Booglengte van een kromme}
+\label{sec:BooglengteKromme}
+bepaald door $f(x)$ tussen $a$ en $b$
+\[
+ L = \int_a^b \sqrt{1+\left(\frac{\d{f}}{\d{x}}\right)^2} \d{x}
+\]
+
+
+\paragraph{Booglengte van een parameterkromme}
+\label{sec:BooglengteParameterKromme}
+bepaald door $x= f(t)$ en $y=g(t)$ tussen $a$ en $b$
+\[
+ L = \int_a^b \sqrt{\left(\frac{\d{x}}{\d{t}}\right)^2 + \left(\frac{\d{y}}{\d{t}}\right)^2} \d{t}
+\]
+
+
+\paragraph{Manteloppervlakte van een omwentellingslichaam}
+\label{sec:ManteloppervlakteOmwentellingslichaam}
+bepaald door wenteling van $f(x)$ om de $x$-as begrensd door $a$ en $b$
+\[
+ S = 2\pi\int_a^b \left|f(x)\right| \sqrt{1+\left[f'(x)\right]^2} \d{x}
+\]
+\[
+ S = 2 \pi \int_a^b f(x) \d{s} \qquad \mbox{ met } \d{s} = \sqrt{\d{x}^2 + \d{y}^2 + \d{z}^2}
+\]
+
+\paragraph{Flux door een oppervlakte}
+\label{sec:FluxOpp}
+\[
+  \Phi_F = \int\int_G \left( \vec{F} \cdot \vec{n}_u \right) \d{S}
+\]
+
+

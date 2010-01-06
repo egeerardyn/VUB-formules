@@ -1,0 +1,348 @@
+
+\subsection{Standaardbegrippen}
+\paragraph{Gemiddelde}
+\[
+	\overline{x} = \frac{1}{n} \sum^n_{i=1} x_i
+\]
+
+\paragraph{Variantie}
+\[
+	s^2 = \frac{1}{n-1} \sum^n_{i=1} \left(x_i - \overline{x} \right)^2
+\]
+
+\paragraph{Standaardafwijking}
+\[
+  s = \sqrt{s^2}
+\]
+
+MED
+MOD
+MAD
+
+
+\subsection{Steekproef}
+\label{sec:Steekproef}
+
+  \paragraph{Gemiddelde}
+  \label{sec:GemiddeldeSteekproef}
+  \[
+      \overline{x} = \frac{1}{n}\sum^n_{i=1} x_1
+                   = \frac{1}{n}\sum^n_{i=1} n_i x_1 \mbox{ voor gegroepeerde gegevens}
+  \]
+
+  \paragraph{Variantie}
+  \label{sec:VariantieSteekproef}
+  \[
+      s^2 = \frac{1}{n-1} \sum^n_{i=1} \left(x_i-\overline{x}\right)^2
+          = \frac{1}{n-1} \sum^n_{i=1} n_i\left(x_i-\overline{x}\right)^2 \mbox{ voor gegroepeerde gegevens}
+  \]
+
+  \paragraph{Standaardafwijking}
+  \label{sec:StandaardafwijkingSteekproef}
+  \[
+      s = \sqrt{\frac{1}{n-1} \sum^n_{i=1} \left(x_i-\overline{x}\right)^2}
+        = \sqrt{\frac{1}{n-1} \sum^n_{i=1} n_i\left(x_i-\overline{x}\right)^2} \mbox{ voor gegroepeerde gegevens}
+  \]
+
+\subsection{Populatie}
+\label{sec:Populatie}
+  \paragraph{Gemiddelde}
+  \label{sec:GemiddeldePopulatie}
+  \[
+      \mu = \frac{1}{N}\sum^N_{i=1} x_1
+          = \frac{1}{N}\sum^N_{i=1} n_i x_1 \mbox{ voor gegroepeerde gegevens}
+  \]
+
+  \paragraph{Variantie}
+  \label{sec:VariantiePopulatie}
+  \[
+      \sigma^2 = \frac{1}{N} \sum^N_{i=1} \left(x_i-\mu\right)^2
+               = \frac{1}{N} \sum^N_{i=1} n_i\left(x_i-\mu\right)^2 \mbox{ voor gegroepeerde gegevens}
+  \]
+
+  \paragraph{Standaardafwijking}
+  \label{sec:StandaardafwijkingPopulatie}
+  \[
+      \sigma = \sqrt{\frac{1}{N} \sum^N_{i=1} \left(x_i-\mu\right)^2}
+             = \sqrt{\frac{1}{N} \sum^N_{i=1} n_i\left(x_i-\mu\right)^2} \mbox{ voor gegroepeerde gegevens}
+  \]
+
+
+
+\subsection{Kansverdelingen}
+\label{sec:Kansverdelingen}
+
+  \subsubsection{Verwachtingswaarde}
+  \[
+    \E{X} = \int_{-\infty}^{+\infty} x \d{F_X}
+  \]
+  \paragraph{Eigenschappen}
+  \[
+    \E{aX+b} = a \cdot \E{X} + b
+  \]
+  \[
+    \E{X + Y} = \E{X} + \E{Y}
+  \]
+  \[
+    \left| \E{X} \right| \geq
+  \]
+
+  \subsubsection{Variantie}
+  \[
+    \Var{X} = \E{\left(X - \E{X} \right)^2}
+  \]
+
+
+  \subsubsection{\texorpdfstring{$\sqrt{n}$-wet}{Wortel-n-wet}}
+  \label{sec:SqrtNWet}
+    \[
+      S = \sum^n_{i=1} X_i
+    \]
+    \[
+      \mu_S = E\left[S\right] = n \cdot E\left[X\right] = n\mu_X
+    \]
+    \[
+      \sigma^2_S = n \sigma^2_X \Leftrightarrow \sigma_S = \sqrt{n}\sigma_X
+    \]
+    \[
+      \overline{X} = \frac{1}{n}S = \frac{1}{n}\sum_{i=1}^n X_i
+    \]
+    \[
+      \mu_{\overline{X}} = \mu_X
+    \]
+    \[
+      \sigma^2_{\overline{X}}= \frac{1}{n^2}n\sigma^2_X = \frac{1}{n}\sigma_X^2
+      \leftrightarrow \sigma_{\overline{X}}=\frac{\sigma_X}{\sqrt{n}}
+    \]
+
+\subsection{Discrete Verdelingen}
+\label{sec:DiscreteVerdelingen}
+  \[
+    \E{X} = \sum^n_{i=1} x_i \prob{X=x_i} = \sum^n_{i=1} x_i p_i
+  \]
+  \[
+    \Var{X} = \sum^n_{i=1}\left(x_i-\E{X}\right)^2 \prob{X=x_i}
+                      = \sum^n_{i=1}\left(x_i-\E{X}\right)^2 p_i
+  \]
+
+  \subsubsection{Uniforme discrete verdeling}
+  \label{sec:UniformeDiscreteVerdeling}
+    \[
+      E\left[X\right] = \mu_x = \frac{n+1}{2}
+    \]
+    \[
+      \prob{X=x_i} = \frac{1}{n}
+    \]
+    \[
+      \Var{X} = \sigma^2_x = \frac{n^2-1}{12}
+    \]
+
+
+    \subsubsection{Bernouilli-verdeling}
+    Een experiment waarbij de mogelijke uitkomsten $1$ (waar) en $0$ (niet-waar) zijn.
+    \[
+      X \sim \mathrm{Bernouilli}\left(p\right)
+    \]
+    \[
+      \begin{array}{l}
+        \prob{X = 1} = p\\
+        \prob{X = 0} = q = 1 - p
+      \end{array}
+    \]
+    \[
+      \E{X} = p
+    \]
+    \[
+      \Var{X} = pq = p(1-p)
+    \]
+
+  \subsubsection{Binomiale verdeling}
+  \label{sec:BinomialeVerdeling}
+  Een herhaling van $n$ Bernouilli-experimenten met kans $p$.
+    \[
+       X \sim \mathrm{Binom}\left(n,p\right)
+    \]
+    \[
+      p + q = 1
+    \]
+    \[
+      \prob{X=i} = \binom{n}{k} p^iq^{n-i}
+    \]
+    \[
+      \E{X} = np
+    \]
+    \[
+      \Var{X} = npq
+    \]
+    \[
+     \gamma_1 = \frac{q-p}{\sqrt{npq}}
+    \]
+    \[
+      \gamma_2 = \frac{1-6pq}{npq}
+    \]
+
+  \subsubsection{Hypergeometrische verdeling}
+  Een populatie met $N$ elementen waarvan er $P$ elementen voldoen ($1$) en de andere niet. De kans op $k$ succesvolle experimenten bij trekken zonder teruglegging. Een som van $N$ Bernouilli-experimenten, waarbij de kans steeds afneemt. $p=\frac{P}{N}$
+  \[
+    X \sim \mathrm{hypergeom}\left(N,p,n\right) \quad \mbox{met } p = \frac{P}{N}
+  \]
+  \[
+    \prob{X = j} = \frac{\binom{P}{j} \binom{N-P}{n-j}}{ \binom{N}{n}}
+  \]
+  \[
+    \E{X} = np
+  \]
+  \[
+    \Var{X} = npq\frac{N-n}{N-1}
+  \]
+
+  \subsubsection{Geometrische verdeling}
+  De kans dat de eerste $k$ trekkingen falen uit een experiment zoals de hypergeometrische.
+  \[
+    \prob{X_i = 0 \forall i < k; X_k = 1} = pq^k
+  \]
+  \[
+    \E{X} = \frac{q}{p}
+  \]
+  \[
+    \Var{X} = \frac{q}{p^2}
+  \]
+
+  \subsubsection{Poissonverdeling}
+  \[
+    f_X = \frac{\left(\lambda t\right)^n}{n!}e^{-\lambda t}
+  \]
+  \[
+    \E{X} = \lambda
+  \]
+  \[
+    \Var{X} = \lambda
+  \]
+
+\subsection{Continue Verdelingen}
+\label{sec:ContinueVerdelingen}
+  \[
+    E\left[X\right]   =\mu_X
+                      =\int_a^b xf\left(x\right) \d{x}
+  \]
+  \[
+    Var\left[X\right] = \sigma^2_X
+                      = \int_a^b \left(x-\mu_x\right)^2 f\left(x\right) \d{x}
+                      = \int_a^b x^2 f\left(x\right) \d{x} - \mu_x^2
+  \]
+
+
+\subsubsection{Uniforme continue verdeling}
+\label{sec:UniformeContinueVerdeling}
+  \[
+    f\left(x\right)
+     = \left\{
+          \begin{array}{ll}
+             \forall x \in \left[a,b\right] : & f\left(x\right)= \frac{1}{b-a}\\
+             \forall x \not\in \left[a,b\right] : & f\left(x\right)= 0\\
+          \end{array}%
+        \right.
+  \]
+  \[
+    \mu_X = \frac{a+b}{2}
+  \]
+  \[
+    \sigma_X = \frac{b-a}{\sqrt{12}} = \frac{b-a}{2\sqrt{3}}
+  \]
+
+\subsubsection{Normaalverdeling}
+\label{sec:Normaalverdeling}
+  \[
+    X \sim N\left(\mu,\sigma\right) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+  \]
+  \paragraph{Standaardnormaalverdeling}
+  \[
+    z = \frac{x-\mu}{\sigma}
+  \]
+  \[
+    X \sim Z = N\left(0,1\right) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}\left(z\right)^2}
+  \]
+
+  \subsubsection{Exponentiële verdeling}
+  \[
+    f_X(t) =
+    \left\{
+      \begin{array}{ll}
+        \forall t > 0 & \lambda e^{- \lambda t}\\
+        \forall t \leq 0 & 0
+      \end{array}
+    \right.
+  \]
+  \[
+    F_X(t) =
+    \left\{
+      \begin{array}{ll}
+        \forall t > 0 & 1 - e^{- \lambda t}\\
+        \forall t \leq 0 & 0
+      \end{array}
+    \right.
+  \]
+  \[
+    \E{X} = \frac{1}{\lambda}
+  \]
+  \[
+    \Var{X} = \frac{1}{\lambda^2}
+  \]
+
+\subsection{Betrouwbaarheidsintervallen}
+\label{sec:Betrouwbaarheidsintervallen}
+  \[
+    \mu_{\hat{p}} = \frac{1}{n}np = p
+  \]
+  \[
+    \sigma_{\hat{p}} = \frac{1}{n}\sqrt{npq} = \sqrt{\frac{p\left(1-p\right)}{n}}
+  \]
+
+  \[
+    \mu_{\hat{\mu}} = \mu_x
+  \]
+  \[
+    \sigma_{\hat{\mu}} = \frac{\sigma_x}{\sqrt{n}}
+  \]
+
+  \paragraph{a\%-betrouwbaarheidsinterval voor $p$}
+  \label{sec:aBetrouwbaarheidsintervalVoorP}
+  \[
+    \left[\hat{p}-z_a\cdot\sqrt{\frac{\hat{p}\left(1-\hat{p}\right)}{n}};
+      \hat{p}+z_a\cdot\sqrt{\frac{\hat{p}\left(1-\hat{p}\right)}{n}}\right]
+  \]
+
+  \paragraph{a\%-betrouwbaarheidsinterval voor $\hat{\mu}$}
+  \label{sec:aBetrouwbaarheidsintervalVoorMu}
+  \[
+    \left[\mu-z_a\cdot\frac{\sigma}{\sqrt{n}};
+          \mu+z_a\cdot\frac{\sigma}{\sqrt{n}}\right]
+  \]
+
+
+\subsection{Lineaire enkelvoudige regressie en correlatie}
+\label{sec:LineaireEnkelvoudigeRegressieEnCorrelatie}
+  \paragraph{Regressielijn Kleinste kwadratenmethode}
+  \label{sec:KleinsteKwadratenmethode}
+    \[
+     y = ax + b
+    \]
+    \[
+     a = \frac{\sum_{i=1}^{n}
+               \left(x_i-\overline{x}\right)\left(y_i-\overline{y}\right)
+              }{\sum_{i=1}^{n}\left(x_i-\overline{x}\right)^2}
+    \]
+    \[
+     b = \overline{y} - a\overline{x}
+    \]
+
+
+\paragraph{Correlatiecoëfficiënt}
+\label{sec:Correlatiecoefficient}
+  \[
+     r = \frac{1}{n-1}\sum_{i=1}^{n}z_x \cdot z_y
+       = \frac{1}{n-1}\sum_{i=1}^{n}\left(\frac{x_i-\overline{x}}{s_x}\right)
+                             \cdot \left(\frac{y_i-\overline{y}}{s_y}\right)
+       = \frac{\sum_{i=1}^{n}\left(x_i-\overline{x}\right)\left(y_i-\overline{y}\right)}
+              {\left(n-1\right)s_x s_y}
+    \]

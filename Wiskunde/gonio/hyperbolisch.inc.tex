@@ -1,0 +1,86 @@
+\subsection{Hyperbolische functies}
+\label{sec:HyperbolischeFuncties}
+  \begin{eqnarray*}
+    \cosh x = \frac{e^x+e^{-x}}{2} & \qquad \qquad \qquad &%
+    \tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x-e^{-x}}{e^x+e^{-x}} \\
+    %
+    \sinh x = \frac{e^x-e^{-x}}{2} & \qquad \qquad \qquad &%
+    \coth x = \frac{\cosh x}{\sinh x} = \frac{e^x+e^{-x}}{e^x-e^{-x}}
+  \end{eqnarray*}
+  
+\paragraph{Hoofdeigenschap}
+\label{sec:HoofdeigenschapHyperbolisch}
+   \[
+	   \cosh^2 \alpha - \sinh^2 \alpha = 1
+   \]
+  
+\paragraph{Som- en verschilformules}
+\label{sec:SomVerschilHyperbolisch}
+   \[
+	   \sinh\left( x \pm y \right)  = \sinh x \cosh y \pm \cosh x \sinh y 
+   \]
+   \[
+	   \cosh\left( x \pm y \right)  = \cosh x \cosh y \mp \sinh x \sinh y 
+   \]
+
+\paragraph{Symmetrie van Hyperbolische functies}
+\label{sec:SymmetrieHyperbolisch}
+
+\begin{center}
+	\begin{tabular}{|c||c|c|c|c||l|}
+	  \hline
+	  $\swarrow$ & $\sinh$ & $\cosh$ & $\tanh$ & $\coth$ & beschrijving\\
+	  \hline \hline
+	  $- x$ & $-\sinh x$ & $\cosh x$ & $-\tanh x$ & $-\coth x$ & tegengesteld\\
+	  \hline
+	\end{tabular}
+\end{center}
+
+\paragraph{Inverse functies}
+\label{sec:invHyperbFunc}
+\[
+  \argsinh \left( x \right) = \ln \left( x + \sqrt{x^2+1} \right)
+\]
+\[
+  \argcosh \left( x \right) = \ln \left( x + \sqrt{x^2-1} \right)
+\]
+\[
+  \argtanh \left( x \right) = \frac{1}{2} \ln \frac{1+x}{1-x}
+\]
+
+\paragraph{Omzettingstabel}
+\label{sec:OmzettingHyperbolisch}
+
+\newcommand{\FSH}[1]{\sinh^{#1}\left(x\right)}
+\newcommand{\FCH}[1]{\cosh^{#1}\left(x\right)}
+\newcommand{\FTH}[1]{\tanh^{#1}\left(x\right)}
+\newcommand{\FCT}[1]{\coth^{#1}\left(x\right)}
+\begin{center}
+\[
+  \begin{array}{|l|c|c|c|c|}
+  \hline    & \FSH{} & \FCH{} & \FTH{} & \FCT{} \\ \hline \hline
+                                                             
+  \FSH{} =  & \FSH{}%                        
+            & \pm \sqrt{\FCH{2}-1}% 
+            & \frac{\FTH{}}{\sqrt{1-\FTH{2}}}%
+            & \pm \frac{1}{\sqrt{\FCT{2}-1}}%
+            \\ \hline %
+  \FCH{} =  & \sqrt{1+\FSH{2}}%
+            & \FCH{}%
+            & \frac{1}{\sqrt{1-\FTH{2}}}%
+            & \frac{\abs{\FCT{}}}{\sqrt{\FCT{2}-1}}%
+            \\ \hline %
+  \FTH{} =  & \frac{\FSH{}}{\sqrt{1+\FSH{2}}}%
+            & \pm \frac{\sqrt{\FCH{2}-1}}{\FCH{}}%
+            & \FTH{}%
+            & \frac{1}{\FCT{}}%
+            \\ \hline %
+  \FCT{} =  & \frac{\sqrt{1+\FSH{2}}}{\FSH{}}%
+            & \pm \frac{\FCH{}}{\sqrt{\FCH{2}-1}}%
+            & \frac{1}{\FTH{}}
+            & \FCT{}%
+            \\ \hline
+  \end{array}
+\]
+waarin $\pm$ overeenkomt met het teken van $x$
+\end{center}

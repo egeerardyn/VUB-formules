@@ -1,0 +1,91 @@
+\newpage
+\section{Regressie-analyse}
+\label{sec:RegressieAnalyse}
+  \[
+    \left(x , y\right) : \left(x_1 ,y_1 \right), \left(x_2 ,y_2 \right), \ldots, \left(x_n , y_n \right)
+  \]
+  \[
+    y = \Psi\left(x\right)
+  \]
+  \[
+    \sigma\left\{x_i\right\} = 0 \qquad \mbox{en} \qquad \sigma\left\{y_i\right\} = \sigma_i
+  \]
+  \paragraph{Parameters voor de regressiekromme}
+    \[
+      \theta_j : \theta_1, \theta_2, \ldots, \theta_k
+    \]
+  
+  \subsection{Correlatiecoëfficiënt}
+  \label{sec:correlatiecoefficient}
+    \[
+      R^2 = \frac{\mbox{verklaarde variantie van y}}{\mbox{totale variantie van y}}
+          = 1 - \frac{\mbox{onverklaarde variantie van y}}{\mbox{totale variantie van y}}
+    \]
+    \[
+      R^2 = 1 - \frac{\frac{1}{n}\chi^2}{\frac{1}{n}\sum_{i=1}^n \left(y_i-m_y\right)^2}
+          = 1 - \frac{\chi^2}{\sum_{i=1}^n \left(y_i-m_y\right)^2}
+    \]
+    De correlatiecoëfficiënt is de vierkantswortel van $R^2$ met hetzelfde teken als de richtingscoëfficiënt van de regressiekromme.
+  
+  \subsection{Gelijkwaardige y-waarden}
+  \label{sec:RegGelijkwaardigeY}
+    \[
+      \chi^2 = \sum_{i=1}^n \left(y_i - \Psi\left(x_i ; \theta_j\right) \right)^2
+    \]
+    \paragraph{Stelsel der normaalvergelijkingen}
+      \[
+        \forall j \in \left[1, \ldots, k\right] : \frac{\partial \chi^2}{\partial \theta_j} 
+                  = \frac{\partial}{\partial \theta_j}
+                    \left[ \sum_{i=1}^n \left(y_i - \Psi\left(x_i ; \theta_j\right) \right)^2 \right]
+                  = 0
+      \]
+    \paragraph{Standaardafwijking op y}
+      \[
+        \sigma^2 = \frac{1}{n} \sum_{i=1}^n \left(y_i - \Psi\left(x_i ; \theta_j\right) \right)^2 = \frac{\chi^2}{n}
+      \]
+      \[
+        \sigma^2 \hat{=} \frac{1}{n-k} \sum_{i=1}^n \left(y_i - \Psi\left(x_i ; \hat{\theta}_j\right) \right)^2 = \frac{\chi^2}{n-k}
+      \]
+    \paragraph{Correlatiecoëfficiënt}
+      \[
+        R^2 = 1 - \frac{\sum_{i=1}^n \left(y_i - \Psi\left(x_i ; \theta_j\right) \right)^2}{\sum_{i=1}^n \left(y_i-m_y\right)^2}
+      \]
+      \[
+        m_y = \frac{1}{n} \sum_{i=1}^n y_i
+      \]
+      
+  \subsection{Ongelijkwaardige y-waarden met bekende nauwkeurigheid}
+  \label{sec:RegOngelijkwaardigeYNauwkeurigheid}
+    \[
+      \chi^2 = \sum_{i=1}^n \frac{1}{\sigma_i} \left(y_i - \Psi\left(x_i ; \theta_j\right) \right)^2
+    \]
+  \subsection{Ongelijkwaardige y-waarden met bekend gewicht}
+  \label{sec:RegOngelijkwaardigeYGewicht}
+  
+  \subsection{Standaardfout op de parameters}
+  \label{sec:StandaardfoutOpDeParameters}
+    \[
+      \forall j \in \left[1,k\right]: \theta_j = \phi_j\left(x_1, \ldots, x_n ; y_1, \ldots, y_n\right\}
+    \]
+    \[
+      \sigma^2\left\{\theta_j\right\} = \sigma^2\left\{x_i\right\} \sum_{i=1}^n \left(\frac{\partial \phi_j}{\partial x_i}\right)^2
+                                      + \sigma^2\left\{y_i\right\} \sum_{i=1}^n \left(\frac{\partial \phi_j}{\partial y_i}\right)^2
+                                      = \sigma^2_i \sum_{i=1}^n \left(\frac{\partial \phi_j}{\partial y_i}\right)^2
+    \]
+    \[
+      \theta_j = \hat{\theta}_j \pm \sigma\left\{\theta_j\right\}
+    \]
+    
+  
+  
+  \subsection{Praktische Toepassingen}
+  \label{sec:RegToepassing}
+    \subsubsection{Rechte door de oorsprong}
+    \label{sec:RegAX}
+  
+    \subsubsection{Rechte niet door de oorsprong}
+    \label{sec:RegAXplusB}
+  
+    \subsubsection{Veelterm}
+    \label{sec:RegPolynoom}
+  

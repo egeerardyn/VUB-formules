@@ -1,0 +1,165 @@
+\section{Elektromagnetisme}
+\label{sec:EM}
+
+
+\paragraph{Samenvatting: 4 Maxwelbetrekkingen}
+
+  \begin{eqnarray*}
+     \vdiv{\vec{E}} = \frac{\rho_{alle}}{\epsilon_0} &&
+     \mbox{Gauss} \\
+     c^2 \vrot{\vec{B}} = \frac{\vec{J}_{alle}}{\epsilon_0} + \frac{\pd{\vec{E}}}{\pd{t}} &&
+     \mbox{Ampère-Maxwell}\\
+     \vrot{\vec{E}} = - \frac{\pd{\vec{B}}}{\pd{t}} &&
+     \mbox{Faraday-Lenz}\\
+     \vdiv{\vec{B}} = 0 &&
+  \end{eqnarray*} 
+
+
+
+
+\paragraph{Coulomb}
+\[
+  \vec{F}_{q(tot)} = \frac{q}{4 \pi \epsilon_0} \sum_{i=1}^n \frac{q_i \left(\vec{r} - \vec{r}_i\right)}{\norm{\vec{r} - \vec{r}_i}^3}
+\]
+\paragraph{Gauss/Maxwell 1}
+\[
+  \Phi_E = \oiint_{\partial V}\vec{E}(\vec{r})\cdot \vec{n}_u \d{S} = \frac{Q_{in}}{\epsilon_0}
+\]
+\[
+  \vdiv{\vec{E}} = \frac{\rho_{elek}}{\epsilon_0}
+\]
+
+
+\paragraph{Elektrostatische potentiaal}
+\[
+  U_{elek} = E_{p(elek)} = q V
+\]
+\[
+  \vec{E} = -\vgrad{V}
+\]
+\[
+  \Delta V = - \int_\ell \vec{E} \cdot \d{\vec{\ell}}
+\]
+
+
+\paragraph{Dipoolmoment}
+\[
+  \vec{\mu}_{el} = |q| \vec{\ell} \qquad \mbox{met $\vec{\ell}$ gericht van negatief naar positief}
+\]
+Bijhorende potentieële energie
+\[
+  U(\theta) = - \vec{\mu}_{el} \cdot \vec{E}
+\]
+
+
+\paragraph{Stromen}
+\[
+  I = \iint_S \vec{J}_{el} \cdot \d{\vec{S}} = \iint_S \vec{J}_{el} \cdot \vec{n}_+ \d{s}
+\]
+
+
+\paragraph{Lorentzkracht}
+\[
+  \vec{F}_{Lo} = q \left(\vec{E} + \vec{v} \times \vec{B} \right)
+\]
+
+
+\paragraph{Laplacekracht}
+\[
+  \vec{F}_{La} = I \int_{\ell} \d{\vec{\ell}} \times \vec{B}
+\]
+
+\paragraph{Definitie magnetisch inductieveld}
+\[
+  \vec{B} = \frac{\mu_0}{4\pi} \sum_i \frac{q_i \vec{v}_i \times \left( \vec{r} - \vec{r}_i \right) }{\norm{\vec{r} - \vec{r}_i}^3}
+\]
+
+
+\paragraph{Biot en Savart}
+\[
+  \d{\vec{B}}(\vec{r}) = \frac{\mu_0 I}{4\pi} \frac{\d{\vec{\ell}} \times \vec{r}_\Delta}{\norm{\vec{r}_\Delta}^3} 
+  \qquad
+  \mbox{met $\vec{r}_\Delta = \vec{r} - \vec{r}_i$ en $\ell$ de (booglengte van) geleider} 
+\]
+\[
+  \vec{B}_{tot} = \frac{I \mu_0}{4\pi} \int_\ell \frac{\d{\vec{\ell}} \times \vec{r}_\Delta}{\norm{\vec{r}_\Delta}^3}
+\]
+
+\paragraph{Cyclotron}
+\[
+  f = \frac{qB}{2\pi m}
+\]
+\[
+  \omega_c = \frac{m}{qB}
+\]
+
+Larmorstraal
+\[
+  r_L = \frac{v_{\perp}}{\omega_c} = \frac{mv_{\{perp}}{qB}
+\]
+Driftsnelheid
+\[
+  v_D = \frac{I}{S n_e \abs{q_e}} = \frac{I}{S \rho_{el}}
+\]
+
+\paragraph{Potentiële energie in een magnetisch veld}
+\[
+  U_{magn} = E_{p(magn)} = - \vec{\mu}_{magn} \cdot \vec{B}
+\]
+
+
+\paragraph{Ampère2} (enkel bij een constante stroom!)
+\[
+  c^2 \vrot{\vec{B}} = \frac{1}{\epsilon_0} \vec{J}_{alle}
+\]
+\[
+  c^2 \iint_S \vrot{\vec{B}} \cdot \vec{n}_u \d{S} = c^2 \oint_{\partial S} \vec{B} \cdot \d{\vec{\ell}}
+                                                   = \frac{1}{\epsilon_0} \iint_S \vec{J}_{alle} \cdot \vec{n}_u \d{S}
+                                                   = \frac{I_{alle}}{\epsilon_0}
+\]
+\[
+  \epsilon_0 \mu_0 c^2 = 1
+\]
+
+\paragraph{Ampère-Maxwell}
+\[
+  c^2 \vrot{\vec{B}} = \frac{1}{\epsilon_0} \vec{J}_{alle} + \frac{\pd{\vec{E}}}{\pd{t}}
+\]
+
+\paragraph{Faraday-Lenz}
+\[
+  \frac{\d{}}{\d{t}} \iint_S \vec{E} \cdot \vec{n}_u \d{S} = - \oint_{\partial S} \vec{E} \cdot \d{\vec{\ell}}
+\]
+\[
+  \frac{\pd{\vec{B}}}{\pd{t}} = - \vrot{\vec{E}}
+\]
+
+\paragraph{Wet van Pouillet}
+\[
+  R = \frac{\rho_{R} \ell}{A} \qquad \mbox{met $\rho_R$ de resistiviteit}
+\]
+
+
+\paragraph{Poynting}
+\[
+  \vec{S} \isdef  \epsilon_0 c^2 \left( \vec{E} \times \vec{B} \right) 
+\]
+
+\[
+  \rho_{EM} = \frac{\epsilon_0}{2} \norm{\vec{E}}^2 + \frac{\epsilon_0 c^2}{2} \norm{\vec{B}}^2
+\]
+Bilanvergelijking:
+\[
+  \frac{\pd{\rho_{EM}}}{\pd{t}} = - \vdiv{\vec{S}} - \vec{E} \cdot \vec{J}_{alle}
+\]
+
+\paragraph{Irradiantie}
+\[
+  I_{RR} = \norm{\vec{S}}
+\]
+\[
+  \average{I_{RR}} = \frac{\epsilon_0 c}{2} \norm{\vec{E}}^2
+\]
+\[
+  \average{\rho_{EM}} = \frac{\epsilon_0}{2} \norm{\vec{E}}^2
+\]

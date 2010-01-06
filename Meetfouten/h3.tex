@@ -1,0 +1,273 @@
+\newpage
+\section{Nauwkeurigheidsbespreking / Toevallige fouten}
+\label{sec:NauwkeurigheidsbesprekingToevalligeFouten}
+  
+  \subsection{Steekproef}
+  \label{sec:Steekproef}
+    
+    \subsubsection{Kentallen van ligging}
+    \label{sec:KentallenVanLigging}
+    
+      \paragraph{(rekenkundig) Gemiddelde} $m$
+      \label{sec:RekenkundigGemiddelde}
+        \[
+          m = \frac{1}{n} \sum_{i=1}^n x_i
+        \]
+      \paragraph{Meetkundig / Geometrisch gemiddelde} $G$
+      \label{sec:MeetkundigGemiddelde}
+        \[
+          G = \sqrt[n]{\prod_{i=1}^n x_i}
+        \]
+      \paragraph{Harmonisch gemiddelde} $H$
+      \label{sec:HarmonischGemiddelde}
+        \[
+          \frac{1}{H} = \frac{1}{n} \left( \sum_{i=1}^n \frac{1}{x_i}\right)
+        \]
+      \paragraph{Middelbare waarde} $M$ (ook wel Root-Mean-Square(RMS)-waarde, effectieve of echte waarde)
+      \label{sec:Middelbare waarde}
+        \[
+          M = \sqrt{\frac{1}{n}\sum_{i=1}^n x_i^2}
+        \]
+    
+    \subsubsection{Kentallen van schaal}
+    \label{sec:KentallenVanSchaal}
+      
+      \paragraph{Variantie} $s^2$
+      \label{sec:Variantie}
+        \[
+          s^2 = \frac{1}{n} \sum^n_{i=1} \left(x_i - m\right)^2 = \frac{1}{n} \sum^n_{i=1} v_i^2
+        \]
+      \paragraph{Standaardafwijking} $s$ (ook wel spreiding, rms-waarde van de afwijkingen)
+      \label{sec:stdDev}
+        \[
+          s = \sqrt{s^2} = \sqrt{\frac{1}{n} \sum^n_{i=1} \left(x_i - m\right)^2} = \sqrt{\frac{1}{n} \sum^n_{i=1} v_i^2}
+        \]  
+  
+  \subsection{Empirische verdeling}
+  \label{sec:EmpVerdeling}
+    
+    \subsubsection{Histogram en trapfunctie}
+    \label{sec:Histogram}
+      Verdeling van de bekomen meetresultaten in $n$ klassen met klassemiddens $x_i$, klassebreedtes $\Delta x_i$ en frequenties $p_i$
+      \[
+        f_i = \frac{p_i}{\sum_i^n p_i}
+      \]
+      \[
+        m = \sum_i^n f_i x_i
+      \]
+      \[
+        s^2 = \frac{\sum_i^n p_i\left(x_i - m\right)}{\sum_i^n p_i} = \sum_i^n f_i v_i^2
+      \]
+      \paragraph{Trapfunctie}
+      \label{sec:trapfunctie}
+      \[
+        F\left(x_i\right) = \frac{f_i}{\Delta x_i}
+      \]
+      \[
+        m = \sum_i^n x_i F\left(x_i\right) \Delta x_i
+      \]
+      \[
+        s^2 = \sum_i^n \left(x_i-m\right)^2F\left(x_i\right)\Delta x_i
+      \]
+      \[
+        P\left(x = x_j\right) = \frac{p_j}{\sum_i^n p_i} = f_j = F\left(x_j\right)\Delta x_j
+      \]
+      \[
+        P\left(x_j \leq x \leq x_k\right) = \sum_{i=j}^k f_i = \sum_{i=j}^k F\left(x_i\right)\Delta x_i
+      \]
+    
+  \subsection{Theoretische verdeling}
+  \label{sec:theorVerdeling}
+    \[
+      P\left(x \leq \underline{x} \leq x +\d{x}\right) = F\left(x\right)\d{x}
+    \]
+    \[
+      P\left(x_1 \leq x \leq x_2\right) = \int_{x_1}^{x_2} F\left(x\right)\d{x}
+    \]
+      \paragraph{Verwachtingswaarde}
+        \[
+          \mu = \varepsilon\left\{x\right\} = \int_{- \infty}^{+ \infty} x F\left(x\right) \d{x}
+        \]
+        \[
+          \varepsilon\left\{\Psi\right\} = \varepsilon\left\{\Psi\left(x\right)\right\} = \int_{- \infty}^{+ \infty} \Psi\left(x\right) F\left(x\right) \d{x}
+        \]
+      \paragraph{Variantie}
+        \[
+          \sigma^2 = \sigma^2\left\{x\right\} = \int_{- \infty}^{+ \infty} \left(x-\mu\right)^2 F\left(x\right) \d{x}
+        \]
+      \paragraph{Rekenregels}\
+        \[
+          \varepsilon\left\{a\underline{x} + b\underline{y}\right\} = a \varepsilon\left\{x\right\} + b \varepsilon\left\{x\right\}
+        \]
+        \[
+          \sigma^2\left\{a\underline{x} + b\underline{y}\right\} = a^2 \sigma^2\left\{x\right\} + b^2 \sigma^2\left\{x\right\}
+        \]
+        Behalve als $\Psi$ een lineaire functie is, geldt:
+        \[
+          \varepsilon \left\{ \Psi\left(x\right) \right\} \neq \Psi\left( \varepsilon\left\{x\right\}\right)
+        \]
+    \subsubsection{Normale Verdeling}
+    \label{sec:NormaleVerdeling}
+      \[
+        x \sim N\left(\mu,\sigma\right) \Leftrightarrow 
+        F\left( x \right) = \frac{1}{\sigma\sqrt{2\pi}} e^{\left[-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right]}
+      \]
+      
+      \paragraph{Standaardnormaalverdeling}
+      \label{sec:Standaardnormaalverdeling}
+      \[
+        z = \frac{x-\mu}{\sigma}
+      \]
+      \[
+        z \sim N\left(\mu=0,\sigma=1\right) \Leftrightarrow
+        F\left( z \right) = \frac{1}{\sqrt{2\pi}} e^{\left(-\frac{z^2}{2}\right)}
+      \]
+  \subsection{Steekproeftheorie}
+  \label{sec:Steekproeftheorie}
+    \subsubsection{Gelijkwaardige uitslagen}
+    \label{sec:SteekproeftheorieGeljkwaardigeUitslagen}
+      \[
+        x : x_1, x_2, \ldots, x_n
+      \]
+      \[
+        m = \frac{1}{n} \sum^n_{i=1}x_i
+      \]
+      \[
+        s^2 = \frac{1}{n} \sum^n_{i=1}v_i^2 = \frac{1}{n} \sum^n_{i=1}\left(x_i-m\right)^2
+      \]
+      \[
+        \varepsilon\left\{ m_x\right\} = \mu_x
+      \]
+      \[
+        \sigma\left\{ m_x\right\} = \frac{\sigma_x}{\sqrt{n}}
+      \]
+      \[
+        \varepsilon\left\{s_x^2\right\} = \frac{n-1}{n}\sigma_x^2 \hat{=} s_x^2
+      \]
+      \[
+        \sigma^2_x \hat{=} \frac{n}{n-1}s_x^2 \equiv \hat{s}^2_x
+      \]
+      \[
+        \sigma_x^2 \hat{=} \frac{1}{n-1}\sum^n_{i=1} \left(x_i-m_x\right)^2 = \hat{s}^2_x
+      \]
+      \paragraph{Betrouwbaarheid op de schatting van de verwachtingswaarde (standaardfout)}
+        \[
+          \mu = m \pm \frac{a_p\sigma_x}{\sqrt{n}} %
+              = m \pm \sqrt{\frac{\sum_{i=1}^n a_p^2\left(x_i - m_x\right)^2}{n\left(n-1\right)}} \qquad \mbox{normaal: $a_p = 1$ is de betrouwbaarheid 68\%}
+        \]
+    \subsubsection{Gelijkwaardige uitslagen met ongelijke frequenties}
+    \label{sec:SteekproeftheorieGeljkwaardigeUitslagenOngelijkeFrequenties}
+      \[
+        \mu_x \hat{=} m = \frac{\sum_{i=1}^{n} p_i x_i}{\sum_{i=1}^{n} p_i}
+      \]
+      \[
+        \sigma_x^2 \hat{=} \frac{\sum_{i=1}^n p_i \left(x_i-m\right)^2}{\left(\sum_{i=1}^{n} p_i\right) - 1}
+      \]
+      \[
+        \sigma\left\{m_x\right\} = \frac{\sigma_x}{\sum_{i=1}^n p_i}
+      \]
+      \paragraph{Betrouwbaarheid op de schatting van de verwachtingswaarde (standaardfout)}
+        \[
+          \mu = m \pm \frac{\sigma_x}{\sqrt{\sum_{i=1}^n p_i}} \qquad \mbox{(68\%)}
+        \] 
+        Praktischere schatting hiervan:
+        \[
+          \mu = \frac{\sum_{i=1}^{n} p_i x_i}{\sum_{i=1}^{n} p_i}
+                \pm
+                \sqrt{\frac{\sum_{i=1}^n p_i \left(x_i-m\right)^2}{\left(\sum_{i=1}^{n} p_i\right)\left[\left(\sum_{i=1}^{n} p_i\right) - 1\right]}}
+                \qquad \mbox{(68\%)}
+        \] 
+    \subsubsection{Ongelijkwaardige uitslagen met bekende nauwkeurigheid}
+    \label{sec:SteekproeftheorieONGeljkwaardigeUitslagenNauwkeurigheid}
+      \[
+        \mu \hat{=} m = \frac{\sum_{i=1}^n \frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}}
+      \]
+      \[
+        \sigma^2\left\{m_x\right\} = \frac{1}{\sum_{i=1}^n \frac{1}{\sigma_i^2}}
+      \]
+      \paragraph{Betrouwbaarheid op de schatting van de verwachtingswaarde (standaardfout)}
+      \[
+        \mu = m \pm \sigma\left\{m\right\} 
+            = \frac{\sum_{i=1}^n \frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}} 
+              \pm \frac{1}{\sqrt{\sum_{i=1}^n \frac{1}{\sigma_i^2}}}
+              \qquad \mbox{(68\%)}
+      \]
+    \subsubsection{Ongelijkwaardige uitslagen met met bekend gewicht}
+    \label{sec:SteekproeftheorieONGeljkwaardigeUitslagenGewicht}
+      \[
+        \sigma_i^2 = \frac{\sigma_x^2}{w_i}
+      \]
+      \[
+        \mu \hat{=} m = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}
+      \]
+      \[
+        \sigma_x^2 \hat{=} \frac{1}{n-1}\sum_{i=1}^n w_i\left(x_i-m\right)^2
+      \]
+      \[
+        \sigma^2\left\{m_x\right\} = \frac{\sigma_x^2}{\sum_{i=1}^n w_i}
+                              \hat{=} \frac{w_i\left(x_i-m\right)^2}{\left(n-1\right) \sum_{i=1}^n w_i} 
+      \]
+      \paragraph{Betrouwbaarheid op de schatting van de verwachtingswaarde (standaardfout)}
+      \[
+        \mu = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i} \pm \sqrt{\frac{w_i\left(x_i-m\right)^2}{\left(n-1\right) \sum_{i=1}^n w_i}}
+      \]
+      \[
+        \mu = \frac{\sum_{i=1}^n\frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n\frac{1}{\sigma_i^2}}
+              \pm
+              \sqrt{\frac{\frac{\left(x_i-m\right)^2}{\sigma_i^2}}{\left(n-1\right) \sum_{i=1}^n \frac{1}{\sigma_i^2}}}
+              \qquad \mbox{(68\%)}
+      \]
+    
+  \subsection{Toevallige fouten in onrechtstreekse metingen}
+  \label{sec:ToevFoutenOnrechtstreeksMeting}
+    \[
+      Y = \Psi\left(X_1, \ldots , X_N\right)
+    \]  
+    \[
+      \varepsilon\left\{X_i\right\} \hat{=} m_i
+    \]
+    \[
+      \sigma\left\{X_i\right\} \hat{=} \hat{s}_i
+    \]
+    \[
+      \Psi\left(X_1, \ldots , X_N\right) = \Psi\left(m_1, \ldots, m_i\right)
+                                           +
+                                           \sum_{i=1}^N \left(\frac{\partial \Psi\left(m_1, \dots, m_N\right)}{\partial X_i}\right)
+                                           \left(X_i-m_i\right)
+    \]
+    \[
+      \varepsilon\left\{\Psi\left(X_i\right)\right\} = \Psi\left(m_i\right) 
+                                                     + \sum_{i=1}^N \left(\frac{\partial \Psi\left(m_1, \dots, m_N\right)}{\partial X_i}\right)
+                                                    \varepsilon \left\{X_i-m_i\right\}
+                                                \hat{=} \Psi\left(m_i\right)
+    \]
+    \[
+      \sigma^2\left\{Y\right\} = \sigma^2\left\{\Psi\left(X_i\right)\right\}
+                               = \sum_{i=1}^N \left(\frac{\partial \Psi\left(m_i\right)}{\partial X_i}\right)
+                                 \sigma^2\left\{X_i-m_i\right\}
+                             %  = \sum_{i=1}^N \left(\frac{\partial \Psi\left(m_i\right)}{\partial X_i}\right)
+                             %    \sigma^2\left\{X_i\right\}
+                          \hat{=}\sum_{i=1}^N \left(\frac{\partial \Psi\left(m_i\right)}{\partial X_i}\right)
+                                 \hat{s}_i^2
+    \]
+    
+  \subsection{Controleberekeningen}
+  \label{sec:Controleberekeningen}
+    \begin{enumerate}
+	    \item Controle of ongeveer $x\%$ van de uitslagen in het $x\%$-betrouwbaarheidsinterval liggen.
+	    \item Controle of de theoretische verdeling de empirische verdeling benadert
+    \end{enumerate}
+    
+  \subsection{Verwerping van meetresultaten}
+  \label{sec:VerwerpingMeetresultaten}
+    De kans dat $x_i$ een foutief meetresultaat is, wordt bepaald door:
+    \[
+      P\left(\abs{x_i-\mu_x} \ge a_p \sigma\right) = \frac{100 - p}{100}
+    \]
+    Voor $1\%$-risicodrempel:
+    \[
+      \abs{x_j - m_x} \ge 2.6 \sigma_x \Leftrightarrow \abs{z_x} \ge 2.6
+    \]
+    Slechts 1 meetuitslag per keer verwerpen, daarna moeten $\mu$ en $\sigma$ opnieuw geschat worden!
+    
+    

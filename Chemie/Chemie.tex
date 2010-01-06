@@ -1,0 +1,119 @@
+\documentclass[pdftex,fleqn,a4paper]{article}
+  
+  \let\oldAuthor\author
+  \renewcommand{\author}[1]{\newcommand{\theAuthor}{#1}\oldAuthor{#1}} 
+  \let\oldTitle\title
+  \renewcommand{\title}[1]{\newcommand{\theTitle}{#1}\oldTitle{#1}}
+  \newcommand{\subtitle}[1]{\newcommand{\theSubtitle}{#1}}
+  \let\oldDate\date
+  \renewcommand{\date}[1]{\newcommand{\theDate}{#1}\oldDate{#1}}
+  
+  \usepackage{../huisstijl/vubtitlepage}
+  \faculty{Faculteit Ingenieurswetenschappen}
+  
+  \author{\href{mailto:Egon.Geerardyn@vub.ac.be}{Egon Geerardyn}}
+  \title{Formules Chemie}
+  \newcommand{\revisie}{revisie 0.4b}
+  \date{\revisie\ (\today)}
+ 
+ 
+ 
+ 
+  %\usepackage{graphicx}
+  \usepackage{amsfonts}
+  \usepackage{mathrsfs}
+  \usepackage{fancyhdr}
+  \usepackage[dutch]{babel}
+  \usepackage[latin1]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+  \usepackage{flow}
+  \usepackage{graphicx}
+  \usepackage{wrapfig}
+  \usepackage{rotating}
+  %%%%
+
+  \addtolength{\textheight}{2cm}
+  \addtolength{\textwidth}{3cm}
+  \addtolength{\hoffset}{-1.5cm}
+  \renewcommand{\rmdefault}{cmss}
+  \renewcommand{\sfdefault}{cmr}
+
+
+    \input{../commands/commands.inc.tex}
+    \newcommand{\definitie}[2]{\par \textbf{#1:}  #2\par}
+
+  
+ %lay-out
+  \hypersetup{colorlinks,%
+            citecolor=black,%
+            filecolor=black,%
+            linkcolor=black,%
+            urlcolor=black,%
+            pdfauthor={Egon Geerardyn},%
+            pdftitle={Formules Chemie},%
+            plainpages=false}%,%
+            %pdfpagelabels}
+  \pdfpagewidth=\paperwidth
+  \pdfpageheight=\paperheight
+ %margins
+\begin{document}
+  \maketitlepage
+%  \titlepage
+%  \thispagestyle{empty}%
+%  \null
+%  \vfill
+%  \begin{center}\leavevmode
+%    \normalfont
+%    %{\Large\raggedleft schooljaren 2004 -- 2005 -- 2006\par}%
+%    {\Large\raggedleft Ingenieurswetenschappen\par}%
+%    \hrulefill\par
+%    {\Huge\raggedright Formularium Chemie \large \revisie\   \footnotesize (\today)\par }%
+%  \end{center}%
+%  \vfill
+%  \footnotesize
+%  auteur: \textsc{E. Geerardyn}\par
+%  bron: \textsc{prof. R. Willem}, \textit{Chemie: Structuur en Transformaties van de materie}, Dienst Uitgaven VUB 2006.\par
+%  bron: \textsc{prof. M. Biesemans} en \textsc{prof. R. Willem} , \textit{Chemie: Oefeningen}, Dienst Uitgaven VUB 2006.\par
+%  bron: \textsc{Brown, LeMay} en \textsc{Bursten} , \textit{Chemistry: the Central Science (10th Edition)}, Pearson Education 2006.
+%  \normalsize
+%  
+%  \null
+    \setlength{\voffset}{-2cm}
+  
+  \newpage
+
+  \pagestyle{fancy}
+  \rhead{pagina \thepage}
+  \chead{\footnotesize \revisie}
+  \lhead{\textbf{Formules Chemie}}
+  \cfoot{}
+   \input{voorwoord.inc.tex}
+   \newpage
+   \tableofcontents
+   \newpage
+   
+  % \input{Basis/Gaswetten.inc.tex}
+  % \input{Basis/Stoichiometrie.inc.tex}
+   
+   \input{Thermodynamica/Thermodynamica.inc.tex}
+   
+   \input{ZuurBase/ZuurBase.inc.tex}
+   
+   \input{Elektrochemie/Elektrochemie.inc.tex}
+   
+   \input{Kinetica/Kinetica.inc.tex}
+   
+   \input{Fasenleer/Fasenleer.inc.tex}
+   
+   \appendix
+   \input{Appendix/Referenties.inc.tex}
+   \input{Appendix/halfreacties.inc.tex}
+   \input{Appendix/Namen.inc.tex}
+   
+   
+   
+ 
+ 
+
+\end{document}

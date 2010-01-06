@@ -1,0 +1,82 @@
+\subsection{Taylorreeksen}
+\label{sec:Taylorreeksen}
+  \subsubsection{Algemene benaderende reeksen}
+  \label{sec:algbBenadering}
+    \paragraph{Taylor-reeks} benadering van $f\left(x\right)$ in $x=a$ van graad $n$
+      \[
+        P_n\left(x\right) = \sum_{n=0}^n \frac{f^{\left(n\right)}\left(a\right)}{n!}\left(x-a\right)^n + r_n\left(x\right)
+      \]
+    \paragraph{McLaurin-reeks} benadering van $f\left(x\right)$ in $x=0$ van graad $n$ 
+      \[
+        P_n\left(x\right) = \sum_{n=0}^n \frac{f^{\left(n\right)}\left(0\right)}{n!}x^n + r_n\left(x\right)
+      \]
+    \paragraph{Restterm van Lagrange van orde $n$}
+      \[
+        r_n\left(x\right) = \frac{f^{\left(n+1\right)}\left( \xi \right)}{\left(n+1\right)!}\left(x-a\right)^{n+1}
+        \quad \mbox{met} \;
+        \xi \in/; ]a,x[
+      \]
+    \paragraph{Restterm van de Liouville van orde $n$}
+      \[
+        r_n\left(x\right) = \frac{\left(x-a\right)^n}{n!}\lambda \left( x \right)
+        \quad \mbox{met} \;
+        \lim_{x \to a} \lambda (x) = 0
+      \]
+    \paragraph{Restterm van Lagrange van orde $n$ voor een McLaurin-reeks}
+      \[
+        r_n\left(x\right) = \frac{f^{\left(n+1\right)}\left( \theta x \right)}{\left(n+1\right)!}x^{n+1}
+        \quad \mbox{met} \;
+        \theta \in/; ]0,1[ \;\mbox{of}\; \theta x \in/; ]0,x[
+      \]
+  \subsubsection{Specifieke Taylor/McLaurin-reeksen}
+  \label{sec:FreqBenadReeks}
+    \[
+      \forall x :
+      e^{x} = \sum^{\infin}_{n=0} \frac{x^n}{n!}
+      = x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \frac{x^5}{120} + \frac{x^6}{720} + \ldots
+    \]
+    \[
+      \forall \left| x \right| < 1 :
+      \ln(1+x) = \sum^{\infin}_{n=0} \frac{(-1)^n}{n+1} x^{n+1}
+      = x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+ \ldots
+    \]
+    \[
+      \forall x :
+      \sin x = \sum^{\infty}_{n=0} \frac{(-1)^n}{(2n+1)!} x^{2n+1} 
+      = x - \frac{x^3}{6} + \frac{x^5}{120} - \frac{x^7}{5040} + \ldots
+    \]
+    \[
+      \forall x :
+      \cos x = \sum^{\infty}_{n=0} \frac{(-1)^n}{(2n)!} x^{2n} 
+      = x - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720} + \ldots
+    \]
+    \[
+      \forall \left| x \right| < \frac{\pi}{2} :
+      \sec x = \sum^{\infty}_{n=0} \frac{(-1)^n E_{2n}}{(2n)!} x^{2n}
+      = 1 + \frac{x^2}{2}+\frac{5x^4}{24}+\frac{61x^6}{720}+\frac{277x^8}{8064} + \ldots
+    \]
+    \[
+      \forall \left| x \right| < 1 :
+      \argsin x = \sum^{\infty}_{n=0} \frac{(2n)!}{4^n (n!)^2 (2n+1)} x^{2n+1}
+      = x + \frac{x^3}{6} + \frac{3x^5}{40} + \frac{5x^7}{112} + \frac{35x^9}{1152} + \ldots
+    \]
+    \[
+      \forall \left| x \right| \leq 1 :
+      \argtan x = \sum^{\infty}_{n=0} \frac{(-1)^n}{2n+1} x^{2n+1}
+      = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \frac{x^9}{9} + \ldots
+    \]
+    \[
+      \forall x :
+      \sinh \left(x\right) = \sum^{\infty}_{n=0} \frac{1}{(2n+1)!} x^{2n+1}
+      = x + \frac{x^3}{6} + \frac{x^5}{120} + \frac{x^7}{5040} + \frac{x^9}{362880} + \ldots
+    \]
+    \[
+      \forall x :
+      \cosh \left(x\right) = \sum^{\infty}_{n=0} \frac{1}{(2n)!} x^{2n}
+      = 1 + \frac{x^2}{2} + \frac{x^4}{24} + \frac{x^6}{720} + \frac{x^8}{40320} + \ldots
+    \]
+    \[
+      \forall \left|x\right| < \frac{\pi}{2} :
+      \tanh\left(x\right) = \sum^{\infty}_{n=1} \frac{B_{2n} 4^n (4^n-1)}{(2n)!} x^{2n-1}
+      = x - \frac{x^3}{3} + \frac{2x^5}{15}- \frac{17x^7}{315}+ \frac{62x^9}{2835} + \ldots
+    \]

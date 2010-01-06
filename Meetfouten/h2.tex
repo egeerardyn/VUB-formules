@@ -1,0 +1,136 @@
+\newpage
+\section{Accuratiebespreking / Maximumfouten}
+\label{sec:AccuratiebesprekingMaximumfouten}
+
+  \paragraph{Absolute fout}
+  \label{sec:AbsoluteFout}
+    \[ 
+       \Delta X = \left| X - X^{obs}\right|
+    \]
+  
+  \paragraph{Relatieve fout}
+  \label{sec:RelatieveFout}
+    \[
+       RF = \left| \frac{\Delta X}{X}\right| \approx  \left| \frac{\Delta X}{X^{obs}}\right|
+    \]
+  
+  \subsection{Rechtstreekse meting}
+  \label{sec:MaxFoutRechtstreekseMeting}
+  
+    \subsubsection{Analoge meettoestellen}
+    \label{sec:AnaMeettoestellen}
+      \paragraph{Afleesfout}
+	      \begin{itemize}
+	        \item $\frac{1}{2}$ kleinste schaalverdeling
+	        \item $1$ kleinste schaalverdeling (bij te kleine schaalverdelingen om te interpoleren, of bij nonius)
+        \end{itemize}
+      \paragraph{Instrumentale fout}
+        gegeven percentage van het meetbereik ($\% \mbox{rg}$) $=$ klasse van het toestel
+      
+    \subsubsection{Digitale meettoestellen}
+    \label{sec:DigMeettoestellen}
+      \begin{description}
+	      \item[Afleesfout:]  Resolutie van het toestel (meestal 1 digit op kleinste aanduiding), tenzij opgave van $\# \mbox{dig}$
+	      \item[Instrumentale fout:] Gegeven percentage van de meetuitslag ($\% \mbox{rdg}$),
+	                                 aantal eenheden op de laatste digit ($\# \mbox{dig}$),
+	                                 soms ook een percentage van het meetbereik ($\% \mbox{rg}$) 
+      \end{description}
+    
+    \subsubsection{Instelfout}
+    \label{sec:Instelfout}
+      Grof afschatten door waarde juist te groot en waarde juist te klein te nemen en het zo bekomen foutinterval te halveren.
+    
+    \subsubsection{Toevallige fouten}
+    \label{sec:MaxFoutbijToevFout}
+      Bij toevallige fouten groter dan de resolutie:
+      \[
+        X^{obs} = m = \frac{1}{n} \sum^n_{i=1} x_i
+      \]
+      \[
+        \sigma = \sqrt{\frac{\sum^n_{i=1}\left(x_i-m\right)^2}{n-1}}
+      \]
+      (maximum) toevallige fout:
+      \[
+        \Delta X = 3\sigma \qquad \mbox{slechts 0,3\% kans dat deze fout wordt overschreden}
+      \]
+      
+  \subsection{Onrechtstreekse meting}
+  \label{sec:MaxFoutOnrechtstreekseMeting}
+    \[
+      Y = \Psi\left(X_1, X_2, \ldots , X_N\right)
+    \]
+
+    \[
+      Y^{obs} = \Psi\left(X_1^{obs}, X_2^{obs}, \ldots, X_N^{obs}\right)
+    \]
+    
+    
+    \subsubsection{Calibratie (Testmeetproces)}
+    \label{sec:CalibratieTestmeetproces}
+      
+      \paragraph{Absolute accuratie}
+      \label{sec:AbsAccuratie}
+        \[
+          \Delta Y = \abs{Y^{obs} - Y^{cal}}
+        \]
+        
+      \paragraph{Relatieve accuratie}
+      \label{sec:RelAccuratie}  
+        \[
+          \abs{\frac{\Delta Y}{Y^{cal}}} = \abs{\frac{Y^{obs}-Y^{cal}}{Y^{cal}}}
+        \]
+    
+  \subsubsection{Afschatting van de resultante fout}
+  \label{sec:AfschattingVanDeResultanteFout}
+
+    \paragraph{Absolute Maximumfout op Y}
+    \label{sec:AbsMaxFoutY}
+      \[
+        \Delta Y = \sum_{i=1}^{N} \abs{\frac{\partial \Psi\left(X_i^{obs}\right)}{\partial X_i}} \Delta X_i
+      \]
+  
+    \paragraph{Relatieve Maximumfout op Y}
+    \label{sec:RelMaxFoutY}
+      \[
+        \left|\frac{\Delta Y}{Y^{obs}}\right| = \sum_{i=1}^{N} \abs{\frac{\partial \Psi\left(X_i^{obs}\right)}{\partial X_i}} 
+                                                \abs{\frac{\Delta X_i}{X_i^{obs}}}
+                                                \abs{\frac{X_i^{obs}}{X_i^{obs}}}|
+      \]
+  
+  \subsubsection{Bijzondere gevallen}
+  \label{sec:BijzondereGevallen}
+  
+    \paragraph{Veralgemeende Som}
+    \label{sec:VeralgemeendeSom}
+      De absolute fout op een som/verschil is de som van de (absolute waarden van de) absolute fouten op elk der termen.
+      \[
+        Y = \sum^N_{i=1} a_i X_i
+      \]
+      \[
+        \Delta Y = \sum^n_{i=1} \abs{a_i} \Delta X_i
+      \]
+    \paragraph{Veralgemeend Product}
+    \label{sec:VeralgemeendProduct} 
+      De relatieve fout op een product/quotiënt is de som van de (absolute waarden van de) relatieve fouten op elk der factoren.
+      \[
+        Y =  \prod_{i=1}^N b_i X_i^{a_i}
+      \]
+      \[
+        \abs{\frac{\Delta Y}{Y^{obs}}} = \sum_{i=1}^N \abs{a_i\frac{\Delta X_i}{X^{obs}_i}}
+      \]
+    \paragraph{Exponentiële functies}
+    \label{sec:Exponentieel} 
+      \[
+        Y = a \cdot e^{b\cdot X}
+      \]
+      \[
+        \abs{\frac{\Delta Y}{Y^{obs}}} = \abs{b} \Delta X
+      \]
+    \paragraph{Logaritmische functies}
+    \label{sec:Logaritmisch} 
+      \[
+        Y = a \cdot \ln\left(b\cdot X\right)
+      \]
+      \[
+        \Delta Y = \abs{a\cdot\frac{\Delta X}{X^{obs}}}
+      \]

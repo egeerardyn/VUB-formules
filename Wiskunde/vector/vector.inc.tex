@@ -1,0 +1,178 @@
+\[
+  \overrightarrow{AB} = \vec{B} - \vec{A}
+\]
+
+\paragraph{Rekenregels}
+\label{sec:RekenregelsVectoren}
+     \[
+       \forall \vec a:
+          \vec a \cdot \vec o = 0 = \vec o \cdot \vec a
+     \]
+   \[
+       \forall \vec a \neq \vec o:
+          \vec a \cdot \vec a = ||\vec a||^2
+     \]
+     \[
+       \forall \vec a, \vec b :
+          \vec a \cdot \vec b = \vec b \cdot \vec a
+           \Leftrightarrow \scalprodv{a}{b} = \scalprodv{b}{a}
+     \]
+     \[
+       \forall \vec a, \vec b \neq \vec o:
+          \vec a \bot \vec b \Leftrightarrow \vec a \cdot \vec b = 0
+     \]
+
+\paragraph{Scalair product}
+\label{sec:scalairProduct}
+     \[
+       \forall \vec u, \vec v \neq \vec o :
+          \vec u \cdot \vec v = ||\vec u|| \cdot ||\vec v|| \cdot \cos\left(\widehat{\vec u, \vec v}\right)
+                              = \sum_{i=1}^n u_iv_i
+     \]
+\paragraph{Vectoriëel Product}
+\label{sec:VectorieelProduct}
+  \[
+    \vec a \times \vec b =
+    \left|
+     \begin{array}{ccc}
+       \vec u_x  &  \vec u_y  &  \vec u_z \\
+      a_x & a_y & a_z\\
+      b_x & b_y & b_z
+     \end{array}
+   \right|
+  \]
+\paragraph{Gemengd product}
+\label{sec:GemengdProduct}
+  \[
+    \left(\vec a \times \vec b \right) \cdot \vec c=
+    \left|
+     \begin{array}{ccc}
+      c_x & c_y & c_z \\
+      a_x & a_y & a_z\\
+      b_x & b_y & b_z
+     \end{array}
+   \right|
+  \]
+
+\paragraph{Lengtes/Normen}
+\label{sec:Lengtes}
+\[
+  \left\| \vec{x} \right\| =
+  \left\| \vec{x} \right\|_1 =
+  \sqrt{\sum_i^n x_i^2}
+  \qquad
+  \mbox{Euclidische norm}
+\]
+\[
+  \left\| \vec{x} \right\|_2 =
+  \max \left\{ x_1,  \ldots, x_n \right\}
+  \qquad
+  \mbox{maximumnorm}
+\]
+\[
+  \left\| \vec{x} \right\|_3 =
+  \sum_i^n \left| x_i \right|
+  \qquad
+  \mbox{Chebyshevnorm}
+\]
+
+\paragraph{Differentiaaloperatoren}
+\label{sec:Differentiaaloperatoren}
+
+\subparagraph{Differentiaaloperator van de Eerste Orde}
+\label{sec:Differentiaaloperator1}
+  \[
+    \vec \nabla = \left(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\right)
+  \]
+
+\subparagraph{Gradiënt}
+\label{sec:Gradient}
+  \[
+    \mbox{grad}\left(f\right) = \vec \nabla f =  \left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right)
+  \]
+
+\subparagraph{Divergentie}
+\label{sec:Divergentie}
+  \[
+    \mbox{div}\left(\vec v\right) = \vec \nabla \cdot \vec v = \frac{\partial v_x}{\partial x} + \frac{\partial v_y}{\partial y} + \frac{\partial v_z}{\partial z}
+  \]
+
+\subparagraph{Rotatie}
+\label{sec:Rotatie}
+  \[
+    \mbox{rot}\left(\vec v\right) = \vec \nabla \times \vec v =
+    \left|
+     \begin{array}{ccc}
+       \vec u_x  &  \vec u_y  &  \vec u_z \\
+       \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
+      v_x & v_y & v_z
+     \end{array}
+   \right|
+  \]
+
+\subparagraph{Differentiaaloperator van de Tweede Orde (Laplaciaan)}
+\label{sec:Differentiaaloperator2}
+  \[
+    \Delta\left(f\right)=\mbox{div}\left(\mbox{grad}\left(f\right)\right)=
+    \vec \nabla \cdot\left(\vec \nabla f\right) = \vec \nabla^2 f =
+    \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}
+  \]
+
+\paragraph{Coördinatenstelsels}
+\label{sec:CoordStelsels}
+
+\subparagraph{Cartesisch}
+\[
+  \left\{
+    \begin{array}{l}
+      x = x\\
+      y = y\\
+      z = z\\
+    \end{array}
+  \right.
+\]
+\[
+  \left| J \right| = 1
+\]
+
+\subparagraph{Poolcoördinaten/Cilindercoordinaten}
+\[
+  \left\{
+    \begin{array}{l}
+      x = r \cos \theta\\
+      y = r \sin \theta\\
+      z = z\\
+    \end{array}
+  \right.
+\]
+\[
+  \left| J \right| =
+  \left|
+    \begin{array}{ccc}
+      \cos \theta & - r \sin \theta & 0 \\
+      \sin \theta &   r \cos \theta & 0 \\
+      0           &   0             & 1 \\
+    \end{array}
+  \right| = r
+\]
+
+\subparagraph{Bolcoördinaten}
+\[
+  \left\{
+    \begin{array}{l}
+      x = r \sin \theta \cos \phi\\
+      y = r \sin \theta \sin \phi\\
+      z = r \cos \theta \\
+    \end{array}
+  \right.
+\]
+\[
+  \left| J \right| =
+  \left|
+    \begin{array}{ccc}
+      \sin \theta \cos \phi & r \cos \theta \cos \phi & - r \sin \theta \sin \phi \\
+      \sin \theta \sin \phi & r \cos \theta \sin \phi &   r \sin \theta \cos \phi \\
+      \cos \theta           & - r \sin \theta         & 0 \\
+    \end{array}
+  \right| = r^2 \sin \theta
+\]

@@ -1,0 +1,143 @@
+\twocolumn
+\newpage
+\section{Vectorrekening}
+\label{sec:Vectorrekening}
+
+\subsection{Notaties}
+\label{sec:Notaties}
+  
+  \paragraph{Vectoren}
+  \label{sec:Vectoren}
+  \[
+    \vect{OV} = \vec{V}
+  \]
+  
+  \paragraph{Korte notaties voor Afgeleiden}
+  \label{sec:KorteNotatiesAfgeleiden}
+  \[
+    \ds{v} = \frac{\d{v}}{\d{s}} \qquad \mbox{en} \qquad \dss{v} = \frac{\d{^2 v}}{\d{s^2}}
+  \]
+  \[
+    \dt{v} = \frac{\d{v}}{\d{t}} \qquad \mbox{en} \qquad \dtt{v} = \frac{\d{^2 v}}{\d{t^2}}
+  \]
+  \[
+    \dx{v} = \frac{\d{v}}{\d{x}} \qquad \mbox{en} \qquad \dxx{v} = \frac{\d{^2 v}}{\d{x^2}}
+  \]
+  Hierin kan $x$ ook een andere variabele zijn, als dat aangegeven staat!
+  
+\subsection{Beknopte Notaties}
+\label{sec:BeknopteNotaties}
+
+\subsubsection{Sommatie-conventie van Einstein}
+\label{sec:SommatieConventieVanEinstein}
+Wanneer in een eenterm een index tweemaal voorkomt, dient over deze index gesommeerd te worden.
+\[
+  \mbox{voorbeeld: }
+  \vec{a} = a_i \vec{1}_i = \sum_i^n a_i \vec{1}_i
+\]
+
+\subsubsection{Kronecker-symbolen}
+\label{sec:KroneckerSymbolen}
+
+\paragraph{Kronecker-delta}
+\label{sec:KroneckerDelta}
+\[
+  \delta_{ij} =
+  \left\{
+    \begin{array}[h]{cl}
+	    0 & \mbox{als $i \neq j$}\\
+	    1 & \mbox{als $i = j$}
+    \end{array}
+  \right.
+\]
+\paragraph{Kronecker-epsilon}
+\label{sec:KroneckerEpsilon}
+\[
+  \varepsilon_{ijk} =
+  \left\{
+    \begin{array}[h]{cl}
+      0 & \mbox{als een index ($i,j,k$) tweemaal voorkomt}\\
+	    1 & \mbox{als ($i,j,k$) een even permutatie van ($1,2,3$) of ($x,y,z$) is} \\
+	    -1 & \mbox{als ($i,j,k$) een oneven permutatie van ($1,2,3$) of ($x,y,z$) is}
+    \end{array}
+  \right.
+\]
+
+\subsection{Vectoroperatoren}
+\label{sec:Vectoroperatoren}
+  \textbf{Opmerking:} Gelijkheden aangeduid met $\stackrel{\bot}{=}$ zijn enkel geldig in orthogonale assenstelsels!
+  \paragraph{Vectoriele Som}
+  \label{sec:Optellen}
+  \[
+    \vec{a} + \vec{b} = \left( a_i + b_i \right) \vec{1}_i
+  \]
+  
+  \paragraph{Scalair Vermenigvuldigen}
+  \label{sec:Vermenigvuldigen}
+  \[
+    \alpha \vec{a} = \alpha a_i \vec{1}_i
+  \]
+  
+  \paragraph{Scalair Product}
+  \label{sec:ScalProduct}
+  \begin{eqnarray*}
+    \vec{a} \cdot \vec{b} & = & ab \cos{\alpha} \\
+                          & \stackrel{\bot}{=} & \delta_{ij} a_i b_j\\
+                          & \stackrel{\bot}{=} & a_i b_i  
+  \end{eqnarray*}
+  
+  \paragraph{Vectoriëel Product}
+  \label{sec:VectProduct}
+  \begin{eqnarray*}
+    \vec{a} \times \vec{b} & = &
+    \left|
+      \begin{array}[h]{ccc}
+	       \vec{1}_x & \vec{1}_x & \vec{1}_x \\
+	       a_x & a_y & a_z\\
+	       b_x & b_y & b_z
+      \end{array}
+    \right| \\
+      & \stackrel{\bot}{=} & \varepsilon_{ijk}\,  a_i \, b_j \, \vec{1}_k
+  \end{eqnarray*}
+  
+  \paragraph{Gemengd Product}
+  \label{sec:GemProduct}
+  \[
+    \vec{a} \cdot \left( \vec{b} \times \vec{c} \right) =
+    \left|
+      \begin{array}[h]{ccc}
+	       a_x & a_x & a_x \\
+	       b_x & b_y & b_z\\
+	       c_x & c_y & c_z
+      \end{array}
+    \right| 
+  \]
+  
+  \paragraph{Dubbel Vectoriëel Product}
+  \label{sec:DubVectProduct}
+  (expulsieformule)
+  \[
+    \vec{a} \times \left( \vec{b} \times \vec{c} \right) =
+    \left( \vec{a} \cdot \vec{c} \right) \vec{b} - \left( \vec{a} \cdot \vec{b} \right)\vec{c}
+  \]
+  
+  \paragraph{Afgeleide van vectoren}
+  \label{sec:AfgVect}
+  \[
+    \frac{\d{\left(\vec{a} + \vec{b}\right)}}{\d{t}} = \frac{\d{\vec{a}}}{\d{t}} +
+                                                       \frac{\d{\vec{b}}}{\d{t}}
+  \]
+  \[
+    \frac{\d{\alpha \vec{a}}}{\d{t}} = \frac{\d{\alpha}}{\d{t}} \vec{a} +
+                                       \alpha \frac{\d{\vec{a}}}{\d{t}}  
+  \]
+  \[
+    \frac{\d{\left(\vec{a} \cdot \vec{b}\right)}}{\d{t}} = \frac{\d{\vec{a}}}{\d{t}} \cdot \vec{b} + 
+                                                           \frac{\d{\vec{b}}}{\d{t}} \cdot \vec{a}
+  \]
+  \[
+    \frac{\d{\left(\vec{a} \times \vec{b}\right)}}{\d{t}} = \frac{\d{\vec{a}}}{\d{t}} \times \vec{b} + 
+                                                            \vec{a} \times \frac{\d{\vec{b}}}{\d{t}} 
+  \]
+
+\onecolumn

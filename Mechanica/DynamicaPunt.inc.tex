@@ -1,0 +1,376 @@
+\newpage
+\section{Dynamica van een Punt}
+\label{sec:DynamicaPunt}
+\subsection{Basisaxioma's}
+\label{sec:Basisaxiomas}
+
+\paragraph{Traagheidswet}
+(Impuls / Kinetische resultante)
+\[
+  \vec{p} = m \vec{v}
+\]
+
+\[
+  \frac{\d{m\vec{v}}}{\d{t}} = \vec{F} = \vec{K} = \vec{k}
+\]
+Bij constante massa (Wet van d' Alembert)
+\[
+  \vec{F} = \vec{k} = m\vec{a}
+\]
+\[
+  \vec{F} = \vec{K}
+          = m \frac{\d^2{\vec{r}}}{\d{t^2}}
+          = m \frac{\d{\vec{v}}}{\d{t}} 
+          = \vec{K}_{\mbox{uitwendig}} + \vec{K}_{\mbox{binding}} + \vec{K}_{\mbox{relatief}}
+\]
+
+\paragraph{Actie-Reactie} (niet geldig voor relatieve krachten zoals $\vec{F}_{\mbox{Coriolis}}$ en $\vec{F}_{\mbox{sleep}}$
+\[
+  \vec{F}_{ab} = - \vec{F}_{ba}
+\]
+
+\subsection{Algemene stellingen}
+\label{sec:AlgStellingenDynPunt}
+
+\paragraph{Impuls / Kinetische Resultante}\par
+De aangroei van de bewegingshoeveelheid $m\vec{v}$ is gelijk aan de impuls $\int \vec{K} \d{t}$ van de totale kracht.
+\[
+  \int_{t1}^{t2} \vec{K} \d{t} = \left(m \vec{v}\right)_{t2} - \left(m \vec{v}\right)_{t1}
+\]
+
+\paragraph{Kinetisch Moment}\par
+Het kinetisch moment van het bewegend punt $P$ ten pzichte van het punt $O$ is het moment van de bewegingshoeveelheid in $P$.
+\[
+ \vec{M}_O = \vect{OP} \times m\vec{v}_P
+\]
+De afgeleide van het kinetisch moment naar de tijd in een vast punt $O$ (absolute assen!!) is gelijk aan het moment om dit punt van de totale kracht.
+\[
+  \frac{\d{\vec{M}_O}}{\d{t}} = \frac{\d{\vect{OP} \times m\vec{v}_P}}{\d{t}}
+                              = \vect{OP} \times \vec{K}
+\]
+
+\paragraph{Behoud van energie}
+\[
+  \int_{\vec{r}_0}^{\vec{r}} \vec{F} \cdot \d{\vec{r}} = \frac{m}{2} \left( v^2 - v_0^2 \right)
+\]
+
+\[
+  \vec{F} = - \Dgrad{\Phi}
+\]
+\[
+  E_0 = \frac{1}{2} mv^2 + \Phi\left(\vec{r}\right)
+      = \frac{1}{2} mv^2_0 + \Phi\left(\vec{r_0}\right)
+\]
+
+\subsection{Rechtlijnige beweging}
+\label{sec:RechtlBew}
+
+\paragraph{De kracht is tijdsafhankelijk} $m \cdot \dtt{x} = f(t)$
+\[
+  \dt{x} = \frac{1}{m} \int_{t_0}^{t} f(u) \d{u} + v_0
+\]
+\[
+  x = \frac{1}{m} \int_{t_0}^{t} \d{w} \int_{w_0}^{w} f(u) \d{u} + v_0(t - t_0) + x_0
+    = \frac{1}{m} \int_{t_0}^{t} f(u) (t-t_0) \d{u} + v_0(t-t_0) + x_0
+\]  
+
+\paragraph{De kracht is snelheidsafhankelijk} $m \dtt{x} =f(\dt{x})$
+\[
+  \mbox{Stel } 
+  \;
+  \dt{x} = v 
+  \; ; \; 
+  m\dt{v} = f(v)
+\]
+\[
+  m \int_{v_0}^v \frac{\d{v}}{f(v)} = t - t-0 
+  \; \stackrel{?}{\RA} \;
+  x(t) = x_0 + \int_{t_0}^t v(t) \d{t}
+\]
+\[
+  x(v) = x_0 + \int_{v_0}^v \frac{v\d{v}}{f(v)}
+\]
+
+\paragraph{De kracht is plaatsafhankelijk} $m \dtt{x} =f(x)$
+\[
+  \Phi(x) = - \int_{x_0}^x f(u) \d{u}
+\]
+\[
+  E_0 = \frac{m}{2} \dt{x}^2 + \Phi(x) = \frac{m}{2} \dt{x}_0^2 + \Phi(x_0)
+\]
+\[
+  \dt{x}(x) = \pm \sqrt{\frac{2}{m} \left( E_0 - \Phi(x) \right)}
+\]
+\[
+  t(x) = t_0 \pm \int_{x_0}^x \frac{\d{x}}{\sqrt{E_0 - \Phi(x)}}
+\]
+\[
+  F(x) = \frac{\d{\Phi(x)}}{\d{x}}
+\]
+
+\paragraph{Struikelblokken bij het integreren}
+\begin{itemize}
+  \item Het integratieinterval wordt oneindig
+        \[
+          \int^{\infty}_{x_0} = F(x) \d{x}
+        \]
+        \begin{itemize}
+          \item Oplosbaar bij: $\lim_{x \to \infty}\; x F(x) = 0$ of
+          \item Oplosbaar bij: $\lim_{x \to \infty}\; F(x) = x^\alpha$ met $\alpha < -1$.
+        \end{itemize}
+  \item Binnen het integratieinterval ontstaat een oneindigheid
+        \[
+          \int^b_a \frac{F(x)}{(x-x_0)^\alpha} \d{x}  \qquad \qquad \mbox{met } a \leq x_0 \leq b \mbox{ en } F(x_0) \neq 0
+        \]
+        \begin{itemize}
+          \item Oplosbaar bij: $\alpha < 1$
+        \end{itemize}
+\end{itemize}
+
+\paragraph{Autonoom systeem} $\dtt{x} = f(x,\dt{x})$
+\[
+  \left\{
+    \begin{array}{rcl}
+	    \dt{x} & = & y\\
+	    \dt{y} & = & \frac{1}{m} f(x,y)
+    \end{array}
+  \right.
+\]
+\[
+  \frac{\d{y}}{\d{x}} = \frac{f(x,y)}{my}
+\]
+
+\paragraph{Stelling van Liapounoff}
+  In de omgeving van een regelmatig singulier punt, kan de beweging bestudeerd worden door enkel de eerste van nul
+  verschillende termen van de reeksontwikkeling van $f(x,y)$ en $g(x,y)$ rond dat singulier punt te beperken.
+  
+  
+
+\subsection{Rechtlijnige trillingen}
+\label{sec:RechtlTril}
+
+\paragraph{Wet van Hooke}
+\[
+  \vec{F}(x) = - k \vec{r} \quad \mbox{of} \quad F = -kx \qquad \mbox{ met } k > 0
+\]
+\paragraph{Veerwet (bij grotere uitwijkingen)}
+\[
+ F(x) = -kx + \epsilon x^3 \mbox{met } k > 0 \mbox{ en } \epsilon \in \mathbb{R} 
+\]
+
+\subsubsection{Lineaire harmonische oscillator}
+\[
+  m\dtt{x} = -kx  \quad \mbox{of} \quad
+  \dtt{x} + \omega^2 x = 0 \qquad \mbox{met } \omega^2 = \frac{k}{m}      
+\]
+Oplossing (algemeen, met $A$ en $B$ integratieconstanten):
+\[
+  \left\{
+    \begin{array}{l}
+          x  = A \sin \left(\omega t \right) + B \cos \left(\omega t \right)\\
+      \dt{x} = \omega\left(A \cos \left(\omega t \right) - B \sin \left(\omega t \right)\right)
+    \end{array}
+  \right. 
+    \qquad \mbox{met } \omega = \sqrt{\frac{k}{m}} \; , \; A = \frac{v_0}{\omega} \; , \; B = x_0
+\]
+Oplossing:
+\[
+  x = \frac{v_0}{\omega} \sin \left(\omega t \right) + x_0 \cos \left(\omega t \right)
+\]
+Oplossing (alternatieve notatie):
+\[
+  x = M \sin \left( \omega t + \varphi \right)
+  \quad \mbox {met}
+  \left\{
+    \begin{array}{l}
+      M = \sqrt{A^2 + B^2} = \sqrt{\left(\frac{v_0}{\omega}\right)^2 + x_0^2}\\
+      \varphi = \arctan \frac{B}{A} = \arctan \frac{x_0 \cdot \omega}{v_0}
+    \end{array}
+  \right.
+\]
+
+\newpage
+\subsubsection{Lineaire gedempte harmonische oscillator}
+\[
+  m\dtt{x} + \lambda\dt{x} + kx  = 0
+\]
+Oplossen via de discriminant $D = \lambda^2 - 4km$ van de KV.
+\begin{itemize}
+  \item \textbf{Sterk    gedempte trillingen} $D > 0$ of $\lambda^2 > 4km$
+    \begin{itemize}
+      \item  Stel $D = K^2$
+      \item Oplossing (algemeen):
+            \[
+              x = A e^{\left[\frac{-\left(\lambda + K\right)t}{2m}\right]} + B e^{\left[\frac{-\left(\lambda - K\right)t}{2m}\right]}  
+             \quad \mbox{of} \quad
+              x = e^{\frac{-\lambda t}{22}} \left[ A e^{\frac{-Kt}{2m}} + B e^{\frac{Kt}{2m}} \right]
+            \]
+      \item Integratieconstantes
+            \[
+              A = - \frac{mv_0}{K} + x_0 \left(\frac{K-\lambda}{2K}\right)
+              \qquad \qquad
+              B =  \frac{mv_0}{K} + x_0 \left(\frac{K+\lambda}{2K}\right)
+            \]
+      \item Oplossing:
+            \[
+              x = e^{\frac{-\lambda}{2m}}\left[ x_0 \cosh \frac{Kt}{2m} \;+\; \frac{2mv_0+\lambda x_0}{K} \sinh \frac{Kt}{2m}  \right]
+            \]
+      \item Nakijken via $\dt{x} = 0$ of er een maximumamplitude bereikt wordt
+    \end{itemize}
+  \item \textbf{Zwak gedempte trillingen} $D < 0$ of $\lambda^2 < 4km$
+    \begin{itemize}
+       \item  Stel $D = - K^2$ met $K \in \mathbb{R}$
+       \item  Stel $\Omega = \frac{K}{2m}$
+       \item Oplossing (algemeen):
+             \[
+               x = e^{\frac{-\lambda t}{2mn}} \left( A \cos \Omega t \; + \; B \sin \Omega t\right)
+               \quad \mbox{of} \quad
+               x = M e^{\frac{-\lambda t}{2mn}} \sin \left( \Omega t + \Phi \right)
+             \]
+       \item (Integratie)constanten
+             \[
+               A = x_0 
+               \qquad \qquad 
+               B = \frac{v_0}{\Omega} + \frac{\lambda x_0}{2m\Omega}
+               \qquad \qquad
+               M = \sqrt{A^2 + B^2}
+             \]
+       \item Oplossing:
+             \[
+               x = e^{\frac{-\lambda t}{2mn}} \left[ x_0 \cos \Omega t \; + \; \left(\frac{v_0}{\Omega} + \frac{\lambda x_0}{2m\Omega}\right) \sin \Omega t\right]
+             \]
+       \item (Pseudo)-periode $T = \frac{2 \pi}{\Omega}$
+    \end{itemize}
+  \item \textbf{Kritisch gedempte trillingen} $D = 0$ of $\lambda^2 = 4km$
+    \begin{itemize}
+      \item Oplossing (algemeen):
+            \[
+              x = \left(A + Bt\right)e^{\frac{-\lambda t}{2m}}
+            \]
+      \item Integratieconstanten
+            \[
+              A = x_0
+              \qquad \qquad
+              B = v_0 + \frac{\lambda}{2m} x_0
+            \]
+     \end{itemize}
+\end{itemize}
+
+\subsubsection{Lineaire gedempte gedwongen harmonische oscillator}
+\[
+  m\dtt{x} + \lambda \dt{x} + kx  = F(t)
+\]
+
+\subsection{Centraal (conservatief) krachtsveld}
+\[
+   m \dtt{\vec{r}} = F(r) \vec{1}_r
+\]
+Wanneer $F(\vec{r}) = F(r)$ dan geldt het volgende:
+\[
+  F(r) = \frac{\d{V}}{\d{r}}
+\]
+De bewegingsvergelijkingen (in poolcoördinaten):
+\[
+  m \left( \dtt{r} - r \dt{\theta}^2\right) = F(r)
+\]
+\[
+  m \left( r \dtt{\theta} + 2 \dt{r} \dt{\theta} \right) = 0 = \frac{m}{r} \frac{\d{}}{\d{t}}\left(r^2 \dt{\theta} \right)
+\]
+De volgende bewegingsconstanten (eerste integralen) zijn hiermee equivalent:
+\[
+  r^2 \dt{\theta} = C = v_0 r_0 \sin \phi_0 = \norm{\vec{v}_0 \times \vec{r}_0} \qquad \mbox{met $\phi_o$ de hoek tussen $\vec{r}_0$ en $\vec{v}_0$} 
+\]
+\[
+  E_0 = \frac{m}{2} \left( \dt{r}^2 + r^2 \dt{\theta}^2 \right) + V(r) = \frac{mv_0^2}{2} + V(r_0)
+\]
+\paragraph{Bepaling van $\theta(r)$}
+\[
+  \theta - \theta_0 = \pm C \sqrt{\frac{m}{2}} \int_{r_0}^{r} \frac{\d{r}}{r^2 \sqrt{E_0 - \frac{mC^2}{2r^2} - V(r)}}
+\]
+\paragraph{Bepaling van $r(t)$} door inversie van
+\[
+  t - t_0 = \pm \sqrt{\frac{m}{2}} \int_{r_0}^{r} \frac{\d{r}}{\sqrt{E_0 - \frac{mC^2}{2r^2} - V(r)}}
+\]
+Beide bovenstaande uitdrukkingen samenvoegen om $\theta(t)$ te bepalen.
+\paragraph{Bepaling van $r(\theta)$}
+\[
+  \frac{\d^2{u}}{\d{\theta}^2} + u = - \frac{F\left( \frac{1}{u} \right)}{mC^2u^2} \qquad \mbox{met} u = \frac{1}{r}
+\]
+
+
+
+
+\subsection{Keplerbeweging}
+\[
+  \vec{F}_P = \frac{A}{r^2} \vec{1}_r
+\]
+
+\[
+  \frac{\d^2{u}}{\d{\theta}^2} + u = - \frac{A}{mC^2} \qquad \mbox{met } u = \frac{1}{r}
+\]
+Als $A < 0$ : aantrekking
+\[
+  r = \frac{P}{1 + e \cos \theta}
+\]
+met hierin:
+\begin{itemize}
+ \item \[
+         P = -\frac{mC^2}{A} = \frac{b^2}{a}
+       \]
+ \item \[
+         e = \frac{c}{a} = \sqrt{1+2E_0 \frac{mC^2}{A^2}}
+       \]
+ \item \[
+         C = r^2 \dt{\theta} = v_0 r_0 \sin \phi_0 \qquad \mbox{Kinetisch moment}
+       \]
+ \item \[
+         E_0 = \frac{mv_0^2}{2} - \frac{\abs{A}}{r_0}
+       \]
+\end{itemize}
+Als $E_0 < 0$ is de beweging een ellips met (halve grote en kleine as)
+\[
+  a = \frac{A}{2E_0} \qquad \qquad b = C \sqrt{\frac{-m}{2E_0}}
+\]
+
+
+
+\paragraph{Keplerwetten}
+\begin{enumerate}
+  \item Elke planeet beschrijft een ellips met de zon in een brandpunt
+  \item De voerstraal bestrijkt in gelijke tijdsintervallen gelijke perken (oppervlakten)
+    \[
+      \frac{\d{S}}{\d{t}} = \frac{C}{2}
+    \]
+  \item Het kwadraat van de periode is evenredig met de derde macht van de halve grote as van de ellips.
+    \[
+      T^2 = \frac{4 \pi^2 a^3}{KM}
+    \]
+\end{enumerate}
+
+
+\subsection{Relatieve Beweging}
+\[
+  m \vec{a}_A = \vec{F} + \vec{R}
+\]
+\[
+  m \vec{a}_R = \vec{F} + \vec{R} + \vec{F}_s + \vec{F}_c
+\]
+Hierin zijn:
+\[
+  \vec{F}_s = - m \vec{a}_s
+\]
+\[
+  \vec{F}_c = - m \vec{a}_c
+\]
+Hierin zijn:
+\[
+  \vec{a}_s = \vec{a}_O + \dt{\vec{\omega}} \times \vec{r}_R + \vec{\omega} \times \left( \vec{\omega} \times \vec{r}_R \right)
+\]
+\[
+  \vec{a}_c = 2 \vec{\omega} \times \vec{v}_R
+\]
+
+
+
+
+

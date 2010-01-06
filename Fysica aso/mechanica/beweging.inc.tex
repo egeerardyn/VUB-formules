@@ -1,0 +1,90 @@
+\section{Eendimensionale beweging}
+\label{sec:1DBeweging}
+	\subsection{ERB}
+	\label{sec:ERB}
+     \[ \Delta s = v \cdot \Delta t \]
+	\subsection{EVRB}
+	\label{sec:EVRB}
+		 \[ \Delta s = v_0 \cdot \Delta t + \frac{1}{2} a \cdot \left( \Delta t \right)^2 \]
+		 \[ v = \frac{ds}{dt} = v_0 + a \cdot \Delta t \]
+		 \[ a = \frac{dv}{dt} \]
+		 \[ \gemiddelde{v} = \frac{\Delta s}{\Delta t} \]
+	\subsubsection{Vrije Val}
+	\label{sec:VrijeVal}
+		 \[ \Delta h = \frac{1}{2} g \cdot \left( \Delta t \right)^2 \]
+		 \[ v = \frac{dh}{dt} = g \cdot \Delta t \]
+		   (voor België) 
+		 \[ g = 9.81 m/s^2 = 9.81 m \cdot s^{-2} \] 
+		\subsubsection{Verticale Worp}
+		\label{sec:VerticaleWorp}
+			\paragraph{Naar boven}
+			\label{sec:VerticaleWorpNaarBoven}
+				 \[ \Delta h = v_0 \cdot \Delta t - \frac{1}{2} g \cdot \left( \Delta t \right)^2 \]
+				 \[ v = \frac{dh}{dt} = v_0 - g \cdot \Delta t \]
+				 \[ \Delta t_{stijg} = \frac{v_0}{g} \]
+				 \[ h_{max} = \frac{v_0^2}{2g}\]
+			\paragraph{Naar beneden}
+			\label{sec:VerticaleWorpNaarBeneden}
+				 \[ \Delta h = v_0 \cdot \Delta t + \frac{1}{2} g \cdot \left( \Delta t \right)^2 \]
+				 \[ v = \frac{dh}{dt} = v_0 + g \cdot \Delta t \]
+				 \[ \Delta t_{daal} = \frac{v_0}{g} \]
+				 \[ h_{max} = \frac{v_0^2}{2g}\]
+
+\section{Tweedimensionale Beweging}
+\label{sec:2DBeweging}
+	\subsection{Horizontale Worp}
+	\label{sec:HorizontaleWorp}
+		\paragraph{Verticaal}
+		\label{sec:HorizontaleWorpVerticaal}
+		  analoog aan de vrije val \cfr{sec:VrijeVal}
+    	\[ \Delta h = \frac{1}{2} g \cdot \left( \Delta t \right)^2 \]
+    	\[ \Delta t_{val} = \sqrt{\frac{2h}{g}} \]      
+    \paragraph{Horizontaal}
+		\label{sec:HorizontaleWorpHorizontaal}
+      analoog aan de ERB \cfr{sec:ERB}
+      \[ \Delta s = v_0 \cdot \Delta t = v_0 \cdot \sqrt{\frac{2h}{g}} \]
+    \paragraph{Algemeen}
+		\label{sec:HorizontaleWorpAlgemeen}
+      \[ h = \frac{1}{2}\cdot\frac{g}{v_0^2}\cdot \left(\Delta s\right) ^2 \]
+	\subsection{Schuine Worp}
+	\label{sec:SchuineWorp}
+		\paragraph{Algemeen}
+		\label{sec:SchuineWorpAlgemeen}
+      \[ v_{0,h} = v_0 \cdot \cos \theta \]
+      \[ v_{0,v}= v_0 \cdot \sin \theta \]
+		\paragraph{Verticaal}
+		\label{sec:SchuineWorpVerticaal}
+		  analoog aan de verticale worp \cfr{sec:VerticaleWorp} met $v_0 = v_{0,v}$
+      \[ \Delta t_{stijg} = \Delta t_{daal} = \frac{v_{0,v}}{g} \Leftrightarrow \Delta t_{totaal} = 2 \frac{v_{0,v}}{g}\]
+		\paragraph{Horizontaal}
+		\label{sec:Horizontaal}
+		  analoog aan de ERB \cfr{sec:ERB} met $v_0 = v_{0,h}$
+      \[ \Delta s = v_{0,h} \cdot 2 \Delta t = \frac{2\cdot v_{0,h}\cdot v_{0,v}}{g} \]
+	\subsection{ECB}
+	\label{sec:ECB}
+      \[ f = \frac{1}{T} \]
+      \[ \omega = \frac{\theta}{\Delta t} = 2 \pi f = \frac{2\pi}{T} \]
+      \[ \vec{r}: \left\{ \begin{array}{l}
+	                x = r \cos \theta = r \cos{\left(\omega t\right)}\\
+	                y = r \sin \theta = r \sin{\left(\omega t\right)}
+         \end{array} \right. 
+         \Leftrightarrow \vec{r} = x \cdot \vec{e}_x + y \cdot \vec{e}_y
+                         = r \cos{\left(\omega t\right)} \cdot \vec{e}_x + r \sin{\left(\omega t\right)} \cdot \vec{e}_y \]
+      \[ \vec{v}: \left\{ \begin{array}{l}
+	                v_x = \frac{dx}{dt} = - r \omega \sin{\left(\omega t\right)}\\
+	                v_y = \frac{dy}{dt} =   r \omega \cos{\left(\omega t\right)}
+         \end{array} \right. 
+         \Leftrightarrow v = \left|\vec{v}\right| = \sqrt{v_x^2+v_y^2} 
+                           = \sqrt{r^2\omega^2\left[\sin^2{\left(\omega t\right)}+\cos^2{\left(\omega t\right)}\right]}
+                           = r \omega \]
+      \[ \vec{a}: \left\{ \begin{array}{l}
+	                a_x = \frac{dv_x}{dt} = - r \omega^2 \cos{\left(\omega t\right)}\\
+	                a_y = \frac{dv_y}{dt} = - r \omega^2 \sin{\left(\omega t\right)}
+         \end{array} \right. 
+         \Leftrightarrow \vec{a} = a_x \cdot \vec{e}_x + a_y \cdot \vec{e}_y
+                         = -\omega^2 \left[ r \cos{\left(\omega t\right)} \cdot \vec{e}_x +
+                                            r \sin{\left(\omega t\right)} \cdot \vec{e}_y  \right]
+                         = -\omega^2 \cdot \vec{r}  \]
+      \[ a_c = \left|\vec{a} \right|= \omega^2 \cdot r = a_{centripetaal} = \frac{v^2}{r} = a_{centrifugaal} \]
+      \[ \vec{F}_c = m \cdot \vec{a}_c \Leftrightarrow F_c = m \cdot a_c
+                                                                     = m \cdot \frac{v^2}{r} \]

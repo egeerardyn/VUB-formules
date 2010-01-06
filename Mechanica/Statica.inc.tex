@@ -1,0 +1,297 @@
+\newpage
+\section{Statica}
+\label{sec:Statica}
+
+\subsection{Stelsels van glijdende vectoren}
+\label{sec:StelselsVanGlijdendeVectoren}
+  \paragraph{Elementaire bewerkingen}
+  \label{sec:ElemBewerkingGelijkwStelsels}
+    \begin{itemize}
+	    \item Twee tegengestelde vectoren op eenzelfde drager toevoegen (en omgekeerd)
+	    \item Twee vectoren met samenlopende (snijdende) dragers vervangen door hun resultante (en omgekeerd)
+	    \item \textbf{Varignon:} Een stelsel samenlopende vectoren is gelijkwaardig met hun algemene resultante
+	    \item Een koppel is een stelsel van twee evenwijdige tegengestelde vectoren
+	    \item \textbf{Poinsot:} Een stelsel kan herleid worden tot een koppel en een resultante
+    \end{itemize}
+  
+  \subsubsection{Algemene resultante}
+  \label{sec:AlgemeneResultante}
+    \[
+      \vec{R} = \sum_i \vec{V}_i
+    \]
+  \paragraph{Toepassingen en eigenschappen}
+  \label{sec:eigToepAlgResultante}
+    \begin{itemize}
+      \item De totale resultante is gelijk in alle punten $P$ en $Q$
+            \[
+              \vec{R}_Q = \vec{R}_P = \vec{R}
+            \]
+    \end{itemize}
+    
+  \subsubsection{Totaal moment}
+  \label{sec:TotaalMoment}
+    \[
+      \vec{C}_P = \sum_i \vec{M}_P \left(\vec{V}_i\right)
+                = \sum_i \vect{PA_i} \times \vec{V}_i
+    \]
+  \paragraph{Variatie van het totaal moment}
+  \label{sec:VariatietotaalMoment}
+    \[
+      \vec{C}_Q = \vec{C}_P + \vect{QP} \times \vec{R}_P
+    \]
+  \paragraph{Toepassingen en eigenschappen}
+  \label{sec:eigToepVarTotaalMoment}
+    \begin{itemize}
+	    \item Alle punten $Q$ met eenzelfde totaal moment $\vec{C}_P = \vec{C}_Q$ als $P$, liggen op een rechte evenwijdig met de resultante
+	    \item De projectie van het totaal moment in twee verschillende punten $P$ en $Q$ op de totale resultante $\vec{R}$ is constant.
+	          \[
+	            \frac{1}{R} \left( \vec{C}_P \cdot \vec{R} \right) = \frac{1}{R} \left( \vec{C}_Q \cdot \vec{R} \right)
+	            \Leftrightarrow
+	            \vec{C}_P \cdot \vec{R} = \vec{C}_Q \cdot \vec{R}
+	          \]
+	    \item De projectie van het totaal moment in 2 punten $P$ en $Q$ op de rechte $PQ$ is constant.
+	          \[
+	            \vec{C}_P \cdot \vect{PQ} = \vec{C}_Q \cdot \vect{PQ}
+	          \]
+	    
+    \end{itemize}
+  
+  \subsubsection{Invarianten}
+  \label{sec:Invarianten}
+    \[
+      \vec{R}_P = \vec{R}_Q
+    \]
+    \[
+      \vec{C}_P \cdot \vec{R} = \vec{C}_Q \cdot \vec{R}
+    \]
+   
+   \subsubsection{Centrale As}
+   \label{sec:CentraleAs}   
+   \[
+     \vect{PQ} = \frac{\vec{R} \times \vec{C}_P}{\norm{\vec{R}}^2}
+   \]
+   \[
+     \vect{OQ} = \frac{\vec{R} \times \vec{C}_0}{\norm{\vec{R}}^2} + \lambda \vec{R}
+   \]
+   \[
+     \frac{C_{0,x} - yR_z + zR_y}{R_x} = \frac{C_{0,y} - zR_x + xR_y}{R_y} = \frac{C_{0,z} - xR_y + yR_x}{R_z}
+   \]
+    \paragraph{Eigenschappen}
+    \begin{itemize}
+      \item \[ \vec{C}_Q // \vec{R}\]
+      \item \textbf{Bij een vlak stelsel vectoren (allen gelegen in 1 vlak):}
+            \begin{itemize}
+              \item Het stelsel is evenwaardig met 1 vector, namelijk de algemene resultante $\vec{R}$ gelegen op de centrale as
+              \item Het totaal moment $\vec{C}_P$ staat loodrecht op het vlak
+              \item Op de centrale as is het totaal moment $\vec{C}_Q = 0$
+            \end{itemize}
+      \item \textbf{Bij een stelsel evenwijdige vectoren:}
+            \begin{itemize}
+              \item Het stelsel is evenwaardig met 1 vector, namelijk de algemene resultante $\vec{R}$ gelegen op de centrale as
+              \item Op de centrale as is het totaal moment $\vec{C}_Q = 0$
+            \end{itemize}
+    \end{itemize}
+    
+\subsection{Wrijving}
+\label{sec:Wrijving}
+ Bindingsreacties bij ruwe binding ontbinden in tangentiële en normale component: $\vec{R} = \vec{T} + \vec{N}$. Bij Gladde binding: $\vec{R} =  \vec{N}$
+ 
+ \paragraph{Wrijvingscoëfficiënt en wrijvingshoek}
+   \[
+     f = \frac{\norm{\vec{T}}}{\norm{\vec{N}}} = \frac{T}{N} = \tan \phi
+   \]
+   Kinematische Wrijvingscoëfficënt ($\vec{v}_P \neq 0$)
+   \[
+     T = f_k N
+   \]
+   Statische Wrijvingscoëfficënt ($\vec{v}_P = 0$)
+   \[
+     T \leq f_k N
+   \]
+ 
+
+\subsection{Stabiliteit}
+\label{sec:Stabiliteit}
+Een willekeurige kleine verplaatsing $\d{\vec{r}}$ ($\vect{AA\acute{}}$) die alle bindingen respecteert kiezen en de zo onstane kracht(en) $\vec{F}$ bepalen. Bij een gladde binding hoeven de bindingsreacties niet in rekening gebracht te worden!
+\[
+  A = W = \vec{F} \cdot \d{\vec{r}} 
+  \left\{
+    \begin{array}{ll}
+      < 0 \; \forall \d{\vec{r}} & \mbox{stabiel}\\
+      = 0 \; \forall \d{\vec{r}} & \mbox{onverschillig}\\
+      > 0 \; \mbox{voor tenminste een } \d{\vec{r}} & \mbox{instabiel}\\
+    \end{array}
+  \right.
+\]
+\paragraph{Met wrijving in rekenig gebracht:} Wrijving werkt de stabiliteit nooit tegen!
+\[
+  \vec{T} = -\sigma \vec{v} \qquad \mbox{$\sigma > 0$, $\vec{v}$ de glijsnelheid}
+\]
+\[
+  \vec{R}_A \cdot \d{\vec{r}} = - \sigma v^2 \d{t} < 0
+\]
+
+\paragraph{Speciaal geval} De kracht $\vec{F}$ is de gradiënt van een potentiaal $\Phi$ of $V$:\par
+Arbeid
+\[
+  W = A = \int \vec{F} \d{\vec{r}}
+\]
+\[
+  \vec{F} = - \Dgrad{\Phi}
+\]
+\[
+  A = - \int \Dgrad{\Phi} \d{\vec{r}} = - \Phi
+\]
+Stabiliteitsvoorwaarde
+\[
+  \vec{\nabla} \Phi \cdot \d{\vec{r}} = \d{\Phi} \geq 0
+\]
+voorbeeld:
+\[
+  \Phi = mgz \qquad \mbox{cfr. potentiële energie}
+\] 
+   
+\subsection{Bepaling Massamiddelpunt}
+\label{sec:BepalingMassamiddelpunt}
+    \paragraph{Soortelijke Massa}
+    \label{sec:SoortelijkeMassa}
+      \[
+        \rho\left(P\right) = \frac{\d{M}}{\d{D}} \qquad \mbox{( met $M$ massa en $D$ het domein waarvan de dichtheid bepaald wordt)}
+      \]
+    \paragraph{Totale Massa}
+    \label{sec:totaleMassa}
+      \[
+        M = \int_D \rho \left( P \right) \d{D}
+      \]
+  \subsubsection{Discreet Massamiddelpunt}
+  \label{sec:DiscreetMassamiddelpunt}
+    \[
+      \vec{OG} = \frac{\sum_i m_i \vect{OA_i}}{\sum_i m_i}
+                    = \frac{\sum_i m_i \vect{OA_i}}{M}
+    \]
+  \subsubsection{Continu Massamiddelpunt}
+  \label{sec:ContinuMassamiddelpunt}
+    \[
+      \vec{OG} = \frac{1}{M} \int_D \rho \left( P \right) \vect{OP} \d{D}
+    \]
+  \paragraph{Eigenschappen}
+    \begin{itemize}
+      \item \textbf{Ontbinding:} 
+            Men mag het lichaam steeds ontbinden, van de afzonderlijke delen het massamiddelpunt 
+            bepalen en van deze punten (voorzien met de massa van het hun overeenkomstig deel) het massamiddelpunt bepalen
+      \item \textbf{Symmetrie:} 
+            Het massamiddelpunt ligt op het symmetrieelement van het lichaam. 
+            Deze symmetrie moet gelden voor zowel de geometrie van het lichaam als 
+            voor de massa van het lichaam! (Bij homogene lichamen is aan het laatste automatisch voldaan)
+      \item Bij een discrete puntenverzameling:
+            het massamiddelpunt kan gevonden worden door de centrale as van elk van de punten 
+            voorzien van een vektor met een intensiteit evenredig met de massa in het overeenkomstig punt te bepalen.
+      \item Het massamiddelpunt van een lichaam bevindt zich steeds binnen de (kleinste) convexe veelhoek/veelvlak die het lichaam omsluit!
+    \end{itemize}
+\subsection{Stellingen van Guldin}
+\label{sec:StellingenVanGuldin}
+  \paragraph{Omwenteling van een kromme rond de x-as}
+  \label{sec:OmwentelingVanEenKrommeRondDeXAs}
+    \[
+      S = 2 \pi \cdot y_G \cdot L \qquad \mbox{met hierin:}
+    \]
+    \begin{description}
+    	\item[$S$] het oppervlakte van de omwentelde kromme
+	    \item[$y_G$] het $y$-coördinaat van het massamiddelpunt van de kromme
+    	\item[$L$] de (boog)lengte van de te omwentelen kromme 
+    \end{description}
+  \paragraph{Omwenteling van een oppervlak rond de x-as}
+  \label{sec:OmwentelingVanEenOppervlakRondDeXAs}
+    \[
+      V = 2 \pi \cdot y_g \cdot S \qquad \mbox{met hierin:}
+    \]
+    \begin{description}
+	    \item[$V$] het volume van het omwentelde oppervlak
+	    \item[$y_G$] het $y$-coërdinaat van het massamiddelpunt van het oppervlak
+	    \item[$S$] de oppervlakte van het te omwentelen oppervlak 
+    \end{description}
+
+\subsection{Methode van de evenwichtsvoorwaarden}
+\label{sec:MethodeEvenwichtsvoorwaarden}
+\[
+  \left\{
+    \begin{array}{l}
+      \vec{R} = \vec{0} \\
+      \vec{C}_P = \vec{0} 
+    \end{array}
+  \right.
+\]
+\newpage
+\subsection{Methode van de Virtuele Arbeid}
+\label{sec:MethodeVanDeVirtueleArbeid}
+\[
+  \sum_{\alpha} \vec{F}_{\alpha}^{u,r} + 
+  \sum_{\alpha} \vec{F}_{\alpha}^{i} + 
+  \sum_{\alpha} \vec{R}_{\alpha}^{u} + 
+  \sum_{\alpha} \vec{R}_{\alpha}^{i} = 0
+\]
+Bij een star lichaam: wegvallen van de inwendige krachten (door actie-reactie). Bij gladde bindingen: kiezen van een verplaatsing zodat de ongekende uitwendige bindingsreacties wegvallen (loodrecht op de verplaatsing of, geen verplaatsing in het contactpunt).  Berekenen van de virtuele arbeid door de krachten te vermenigvuldigen met een virtuele verplaatsing.
+\[
+  W = \sum_{\alpha} \vec{F}_{\alpha}^{u,r} \cdot \vect{P_{\alpha} P\,\acute{}_{\alpha}} 
+       = 0
+\]
+Bij holonome bindingen kunnen de virtuele verplaatsingen uitgedrukt worden in functie van Langrange-coërdinaten $q_i$ en eventueel de tijd.
+\[
+  \vect{OP_{\alpha}} = \vec{r}_{\alpha} = \vec{r}_{\alpha} \left(q_1, \ldots, q_n, t \right)
+\]
+\[
+  \vect{P_{\alpha}P\,\acute{}_{\alpha}} = \delta \vec{r}_{\alpha} = \frac{\pd{\vec{r}_{\alpha}}}{\pd{q_i}}\delta q_i
+\]
+De totale arbeid uitdrukken in Lagrange-coërdinaten
+\[
+  W = 0 = \sum_i Q_i \delta q_i
+\]
+\[
+  Q_i = \sum_{\alpha} \vec{F}^u_{\alpha} \left( \frac{\pd{\vec{r}_{\alpha}}}{\pd{q_i}} \right)
+\]
+Bepalen of hierin de Lagrangecoërdinaten $q_i$ onafhankelijk zijn, zo niet moeten er $P=C-V$ bindingen (het aantal gebruikte coërdinaten min het aantal vrijheidsgraden) tussen de coërdinaten vastgelegd worden. Indien de coërdinaten onafhankelijk zijn, zijn alle $\lambda_k = 0$
+\[
+  \phi_k \left(q_1, \ldots, q_n, t \right) = 0
+\]
+Al deze bindingen worden gedifferentiëerd met $\delta t = 0$.
+\[
+ \forall k \in \left[1, p\right] : \frac{\pd{\phi_k}}{\pd{q_i}} \delta q_i = 0
+\]
+Deze betrekkingen worden vermenigvuldigd met de onbekende Lagrangeparameters $\lambda_k$ en bij de arbeid in Lagrangecoërdinaten geteld.
+Oplossen door de coëfficiënten van $q_i$ gelijk te stellen aan $0$:
+\[
+  Q_i + \lambda_k \frac{\pd{\phi_k}}{\pd{q_i}} = 0
+\]
+Hiermee zijn de evenwichtsvoorwaarden bepaald.
+
+Om de bindingsreacties te berekenen: verplaatsing kiezen die ëën bindingsreactie arbeid laat leveren (rotatie of translatie), hierbij mogen bindingen gebroken worden of bepaalde parameters constant gehouden worden (als de vrijheidsgraden dit toelaten).
+
+
+\scriptsize
+\setiftext{ja}{nee}
+\unitwidth=10em
+\STRUCT{Virtuele Arbeid}{}{%
+  \ACTION{coërdinaten $q_i$ kiezen}
+  \IF{bindingen ?}%
+    \THEN{%
+          \ACTION{$\phi_k \left(q_1, \ldots, q_n, t \right) = 0$ vastleggen}%
+          }%
+    \ELSE{%
+         }%
+         \ENDIF%
+  \ACTION{verplaatsing $\delta r$ die de meetkundige bindingen eerbiedigt kiezen}%
+  \ACTION{arbeid $W$ van die verplaatsing zoeken voor de gegeven krachten $\vec{F}^u$}%
+  \ACTION{arbeid uitdrukken in Lagrangecoërdinaten $q_i$, $\delta q_i$ en $\sum Q_i \cdot \delta q_i = 0$}%
+  \IF{$q_i$ onafhankelijk?}%
+    \THEN{%
+          \ACTION{coëfficiënten $Q_i = 0$}%
+         }
+    \ELSE{%
+          \ACTION{bindingen $\phi_k$ differentiëren}%
+          \ACTION{met onbepaalde $\lambda_k$ vermenigvuldigen, bij arbeid tellen en groeperen naar $\delta q_i$}%
+          \ACTION{coëfficiënten van $\delta q_i$ gelijkstellen aan $0$}% 
+          }%
+          \ENDIF%
+  \ACTION{stelsel oplossen}%
+}
+\normalsize

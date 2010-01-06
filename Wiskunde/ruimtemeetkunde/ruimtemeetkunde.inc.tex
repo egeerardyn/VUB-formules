@@ -1,0 +1,476 @@
+
+%\subsection{Vectoriële basis}
+%\label{sec:VectorieleBasis}
+
+%\paragraph{Midden van $\left[AB\right]$}
+% \[
+%   \vec{M}=\frac{\vec A + \vec B}{2}
+% \]
+%\paragraph{Zwaartepunt van $\Delta ABC$}
+%\[
+% \vec{M}=\frac{\vec A + \vec B + \vec C}{3}
+%\] 
+%\paragraph{Zwaartepunt van viervlak $ABCD$}
+%\[
+%  \vec{M}=\frac{\vec A + \vec B + \vec C + \vec D}{4}
+%\]
+
+%\parapgraph{Puntvector van punt $P$ met deelverhouding $k \neq 0$ t.o.v. koppel $\left(P_1,P_2\right)$}
+%\begin{eqnarray*}
+% &\vec P = \frac{\vec P_1 - k \vec P2}{1-k}&\\
+% &P\left(\frac{x_1-kx_2}{1-k},\frac{y_1-ky_2}{1-k},\frac{y_1-ky_2}{1-k}\right)&\\
+% &k=\left(P_1 P_2 P\right) \Leftrightarrow \overrightarrow{PP_1} = k\overrightarrow{PP_2}
+%\end{eqnarray*}
+
+\subsection{Vergelijkingen van rechten}
+\label{sec:VergelijkingenVanRechten}
+
+\paragraph{Rechte bepaald door een punt $P_1(x_1,y_1,z_1)$ en richtingsvector $\vec R(a,b,c)$}
+\label{sec:RechtePuntRichting}
+  \subparagraph{vectoriële vergelijking}
+  \label{sec:RechtePuntRichtingVECTOR}
+    \[
+      \vec P = \vec P_1 + k \cdot \vec R \qquad \textrm{met $k \in \mathbb{R}$}
+    \]
+  \subparagraph{parametervoorstelling}
+  \label{sec:RechtePuntRichtingPARAM}
+    \[
+      \begin{array}{lcr}
+        \left\{
+          \begin{array}{rcl}
+             x &=& x_1 + k \cdot a\\
+             y &=& y_1 + k \cdot b\\
+             z &=& z_1 + k \cdot c
+          \end{array}%
+        \right. &%
+       \textrm{of} &%
+        \left[
+          \begin{array}{c}
+            x\\ y\\  z
+          \end{array}
+         \right]
+        =
+         \left[
+           \begin{array}{c}
+             x_1\\ y_1\\ z_1
+           \end{array}
+         \right]
+       + k \cdot
+         \left[
+           \begin{array}{c}
+             a\\ b\\ c
+           \end{array}
+         \right]
+     \end{array}
+   \]
+  \subparagraph{cartesische vergelijking}
+  \label{sec:RechtePuntRichtingCART}
+    \[
+      \frac{x-x_1}{a} = \frac{y-y_1}{b} = \frac{z-z_1}{c} \qquad \textrm{met $a,b,c \in \mathbb{R}_0$} 
+    \]
+
+\paragraph{Rechte bepaald door twee punten $P_1(x_1,y_1,z_1)$ en $P_2(x_2,y_2,z_2)$}
+\label{sec:RechtePuntPunt}
+  \subparagraph{vectoriële vergelijking}
+  \label{sec:RechtePuntPuntVECTOR}
+    \[
+      \vec P = \vec P_1 + k \cdot \left( \vec P_2 - \vec P_1 \right)  \qquad \textrm{met $k \in \mathbb{R}$}
+    \]
+  \subparagraph{parametervoorstelling}
+  \label{sec:RechtePuntPuntPARAM}
+    \[
+      \begin{array}{lcr}
+        \left\{
+          \begin{array}{rcl}
+            x &=& x_1 + k \cdot \left(x_2-x_1\right)\\
+            y &=& y_1 + k \cdot \left(y_2-y_1\right)\\
+            z &=& z_1 + k \cdot \left(z_2-z_1\right)
+          \end{array}%
+        \right. &%
+      \textrm{of} &%
+        \left[
+          \begin{array}{c}
+            x\\ y\\ z
+          \end{array}
+        \right]
+       =
+        \left[
+          \begin{array}{c}
+            x_1\\ y_1\\ z_1
+          \end{array}
+        \right]
+      + k \cdot
+        \left[
+          \begin{array}{c}
+            x_2-x_1\\ y_2-y_1\\ z_2-z_1
+          \end{array}
+        \right]
+     \end{array}
+   \]
+  \subparagraph{cartesische vergelijking}
+  \label{sec:RechtePuntPuntCART}
+    \[
+      \frac{x-x_1}{x_2-x_1} = \frac{y-y_1}{y_2-y_1} = \frac{z-z_1}{z_2-z_1} 
+    \]
+ 
+\paragraph{Richtingsgetallen $(a,b,c,)$ van de snijlijn van twee vlakken$\alpha$ en $\beta$}
+\label{sec:SnijlijnTweeVlakken}
+ \[
+   d \leftrightarrow 
+   \left\{
+     \begin{array}{rcl}
+       u_1 x + v_1 y + w_1 z + t_1 & = & 0\\
+       u_2 x + v_2 y + w_2 z + t_2 & = & 0
+     \end{array}
+   \right.
+   \ 
+   \textrm{waarbij}
+   \  
+   r\left( \left[
+     \begin{array}{ccc}
+       u_1 & v_1 & w_1\\
+       u_2 & v_2 & w_2\\
+     \end{array}
+     \right] \right)
+   = 2  
+ \]
+ \[
+     a = k \cdot
+       \left|
+         \begin{array}{cc}
+          v_1 & w_1 \\
+          v_2 & w_2
+         \end{array}
+       \right|
+     \ \textrm{en} \  
+     b = -k \cdot
+       \left|
+         \begin{array}{cc}
+          u_1 & w_1 \\
+          u_2 & w_2
+         \end{array}
+       \right|
+     \ \textrm{en} \ 
+     c = k \cdot
+       \left|
+         \begin{array}{cc}
+          u_1 & v_1 \\
+          u_2 & v_2
+         \end{array}
+       \right|
+ \]
+ 
+\subsection{Vergelijkingen van vlakken}
+\label{sec:VergelijkingenVlakken}
+
+\paragraph{Algemene vergelijking van een vlak}
+\label{sec:AlgVglVlak}
+ \[
+   ux + vy + wz + t = 0 \qquad \textrm{met \ } \neg\left(u=v=w=0\right)
+ \]
+
+\paragraph{Vergelijking van basisvlakken}
+\label{sec:VergelijkingVanBasisvlakken}
+ \[  
+     \begin{array}{rl}
+       \textbf{vlak yz:} & x=0\\
+       \textbf{vlak xz:} & y=0\\
+       \textbf{vlak xy:} & z=0\\
+     \end{array}
+ \]
+
+\paragraph{Vlak bepaald door ëen punt $P_1(x_1,y_1,z_1)$ en twee richtingsvectoren $\vec R_1(a_1,b_1,c_1)$ en $\vec R_2(a_2,b_2,c_2)$}
+\label{sec:VlakPuntRichtingRichting}
+ \subparagraph{vectoriële vergelijking}
+  \label{sec:VlakPuntRichtingRichtingVECTOR}
+ \[
+ \vec P = \vec P_1 + k \cdot \vec R_1  + m \cdot \vec R_2
+ \]
+ \subparagraph{parametervoorstelling}
+  \label{sec:VlakPuntRichtingRichtingPARAM}
+ \[
+   \begin{array}{lr}
+     \left\{
+       \begin{array}{rcl}
+         x &=& x_1 + k \cdot a_1 + m \cdot a_2\\
+         y &=& y_1 + k \cdot b_1 + m \cdot b_2\\
+         z &=& z_1 + k \cdot c_1 + m \cdot c_2
+       \end{array}%
+     \right.
+     \  \textrm{of} \  &%
+     \left[
+       \begin{array}{c}
+         x\\ y\\ z
+       \end{array}
+     \right]
+     =
+     \left[
+       \begin{array}{c}
+         x_1\\ y_1\\ z_1
+       \end{array}
+     \right]
+     + k \cdot
+     \left[
+       \begin{array}{c}
+         a_1\\ b_1\\ c_1
+       \end{array}
+     \right]
+     + m \cdot
+     \left[
+       \begin{array}{c}
+         a_2\\ b_2\\ c_2
+       \end{array}
+     \right]
+   \end{array}
+ \]
+ \subparagraph{cartesische vergelijking}
+  \label{sec:VlakPuntRichtingRichtingCART}
+ \[
+   \left|
+     \begin{array}{cccc}
+       x  &  y  &  z  & 1\\
+      x_1 & y_1 & z_1 & 1\\
+      a_1 & b_1 & c_1 & 0\\
+      a_2 & b_2 & c_2 & 0
+     \end{array}
+   \right|
+    = 0%
+    \quad \textrm{of} \quad
+   \left|
+     \begin{array}{ccc}
+       x - x_1 & y - y_1 & z - z_1 \\
+       a_1 & b_1 & c_1\\
+       a_2 & b_2 & c_2
+     \end{array}
+   \right| 
+    = 0
+ \]
+%\newpage \noindent
+\paragraph{Vlak bepaald door drie niet-collineaire punten $P_1$,$P_2$ en $P_3$}
+\label{sec:VlakPuntPuntPunt}
+ \subparagraph{vectoriële vergelijking}
+  \label{sec:VlakPuntPuntPuntVECTOR}
+ \[
+   \vec P = \vec P_1 + k \cdot \left(\vec P_2 - \vec P_1\right)  + m \cdot \left(\vec P_3 - \vec P_1\right)
+ \]
+ \subparagraph{parametervoorstelling}
+  \label{sec:VlakPuntPuntPuntPARAM}
+ \[
+       \left\{
+       \begin{array}{rcl}
+         x &=& x_1 + k \cdot \left(x_2 - x_1\right) + m \cdot \left(x_3 - x_1\right)\\
+         y &=& y_1 + k \cdot \left(y_2 - y_1\right) + m \cdot \left(y_3 - y_1\right)\\
+         z &=& z_1 + k \cdot \left(z_2 - z_1\right) + m \cdot \left(z_3 - z_1\right)
+       \end{array}%
+     \right. 
+ \]
+ \[ 
+     \left[
+       \begin{array}{c}
+         x\\ y\\ z
+       \end{array}
+     \right]
+     =
+     \left[
+       \begin{array}{c}
+         x_1\\ y_1\\ z_1
+       \end{array}
+     \right]
+     + k \cdot
+     \left[
+       \begin{array}{c}
+         x_2 - x_1\\
+         y_2 - y_1\\
+         z_2 - z_1
+       \end{array}
+     \right]
+     + m \cdot
+     \left[
+       \begin{array}{c}
+         x_3 - x_1\\
+         y_3 - y_1\\
+         z_3 - z_1
+       \end{array}
+     \right]
+ \]
+ \subparagraph{cartesische vergelijking}
+  \label{sec:VlakPuntPuntPuntCART}
+ \[
+   \left|
+     \begin{array}{cccc}
+       x  &  y  &  z  & 1\\
+      x_1 & y_1 & z_1 & 1\\
+      x_2 & y_2 & z_2 & 1\\
+      x_3 & y_3 & z_3 & 1\\
+     \end{array}
+   \right|
+    = 0  
+ \]
+ 
+\paragraph{Vergelijking van een vlak op de assegmenten}
+\label{sec:VlakAssegmenten}
+ vlak $\alpha$ snijdt $x$, $y$, $z$  in $P_1\left(a,0,0\right)$, $P_2\left(0,b,0\right)$, $P_3\left(0,0,c\right)$
+ \[
+  \alpha \leftrightarrow \frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1
+ \]
+
+\paragraph{Vergelijking van de vlakkenwaaier door $d$}
+\label{sec:Vlakkenwaaier}
+   \[
+     d \leftrightarrow
+     \left\{
+       \begin{array}{rcl}
+         u_1 x + v_1 y + w_1 z + t_1 & = & 0\\
+         u_2 x + v_2 y + w_2 z + t_2 & = & 0
+       \end{array}
+     \right.
+   \]
+   \[
+     k\left(u_1 x + v_1 y + w_1 z + t_1\right) + m\left(u_2 x + v_2 y + w_2 z + t_2\right) = 0
+     \ \textrm{met } k,m \in \mathbb{R} \ \textrm{en } \ \neg\left(k=m=0\right)
+   \]
+
+\subsection{Loodrechte en evenwijdige stand}
+\label{sec:LoodrechteEnEvenwijdigeStand}
+
+\paragraph{Evenwijdigheid rechten $e$ en $f$ met richtingsgetallen $\left(a_1,b_1,c_1\right)$ en $\left(a_2,b_2,c_2\right)$}
+\label{sec:EvenwijdigheidRechten}
+   \[
+     e // f \Leftrightarrow  \exists k \in \mathbb{R}_0 : a_2 = ka_1 \wedge b_2=kb_1 \wedge c_2=kc_1
+   \]
+ \textbf{Evenwijdigheid vlakken $\alpha \leftrightarrow u_1 x + v_1 y + w_1 z + t_1 = 0$ 
+                          en $\beta  \leftrightarrow u_2 x + v_2 y + w_2 z + t_2 = 0$}
+   \[
+     \alpha // \beta \Leftrightarrow  \exists k \in \mathbb{R}_0 : u_2 = ku_1 \wedge v_2=kv_1 \wedge w_2=kw_1
+   \]
+   
+\paragraph{Evenwijdigheid rechte $d$ met richtingsgetallen $\left(a,b,c\right)$ en het vlak $\alpha \leftrightarrow u_1 x + v_1 y + w_1 z + t_1 = 0$}
+\label{sec:EvenwijdigheidRechteVlak}
+   \[
+     d // \alpha \Leftrightarrow ua + vb + wc = 0
+   \]
+   
+\paragraph{Loodrechte stand van rechten $e$ en $f$ met richtingsgetallen $\left(a_1,b_1,c_1\right)$ en $\left(a_2,b_2,c_2\right)$}
+\label{sec:LoodrechteStandRechten}
+   \[
+     e \bot f \Leftrightarrow a_1 a_2 + b_1 b_2 + c_1 c_2 = 0
+   \]  
+   
+\paragraph{Loodrechte stand van een rechte $e$ met richtingsgetallen $\left(a,b,c\right)$\\ en een vlak $\alpha \leftrightarrow ux + vy + wz + t = 0$}
+\label{sec:LoodrechteStandVanEenRechteEMetRichtingsgetallenLeftABCRightEnEenVlakAlphaLeftrightarrowUxVyWzT0}
+   \[
+     e \bot \alpha \Leftrightarrow 
+                    a = k \cdot u \wedge b = k \cdot v \wedge c = k \cdot w 
+                    \qquad \textrm{met } k \in \mathbb{R}_0
+   \] 
+   
+\paragraph{Loodrechte stand van twee vlakken $\alpha \leftrightarrow u_1 x + v_1 y + w_1 z + t_1 = 0$ 
+                                           en $\beta \leftrightarrow u_2 x + v_2 y + w_2 z + t_2 = 0$}
+\label{sec:LoodrechteStandVlakken}
+   \[
+     \alpha \bot \beta \Leftrightarrow 
+                    u_1 u_2 + v_1 v_2 + w_1 w_2 = 0
+   \]
+   
+\paragraph{Normaalvector van een vlak}
+\label{sec:NormaalvectorVlak}
+   \[
+    \vec N\left(u,v,w\right) \ \textrm{is een normaalvector van het vlak } \alpha \leftrightarrow ux + vy + wz + t = 0
+   \]  
+    
+\paragraph{Stelsel vergelijkingen van de loodlijn $m$ uit $P\left(x_1,y_1,z_1\right)$ op het vlak $\alpha \leftrightarrow ux + vy + wz + t = 0$}
+\label{sec:LoodlijnPuntVlak}
+   \[
+     m \leftrightarrow \frac{x-x_1}{u} = \frac{y-y_1}{v} = \frac{z-z_1}{w} \qquad \textrm{met } u, v,w \in \mathbb{R}_0
+   \]
+   
+\paragraph{Vergelijking van het loodvlak $\alpha$ uit $P\left(x_1,y_1,z_1\right)$ op een rechte $e$ met richtingsgetallen $\left(a,b,c\right)$}
+\label{sec:LoodvlakRechte}
+  \[
+    \alpha \leftrightarrow a\left(x-x_1\right)+b\left(y-y_1\right)+c\left(z-z_1\right)=0
+  \]
+
+
+\subsection{Afstanden en hoeken}
+\label{sec:AfstandenEnHoeken}
+      
+\paragraph{Afstand tussen de punten $A\left(x_1,y_1,z_1\right)$ en $B\left(x_2,y_2,z_2\right)$}
+\label{sec:AfstandPunten}
+   \[
+    d\left(A,B\right) = |AB| = \sqrt{\left(x_2-x_1\right)^2+\left(y_2-y_1\right)^2+\left(z_2-z_1\right)^2}
+   \]
+ 
+\paragraph{Afstand van een punt $A\left(x_1,y_1,z_1\right)$ tot het vlak $\alpha \leftrightarrow ux + vy + wz + t = 0$}
+\label{sec:AfstandPuntVlak}
+    \[
+      d\left(A,a\right) = \frac{\left| ux_1 + vy_1 + wz_1 + t\right|}{\sqrt{u^2 + v^2 + w^2}}
+    \]
+   
+\paragraph{Hoek van twee rechten met richtingsgetallen $\left(a_1,b_1,c_1\right)$ en $\left(a_2,b_2,c_2\right)$}
+\label{sec:HoekRechten}
+    \[
+      \cos\left(\widehat{ab} \right) = \frac {\left| a_1 a_2 + b_1 b_2 + c_1 c_2\right|}%
+                                             {\sqrt{a_1^2 + b_1^2 + c_1^2} \cdot \sqrt{a_2^2 + b_2^2 + c_2^2}}
+    \]
+
+\paragraph{De hoek van een rechte $a$ en een vlak $\alpha$ is het complement van de hoek gevormd door de rechte $a$ en de loodlijn $m$ op dat vlak.}
+\label{sec:HoekRechteVlak}
+    $a$ met stel richtingsgetallen $\left(a,b,c\right)$ en $\alpha \leftrightarrow ux + vy + wz + t = 0$
+    \[
+      \cos\left(\widehat{am} \right) = \frac {\left| au + vb + wc\right|}%
+                                             {\sqrt{a^2 + b^2 + c^2} \cdot \sqrt{u^2 + v^2 + w^2}}
+                                             \qquad \textrm{ en } \widehat{a \alpha} = 90 \degree - \widehat{am}
+    \]
+    
+\paragraph{Hoek van van twee vlakken $\alpha \leftrightarrow u_1 x + v_1 y + w_1 z + t_1 = 0$ en $\beta  \leftrightarrow u_2 x + v_2 y + w_2 z + t_2 = 0$ \\ is de hoek van twee loodlijnen op de respectievelijke vlakken}
+\label{sec:HoekVlakken}
+    \[
+      \cos\left(\widehat{\alpha\beta} \right) = \frac {\left| u_1 u_2 + v_1 v_2 + w_1 w_2\right|}%
+                                             {\sqrt{u_1^2 + v_1^2 + w_1^2} \cdot \sqrt{u_2^2 + v_2^2 + w_2^2}}
+    \]
+    
+    
+      
+\subsection{Bollen}
+\label{sec:Bollen}
+
+\paragraph{Middelpuntsvergelijking van een bol}
+\label{sec:MiddelpuntsvergelijkingBol}
+   \[
+     \bol\left(M\left(x_1,y_1,z_1\right),r\right)
+     \leftrightarrow
+     \left(x-x_1\right)^2+\left(y-y_1\right)^2+\left(z-z_1\right)^2 = r^2
+   \]
+   
+\paragraph{Algemene vergelijking van een bol}
+\label{sec:BolVergelijking}
+   \[
+     x^2 + y^2 + z^2 + 2ax + 2by + 2 cz + d = 0 \qquad \textrm{als } a^2 + b^2 + c^2 - d \geq 0
+   \]
+   \[
+     \textrm{ met middelpunt } M\left(-a,-b,-c\right) \textrm{ en straal } r = \sqrt{a^2 + b^2 + c^2 - d}
+   \]
+   
+%\paragraph{Onderlinge ligging van een twee bollen $\bol_1\left(M_1,r_1\right)$ en $\bol_2\left(M_2,r_2\right)$ }
+%\label{sec:LiggingBollen}
+%    \begin{eqnarray*}
+%      \bol_1 \cap \bol_2 = \left\{ \right\} \Leftrightarrow%
+%        &             & \left| M_1 M_2\right| > r_1 + r_2 \qquad \textrm{liggen volledig buiten elkaar}\\
+%        & \textrm{of} & \left| M_1 M_2\right| < \left|r_1 - r_2\right| \qquad \textrm{liggen volledig in elkaar}\\
+%      \bol_1 \cap \bol_2 = \left\{ S\right\} \Leftrightarrow%
+%        &             & \left| M_1 M_2\right| = r_1 + r_2 \qquad \textrm{raken elkaar uitwendig}\\
+%        & \textrm{of} & \left| M_1 M_2\right| = \left|r_1 - r_2\right| \qquad \textrm{raken elkaar inwendig}\\
+%      \bol_1 \cap \bol_2 = c \Leftrightarrow%
+%        &             &  \left|r_1 - r_2 \right| < \left| M_1 M_2\right| < r_1 + r_2 
+%    \end{eqnarray*} 
+ 
+  
+%\paragraph{Onderlinge ligging van een bol $\bol\left(M,r\right)$ en een vlak $\alpha$ }
+%\label{sec:LiggingBolVlak}
+%    \begin{eqnarray*}
+%      \bol\left(M,r\right) \cap \alpha = \left\{ \right\} & \Leftrightarrow & d\left(M,\alpha\right) > r\\
+%      \bol\left(M,r\right) \cap \alpha = \left\{ S\right\} & \Leftrightarrow & d\left(M,\alpha\right) = r\\
+%      \bol\left(M,r\right) \cap \alpha = c & \Leftrightarrow & d\left(M,\alpha\right) < r\\
+%    \end{eqnarray*}
+%    
+ 

@@ -1,0 +1,190 @@
+\section{Mechanica van starre lichamen}
+
+\subsection{Algemene begrippen}
+
+\[
+  \vec{r}_P = f\left(q_1, \ldots, q_n\right) \qquad \mbox{skleronoom}
+\]
+\[
+  \vec{r}_P = f\left(q_1, \ldots, q_n, t\right) \qquad \mbox{rheonoom}
+\]
+
+\paragraph{Veralgemeende snelheden} $\dt{q}_i$
+\[
+  \vec{v}_P = \diff{\vec{r}_P}{t} = \pdiff{\vec{r}_P}{q_i} \dt{q}_i + \pdiff{\vec{r}_P}{t}
+\]
+\paragraph{Veralgemeende versnellingen} $\dtt{q}_i$
+\[
+  \vec{a}_P = \diff[2]{\vec{r}_P}{t} = \pdiff{\vec{r}_P}{q_i}\dtt{q}_i + \pdiff{^2\vec{r}_P}{q_i \pd{q_j}}\dt{q}_i \dt{q}_j + 2 \pdiff{^2 \vec{r}_P}{q_i \pd{t}} \dt{q}_i + \pdiff[2]{\vec{r}_P}{t}
+\]
+
+  \subsubsection{Eulerhoeken}
+  \begin{tabular}{|c|c|l|}
+    \hline
+     \textbf{As} & \textbf{Hoek} & \textbf{Naam} \\
+    \hline
+    $Z_0$  & $\psi$   & Precessie\\
+    $X_1$  & $\theta$ & Nutatie\\
+    $Z_2$  & $\phi$   & Rotatie\\
+    \hline
+  \end{tabular}
+
+
+  \subsubsection{Bryanthoeken}
+  \begin{tabular}{|c|c|l|}
+    \hline
+     \textbf{As} & \textbf{Hoek} & \textbf{Naam} \\
+    \hline
+    $Z_0$  & $\psi$   & Precessie\\
+    $X_1$  & $\theta$ & Nutatie\\
+    $Y_2$  & $\phi$   & Rotatie\\
+    \hline
+  \end{tabular}
+
+
+  \subsubsection{Roll, Pitch, Yaw / Rollen, Stampen, Gieren}
+  \begin{tabular}{|c|c|l|}
+    \hline
+     \textbf{As} & \textbf{Hoek} & \textbf{Naam} \\
+    \hline
+    $X_0$   & $\gamma$ & Roll (Rollen)\\
+    $Y_0$   & $\beta$  & Pitch (Stampen)\\
+    $Z_0$   & $\alpha$ & Yaw (Gieren)\\
+    \hline
+  \end{tabular}
+
+\subsection{Eindige verplaatsingen}
+
+\subsubsection{Translaties}
+
+\subsubsection{Rotaties}
+
+\paragraph{Samenstelling rotaties}
+\begin{itemize}
+  \item 2 rotaties met evenwijdige assen geeft een rotatie met:
+  \[
+    \ldots
+  \]
+
+  \item 2 rotaties met evenwijdige assen en tegengestelde amplitude geeft een translatie met amplitude $d$ en richting $\theta$ t.o.v. $\vect{P_1 P_2}$
+    \[
+      d = 2 \left\| \vect{P_1 P_2} \right\| \sin{\frac{\phi}{2}}
+      \qquad
+      \mbox{en}
+      \qquad
+      \theta = \frac{\pi - \phi}{2}
+    \]
+\end{itemize}
+
+\paragraph{Rotatie-elementen bepalen}
+De rotatieas wordt bepaald door de eigenvector van de rotatiematrix $M$ met bijhorende eigenwaarde $\lambda = 1$.
+De rotatiehoek wordt bepaald door:
+  \[
+    \theta = \bgcos{\frac{\spoor{M} - 1}{2}}
+  \]
+
+\paragraph{Formule van Rodriguez}
+\[
+  \vec{r}' = \left(\vec{1}_k \cdot \vec{r} \right)\left(1 - \cos{\phi}\right)\vec{1}_k + \cos{\phi}\; \vec{r} + \sin{\phi}\vectprod{\vec{1}_k}{\vec{r}}
+\]
+
+\subsection{Dynamica}
+
+\paragraph{König}
+\[
+  E_{kin} = \frac{mv_G^2}{2} + E_{rot,G}
+          = \frac{mv_G^2}{2} + \vec{v}_G \cdot \sum_h m_h \left.\vec{v}_h \right|_{rel}
+\]
+
+\subsubsection{Algemene stellingen (Newton-Euler)}
+\paragraph{Kinetisch resultante}
+\[
+  \vect{\mathscr{R}} = \int_{(h)} \vect{v}_h \d{m}_h
+    = m \vec{v}_G
+\]
+\[
+  \diff{\vect{\mathscr{R}}}{t} = \vec{R}^u
+\]
+
+\paragraph{Kinetisch moment}
+\[
+  \vect{\mathscr{M}}_O = \int_{(h)} \vect{OP}_h \times \vect{v}_h \d{m}_h
+    = m \vect{OG} \times \vec{v}_O + \vect{\vect{I}}_O \vec{\omega}
+\]
+\[
+  \diff{\vect{\mathscr{M}}_Q}{t} = \vec{M}^u_Q + m \vec{v}_G \times \vec{v}_Q
+\]
+\[
+  \vect{\mathscr{M}}_A = \vect{\mathscr{M}}_O + \vect{AO} \times \vect{\mathscr{R}}
+\]
+
+
+\paragraph{Euler-vergelijkingen}
+
+In HTA:
+\[
+\left\{
+  \begin{array}{l@{\;=\;}l}
+    A \dt{p} - qr\left(B-C \right) & M_x\\
+    B \dt{q} - pr\left(C-A \right) & M_y\\
+    C \dt{r} - pq\left(A-B \right) & M_z
+  \end{array}
+\right.
+\qquad \qquad \mbox{met }
+ \vect{\vect{I}} =
+  \left[
+    \begin{array}{ccc}
+      A & 0 & 0\\
+      0 & B & 0\\
+      0 & 0 & C
+    \end{array}
+  \right]
+ \qquad
+ \vec{\omega} =
+  \left[
+    \begin{array}{c}
+      p \\
+      q \\
+      r
+    \end{array}
+  \right]
+\]
+
+
+\paragraph{Kinetische energie}
+\[
+  E_K = \frac{1}{2}\sum_{(h)} m_h v_h^2
+      = \frac{mv_O^2}{2} + m\vec{v}_O \cdot \left( \vec{\omega} \times \vect{OG} \right) + \frac{\vec{\omega} \overline{\overline{I}}_O \vec{\omega}}{2}
+\]
+\[
+  \diff{E_K}{t} = P^u + P^i \stackrel{\mbox{ \tiny SL}}{=} P^u
+\]
+
+\subsubsection{Gyrostaat}
+\[
+  \diff{\vect{\mathscr{M}}_{G0}}{t} = \vec{M}_G^u + \Gamma \vec{\Omega} \times \vec{\omega}
+\]
+
+
+\subsubsection{Virtuële arbeid}
+
+\subsubsection{Lagrangiaanse aanpak}
+\[
+  Q_i = \sum_k \vec{F}_k^u \cdot \pdiff{\vec{r}_k}{q_i}
+\]
+\[
+  \diff{}{t} \left( \pdiff{E_K}{\dt{q}_i} \right) - \pdiff{E_K}{q_i} = Q_i + \lambda_j \pdiff{\Psi_j}{q_i}
+\]
+\[
+  \Psi_j = 0 \qquad \mbox{Bindingen tussen de coördinaten}
+\]
+\paragraph{Als alle krachten afgeleid zijn van een potentiaal}
+\[
+  \mathscr{L} = E_K - E_p
+\]
+\[
+  \diff{}{t} \left( \pdiff{\mathscr{L}}{\dt{q}_i} \right) - \pdiff{\mathscr{L}}{q_i} = 0
+\]
+
+
+

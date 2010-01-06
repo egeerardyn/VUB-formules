@@ -1,0 +1,102 @@
+\newpage
+\twocolumn
+\section{Coördinatentransformaties}
+\label{sec:Coordinatentransformaties}
+
+\subsection{Poolcoördinaten}
+\label{sec:PoolCoords}
+Plaats
+\[
+  \left\{
+    \begin{array}{rcl}
+      r_x & = & r \cos \theta\\
+      r_y & = & r \sin \theta
+    \end{array}
+  \right.
+\]
+Snelheid
+\[
+  \left\{
+    \begin{array}{rcl}
+      v_{r}      & = & \dt{r}\\
+      v_{\theta} & = & r \dt{\theta}
+    \end{array}
+  \right.
+\]
+Versnelling
+\[
+  \left\{
+    \begin{array}{rcl}
+      a_{r}      & = & \dtt{r} - r\dt{\theta}\\
+      a_{\theta} & = & r\dtt{\theta} + 2\dt{r}\dt{\theta}
+    \end{array}
+  \right.
+\]
+
+\subsection{Cilindercoördinaten}
+\label{sec:CilinderCoords}
+Plaats
+\[
+  \left\{
+    \begin{array}{rcl}
+      r_x & = & r \cos \theta\\
+      r_y & = & r \sin \theta\\
+      r_z & = & z
+    \end{array}
+  \right.
+\]
+Snelheid
+\[
+  \left\{
+    \begin{array}{rcl}
+      v_{r}      & = & \dt{r}\\
+      v_{\theta} & = & r \dt{\theta}\\
+      v_z        & = & \dt{z}
+    \end{array}
+  \right.
+\]
+Versnelling
+\[
+  \left\{
+    \begin{array}{rcl}
+      a_{r}      & = & \dtt{r} - r\dt{\theta}\\
+      a_{\theta} & = & r\dtt{\theta} + 2\dt{r}\dt{\theta}\\
+      a_{z}      & = & \dtt{z}
+    \end{array}
+  \right.
+\]
+
+\subsection{Bolcoördinaten}
+\label{sec:BolCoords}
+Plaats
+\[
+  \left\{
+    \begin{array}{rcl}
+      r_x & = & r \sin \theta \cos \varphi\\
+      r_y & = & r \sin \theta \sin \varphi\\
+      r_z & = & r \cos \theta
+    \end{array}
+  \right.
+\]
+Snelheid
+\[
+  \left\{
+    \begin{array}{rcl}
+      v_{r}       & = & \dt{r}\\
+      v_{\theta}  & = & r \dt{\theta}\\
+      v_{\varphi} & = & r \dt{\varphi} \sin \theta
+    \end{array}
+  \right.
+\]
+Versnelling
+\[
+  \left\{
+    \begin{array}{rcl}
+      a_{r}      & = & \dtt{r} - r \dt{\varphi}^2 \sin^2 \theta - r \dt{\theta}\\
+      a_{\theta} & = & r \dtt{\theta} + 2 \dt{r}\dt{\theta} - r \dt{\varphi}^2 \sin \theta \cos \theta\\
+      a_{z}      & = & r \dtt{\varphi} \sin \theta + 2 \dt{r}\dt{\varphi} \sin \theta + 2r \theta \dt{\varphi}\cos \theta 
+    \end{array}
+  \right.
+\]
+
+\onecolumn

@@ -1,0 +1,93 @@
+\documentclass[pdftex,fleqn,a4paper]{article}
+  
+  \let\oldAuthor\author
+  \renewcommand{\author}[1]{\newcommand{\theAuthor}{#1}\oldAuthor{#1}} 
+  \let\oldTitle\title
+  \renewcommand{\title}[1]{\newcommand{\theTitle}{#1}\oldTitle{#1}}
+  \newcommand{\subtitle}[1]{\newcommand{\theSubtitle}{#1}}
+  \let\oldDate\date
+  \renewcommand{\date}[1]{\newcommand{\theDate}{#1}\oldDate{#1}}
+  
+  \usepackage{../huisstijl/vubtitlepage}
+  \faculty{Faculteit Ingenieurswetenschappen}
+  
+  \author{\href{mailto:Egon.Geerardyn@vub.ac.be}{Egon Geerardyn}}
+  \title{Algemene Constanten}
+  \newcommand{\revisie}{revisie 0.1}
+  \date{\revisie\ (\today)}
+ 
+ 
+ 
+ 
+  %\usepackage{graphicx}
+  \usepackage{amsfonts}
+  \usepackage{mathrsfs}
+  \usepackage{fancyhdr}
+  \usepackage[dutch]{babel}
+  \usepackage[latin1]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+  \usepackage{flow}
+  %%%%
+  
+  
+    
+  \renewcommand{\rmdefault}{cmss}
+  \renewcommand{\sfdefault}{cmr}
+  \setlength\parindent{0cm}
+  \addtolength{\textheight}{2cm}
+  \addtolength{\textwidth}{2cm}
+  \addtolength{\hoffset}{-1.5cm} 
+  \pagestyle{fancy}
+  \rhead{pagina \thepage}
+  \chead{\footnotesize \revisie}
+  \lhead{\textbf{Algemene Constanten}}
+  \cfoot{}   
+  
+  \input{../commands/commands.inc.tex}  
+  
+  
+ %lay-out
+  \hypersetup{colorlinks,%
+            citecolor=black,%
+            filecolor=black,%
+            linkcolor=black,%
+            urlcolor=black,%
+            pdfauthor={Egon Geerardyn},%
+            pdftitle={Algemene Constanten},%
+            plainpages=false}%,%
+            %pdfpagelabels}
+  \pdfpagewidth=\paperwidth
+  \pdfpageheight=\paperheight
+ %margins
+\begin{document}
+  \addtolength{\textwidth}{3cm}
+  \maketitlepage
+%\thispagestyle{empty}%
+%  \null
+%  \vfill
+%  \begin{center}\leavevmode
+%    \normalfont
+%    %{\Large\raggedleft schooljaren 2004 -- 2005 -- 2006\par}%
+%    {\Large\raggedleft Ingenieurswetenschappen\par}%
+%    \hrulefill\par
+%    {\Huge\raggedright Formularium Wiskunde \large \revisie\   \footnotesize (\today)\par }%
+%  \end{center}%
+%  \vfill
+%  \null
+%  \newpage
+  \newpage 
+  \setlength{\voffset}{-2cm}
+
+  \input{voorwoord.inc.tex}
+   \newpage
+   \tableofcontents
+   \newpage
+  
+  \input{SI/prefix.inc.tex}
+ 
+
+ 
+ \ttfamily  
+
+\end{document}

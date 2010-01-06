@@ -1,0 +1,11 @@
+.dropbox
+*.tcp
+*.kileprj
+*.out
+*.log
+*.lof
+*.aux
+*~
+*.backup
+.svn
+*.kilepr
