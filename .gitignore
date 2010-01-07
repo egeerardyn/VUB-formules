@@ -9,3 +9,5 @@
 *.backup
 .svn
 *.kilepr
+*.blg
+*.bbl
